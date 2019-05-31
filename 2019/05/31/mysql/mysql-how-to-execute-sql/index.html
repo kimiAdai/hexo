@@ -96,21 +96,27 @@
 
 
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="mysql-backup">
-<meta property="og:url" content="http://yoursite.com/2019/02/25/mysql-backup/index.html">
+  <meta name="description" content="流程示意图   连接器连接到数据库 , 连接器负责跟客户建立连接 , 获取权限 , 维持和管理连接 . 1mysql -h$ip -P$port -u$user -p*** 长连接 : 连接成功后 , 如果客户端持续有请求 , 则一直使用同一个连接 .短连接 : 每次执行完很少的几次查询后就断开连接 , 下次需要的时候再重新建立连接 .建立连接的过程通常比较复杂 , 在日常使用中建议使用长连接 .">
+<meta name="keywords" content="mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 如何执行一条 SQL 语句的">
+<meta property="og:url" content="http://yoursite.com/2019/05/31/mysql/mysql-how-to-execute-sql/index.html">
 <meta property="og:site_name" content="kimiAdai">
+<meta property="og:description" content="流程示意图   连接器连接到数据库 , 连接器负责跟客户建立连接 , 获取权限 , 维持和管理连接 . 1mysql -h$ip -P$port -u$user -p*** 长连接 : 连接成功后 , 如果客户端持续有请求 , 则一直使用同一个连接 .短连接 : 每次执行完很少的几次查询后就断开连接 , 下次需要的时候再重新建立连接 .建立连接的过程通常比较复杂 , 在日常使用中建议使用长连接 .">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-25T03:26:01.937Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0060vrluly1g3kjdprxdgj31hc140wgx.jpg">
+<meta property="og:updated_time" content="2019-05-31T10:08:07.671Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql-backup">
+<meta name="twitter:title" content="MySQL 如何执行一条 SQL 语句的">
+<meta name="twitter:description" content="流程示意图   连接器连接到数据库 , 连接器负责跟客户建立连接 , 获取权限 , 维持和管理连接 . 1mysql -h$ip -P$port -u$user -p*** 长连接 : 连接成功后 , 如果客户端持续有请求 , 则一直使用同一个连接 .短连接 : 每次执行完很少的几次查询后就断开连接 , 下次需要的时候再重新建立连接 .建立连接的过程通常比较复杂 , 在日常使用中建议使用长连接 .">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0060vrluly1g3kjdprxdgj31hc140wgx.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/25/mysql-backup/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/31/mysql/mysql-how-to-execute-sql/">
 
 
 
@@ -120,7 +126,7 @@
   };
 </script>
 
-  <title>mysql-backup | kimiAdai</title>
+  <title>MySQL 如何执行一条 SQL 语句的 | kimiAdai</title>
   
 
 
@@ -319,7 +325,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/mysql-backup/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/mysql/mysql-how-to-execute-sql/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimiAdai">
@@ -336,7 +342,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mysql-backup
+          <h1 class="post-title" itemprop="name headline">MySQL 如何执行一条 SQL 语句的
 
               
             
@@ -362,12 +368,34 @@
                 
               
 
-              <time title="创建时间：2019-02-25 11:26:01" itemprop="dateCreated datePublished" datetime="2019-02-25T11:26:01+08:00">2019-02-25</time>
+              <time title="创建时间：2019-05-31 15:30:01 / 修改时间：18:08:07" itemprop="dateCreated datePublished" datetime="2019-05-31T15:30:01+08:00">2019-05-31</time>
             
 
+            
+              
+
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -397,7 +425,17 @@
       
 
       
-        
+        <h4 id="流程示意图"><a href="#流程示意图" class="headerlink" title="流程示意图"></a>流程示意图</h4><div style="width: 450px; margin: auto"><img src="https://ws1.sinaimg.cn/large/0060vrluly1g3kjdprxdgj31hc140wgx.jpg" alt="示意图"></div>
+
+
+<h4 id="连接器"><a href="#连接器" class="headerlink" title="连接器"></a>连接器</h4><p>连接到数据库 , 连接器负责跟客户建立连接 , 获取权限 , 维持和管理连接 .</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h$ip -P$port -u$user -p***</span><br></pre></td></tr></table></figure>
+<p>长连接 : 连接成功后 , 如果客户端持续有请求 , 则一直使用同一个连接 .<br>短连接 : 每次执行完很少的几次查询后就断开连接 , 下次需要的时候再重新建立连接 .<br>建立连接的过程通常比较复杂 , 在日常使用中建议使用长连接 . 但是全部使用长连接后 , 可能会导致 MySQL 占用内存过高 , 被系统强行杀掉 , 导致 MySQL 异常重启 .<br>解决方案 : 1.定期断开长连接 . 2.在每次执行一个比较大的操作后 , 通过执行 mysql_reset_connection 来初始化连接资源 , 这个过程不需要重新连接和权限验证 .</p>
+<h4 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h4><p>缓存失效频繁 , 只要有一个更新 , 该表上的所有缓存将全部被清空 . 建议不使用 .<br>需要注意的一点是 , 查询缓存在 MySQL 8.0 中被移除了 .</p>
+<h4 id="分析器"><a href="#分析器" class="headerlink" title="分析器"></a>分析器</h4><p>词法分析 , 判断 SQL 是否满足 MySQL 的语法要求 , 识别表名和字段 , 并判断字段是否存在等 .<br>语法分析 , 判断语法是存在错误 , 如 SELECT 拼成 SELEC , 少了 T 字符串 , 报错 ‘You have an error in your SQL syntax’ .</p>
+<h4 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h4><p>在执行 SQL 语句之前优化处理 , 当表中有多个索引时 , 优化器会决定使用哪个索引 ; 在关联语句中决定表的连接顺序 .</p>
+<h4 id="执行器"><a href="#执行器" class="headerlink" title="执行器"></a>执行器</h4><p>MySQL 通过分析器知道了你要做什么 , 通过优化器知道了该怎么做 , 于是进入执行器 , 开始执行语句 .<br>开始执行的时候 , 需要先判断用户对这个表有没有查询或者更新/插入的权限 , 如果有权限 , 就打开表继续执行 , 打开表的时候 , 执行器会根据表定义的引擎 , 去使用这个引擎提供的接口 .</p>
+
       
     </div>
 
@@ -418,6 +456,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+        </div>
+      
 
       
       
@@ -427,8 +471,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/15/linux-start/" rel="next" title="linux 系统下的启动和重启命令">
-                <i class="fa fa-chevron-left"></i> linux 系统下的启动和重启命令
+              <a href="/2019/02/25/mysql/mysql-backup/" rel="next" title="linux 系统下备份 mysql 数据库">
+                <i class="fa fa-chevron-left"></i> linux 系统下备份 mysql 数据库
               </a>
             
           </div>
@@ -480,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -498,7 +551,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -510,6 +563,8 @@
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
                     
+                    
+                      
                     
                       
                     
@@ -533,6 +588,8 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
+                    
+                      
                     
                       
                     
@@ -581,6 +638,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#流程示意图"><span class="nav-number">1.</span> <span class="nav-text">流程示意图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接器"><span class="nav-number">2.</span> <span class="nav-text">连接器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询缓存"><span class="nav-number">3.</span> <span class="nav-text">查询缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析器"><span class="nav-number">4.</span> <span class="nav-text">分析器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优化器"><span class="nav-number">5.</span> <span class="nav-text">优化器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行器"><span class="nav-number">6.</span> <span class="nav-text">执行器</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

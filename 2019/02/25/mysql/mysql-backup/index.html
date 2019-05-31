@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="新增分类页面进入项目根目录下 , 生成 page1hexo new page categories 在 /source/categories/index.md 的 front-matter 中加入1type: &amp;apos;categories&amp;apos; 新增标签页面1hexo new page tags 在 /source/tags/index.md 的 front-matter 中加入1typ">
-<meta name="keywords" content="hexo 写作">
+  <meta name="description" content="mysql-backup创建 shell script 备份脚本1vim mysql-backup.sh 1234567891011121314151617#!/bin/sh# This is a mysql datbase backup shell script.# set mysql infohostname=&quot;localhost&quot;user=&quot;root&quot;password=&quot;my passwor">
+<meta name="keywords" content="linux,mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 写作">
-<meta property="og:url" content="http://yoursite.com/2019/01/25/hexo-markdown/index.html">
+<meta property="og:title" content="linux 系统下备份 mysql 数据库">
+<meta property="og:url" content="http://yoursite.com/2019/02/25/mysql/mysql-backup/index.html">
 <meta property="og:site_name" content="kimiAdai">
-<meta property="og:description" content="新增分类页面进入项目根目录下 , 生成 page1hexo new page categories 在 /source/categories/index.md 的 front-matter 中加入1type: &amp;apos;categories&amp;apos; 新增标签页面1hexo new page tags 在 /source/tags/index.md 的 front-matter 中加入1typ">
+<meta property="og:description" content="mysql-backup创建 shell script 备份脚本1vim mysql-backup.sh 1234567891011121314151617#!/bin/sh# This is a mysql datbase backup shell script.# set mysql infohostname=&quot;localhost&quot;user=&quot;root&quot;password=&quot;my passwor">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-25T09:23:25.832Z">
+<meta property="og:updated_time" content="2019-02-25T06:12:52.734Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo 写作">
-<meta name="twitter:description" content="新增分类页面进入项目根目录下 , 生成 page1hexo new page categories 在 /source/categories/index.md 的 front-matter 中加入1type: &amp;apos;categories&amp;apos; 新增标签页面1hexo new page tags 在 /source/tags/index.md 的 front-matter 中加入1typ">
+<meta name="twitter:title" content="linux 系统下备份 mysql 数据库">
+<meta name="twitter:description" content="mysql-backup创建 shell script 备份脚本1vim mysql-backup.sh 1234567891011121314151617#!/bin/sh# This is a mysql datbase backup shell script.# set mysql infohostname=&quot;localhost&quot;user=&quot;root&quot;password=&quot;my passwor">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/25/hexo-markdown/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/25/mysql/mysql-backup/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>hexo 写作 | kimiAdai</title>
+  <title>linux 系统下备份 mysql 数据库 | kimiAdai</title>
   
 
 
@@ -323,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/25/hexo-markdown/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/mysql/mysql-backup/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimiAdai">
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo 写作
+          <h1 class="post-title" itemprop="name headline">linux 系统下备份 mysql 数据库
 
               
             
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="创建时间：2019-01-25 17:16:58 / 修改时间：17:23:25" itemprop="dateCreated datePublished" datetime="2019-01-25T17:16:58+08:00">2019-01-25</time>
+              <time title="创建时间：2019-02-25 11:26:01 / 修改时间：14:12:52" itemprop="dateCreated datePublished" datetime="2019-02-25T11:26:01+08:00">2019-02-25</time>
             
 
             
@@ -388,7 +388,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
 
                 
                 
@@ -423,13 +423,17 @@
       
 
       
-        <h3 id="新增分类页面"><a href="#新增分类页面" class="headerlink" title="新增分类页面"></a>新增分类页面</h3><p>进入项目根目录下 , 生成 page<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure></p>
-<p>在 /source/categories/index.md 的 front-matter 中加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type: &apos;categories&apos;</span><br></pre></td></tr></table></figure></p>
-<h3 id="新增标签页面"><a href="#新增标签页面" class="headerlink" title="新增标签页面"></a>新增标签页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>在 /source/tags/index.md 的 front-matter 中加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type: &apos;tags&apos;</span><br></pre></td></tr></table></figure></p>
-<h3 id="使用标签和分类"><a href="#使用标签和分类" class="headerlink" title="使用标签和分类"></a>使用标签和分类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &apos;filename&apos;</span><br></pre></td></tr></table></figure>
-<p>直接在 md 文件的 front-matter 中加入 分类和标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">category: </span><br><span class="line">- hexo #分类</span><br><span class="line">tags: </span><br><span class="line">- 安装hexo #标签</span><br><span class="line">- 主题 #标签</span><br></pre></td></tr></table></figure></p>
-<p>next 主题下使用超链接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Hexo themes](https://hexo.io/themes/)</span><br></pre></td></tr></table></figure></p>
+        <h3 id="mysql-backup"><a href="#mysql-backup" class="headerlink" title="mysql-backup"></a>mysql-backup</h3><p>创建 shell script 备份脚本<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim mysql-backup.sh</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/sh</span></span><br><span class="line"><span class="comment"># This is a mysql datbase backup shell script.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set mysql info</span></span><br><span class="line">hostname=<span class="string">"localhost"</span></span><br><span class="line">user=<span class="string">"root"</span></span><br><span class="line">password=<span class="string">"my password"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set database info</span></span><br><span class="line">database=<span class="string">"bak database name"</span></span><br><span class="line">bakpath=<span class="string">"path to backup"</span></span><br><span class="line">date=$(date +%Y%m%d_%H%M%S)</span><br><span class="line"></span><br><span class="line"><span class="comment"># backup</span></span><br><span class="line">mkdir -p $bakpath</span><br><span class="line">mysqldump -h$hostname -u$user -p$password $database | gzip \ </span><br><span class="line">&gt; $bakpath/$database_$date_sql.gz</span><br></pre></td></tr></table></figure>
+<h3 id="创建定时任务执行-shell-script"><a href="#创建定时任务执行-shell-script" class="headerlink" title="创建定时任务执行 shell script"></a>创建定时任务执行 shell script</h3><h3 id="手动备份"><a href="#手动备份" class="headerlink" title="手动备份"></a>手动备份</h3><p>备份一个数据库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -hhostname -uusername -pmypwd databasename &gt; /path to backup/bakname.sql</span><br></pre></td></tr></table></figure></p>
+<p>备份并压缩<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -hhostname -uusername -pmypwd databasename ｜ gzip &gt; /path to backup/bakname.sql.gz</span><br></pre></td></tr></table></figure></p>
+<p>备份数据库一些表<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -hhostname -uusername -pmypwd databasename table1 table2 table3 &gt; /path to backup/bakname.sql</span><br></pre></td></tr></table></figure></p>
+<p>仅备份数据库结构<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -no-data -databases databasename1 databasename2 databasename3 &gt; /path to backup/bakname.sql</span><br></pre></td></tr></table></figure></p>
+<p>备份所有数据库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -all-databases &gt; /path to backup/bakname.sql</span><br></pre></td></tr></table></figure></p>
+<h3 id="还原数据库"><a href="#还原数据库" class="headerlink" title="还原数据库"></a>还原数据库</h3><p>还原无压缩数据库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql －hhostname -uuser -pmypwd databasename &lt; /path to backup/bakname.sql</span><br></pre></td></tr></table></figure></p>
+<p>还原压缩数据库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gunzip &lt; /path to backup/bakname.sql.gz | mysql -hhostname -uusername -pmypwd databasename</span><br></pre></td></tr></table></figure></p>
+<h3 id="迁移到新的服务器"><a href="#迁移到新的服务器" class="headerlink" title="迁移到新的服务器"></a>迁移到新的服务器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -hhostname -uuser -pmypwd databasename | mysql -hnew_hostname -C databasename</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.jianshu.com/p/b77dfd6d998b" target="_blank" rel="noopener">链接https://www.jianshu.com/p/b77dfd6d998b</a></p>
 
       
     </div>
@@ -453,7 +457,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo-写作/" rel="tag"># hexo 写作</a>
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
           
         </div>
       
@@ -466,8 +472,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/25/hello-everyone/" rel="next" title="安装 hexo">
-                <i class="fa fa-chevron-left"></i> 安装 hexo
+              <a href="/2019/02/15/linux/linux-start/" rel="next" title="linux 系统下的启动和重启命令">
+                <i class="fa fa-chevron-left"></i> linux 系统下的启动和重启命令
               </a>
             
           </div>
@@ -476,8 +482,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/26/php/develop-wx-pay/" rel="prev" title="细数微信公众号小程序开发中遇到的坑">
-                细数微信公众号小程序开发中遇到的坑 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/31/mysql/mysql-how-to-execute-sql/" rel="prev" title="MySQL 如何执行一条 SQL 语句的">
+                MySQL 如何执行一条 SQL 语句的 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -648,7 +654,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#新增分类页面"><span class="nav-number">1.</span> <span class="nav-text">新增分类页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增标签页面"><span class="nav-number">2.</span> <span class="nav-text">新增标签页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用标签和分类"><span class="nav-number">3.</span> <span class="nav-text">使用标签和分类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-backup"><span class="nav-number">1.</span> <span class="nav-text">mysql-backup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建定时任务执行-shell-script"><span class="nav-number">2.</span> <span class="nav-text">创建定时任务执行 shell script</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手动备份"><span class="nav-number">3.</span> <span class="nav-text">手动备份</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#还原数据库"><span class="nav-number">4.</span> <span class="nav-text">还原数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迁移到新的服务器"><span class="nav-number">5.</span> <span class="nav-text">迁移到新的服务器</span></a></li></ol></div>
             
 
           </div>
