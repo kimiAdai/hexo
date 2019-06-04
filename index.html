@@ -319,6 +319,181 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/linux/linux-charset/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/04/linux/linux-charset/" class="post-title-link" itemprop="url">shadowsocks & finalspeed 服务端搭建</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-04 09:51:00 / 修改时间：10:54:09" itemprop="dateCreated datePublished" datetime="2019-06-04T09:51:00+08:00">2019-06-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="shadowsocks-服务端"><a href="#shadowsocks-服务端" class="headerlink" title="shadowsocks 服务端"></a>shadowsocks 服务端</h4><p>使用 root 用户登陆 , 安装 shadowsocks .<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https:<span class="comment">//raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh</span></span><br><span class="line">chmod +x shadowsocks-go.sh</span><br><span class="line">./shadowsocks-go.sh <span class="number">2</span>&gt;&amp;<span class="number">1</span> | tee shadowsocks-go.log</span><br></pre></td></tr></table></figure></p>
+<p>脚本安装完成后，已将 shadowsocks-go 加入开机自启动<br>配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/shadowsocks/config.json</span><br></pre></td></tr></table></figure></p>
+<p>单用户 和 多用户 配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="string">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line"> <span class="string">"server_port"</span>: 13839,</span><br><span class="line"> <span class="string">"local_port"</span>:1080,</span><br><span class="line"> <span class="string">"password"</span>:<span class="string">"jkdf7nd33eUj"</span>,</span><br><span class="line"> <span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line"> <span class="string">"timeout"</span>:600</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line"> <span class="string">"port_password"</span>:&#123;</span><br><span class="line">      <span class="string">"13839"</span>:<span class="string">"jkdf7nd33eUj"</span>,</span><br><span class="line">      <span class="string">"12179"</span>:<span class="string">"Ka7KGb4gqwtF"</span>,</span><br><span class="line">      <span class="string">"16713"</span>:<span class="string">"fJArFv1gQ8Ve"</span>,</span><br><span class="line">      <span class="string">"18711"</span>:<span class="string">"4aZtRq4frGf5"</span>,</span><br><span class="line">      <span class="string">"17739"</span>:<span class="string">"e1PDAM35rYG9"</span></span><br><span class="line"> &#125;,</span><br><span class="line"> <span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line"> <span class="string">"timeout"</span>:600</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>管理<br>启动/停止/重启/状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks start/stop/restart/status</span><br></pre></td></tr></table></figure></p>
+<h4 id="FinalSpeed-服务端"><a href="#FinalSpeed-服务端" class="headerlink" title="FinalSpeed 服务端"></a>FinalSpeed 服务端</h4><p>安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -f install_fs.sh</span><br><span class="line">wget  https://github.com/ucoker/finalspeed/raw/master/install_fs.sh</span><br><span class="line">chmod +x install_fs.sh</span><br><span class="line">./install_fs.sh 2&gt;&amp;1 | tee install.log</span><br></pre></td></tr></table></figure></p>
+<p>开机启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/rc.local</span><br></pre></td></tr></table></figure></p>
+<p>加入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/start.sh</span><br></pre></td></tr></table></figure></p>
+<p>确保端口开放<br>管理 执行一键安装会自动更新<br>卸载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/stop.sh ; rm -rf /fs</span><br></pre></td></tr></table></figure></p>
+<p>启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/start.sh</span><br></pre></td></tr></table></figure></p>
+<p>停止<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/stop.sh</span><br></pre></td></tr></table></figure></p>
+<p>重新启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/restart.sh</span><br></pre></td></tr></table></figure></p>
+<p>运行日志<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f /fs/server.log</span><br></pre></td></tr></table></figure></p>
+<h4 id="windows-客户端"><a href="#windows-客户端" class="headerlink" title="windows 客户端"></a>windows 客户端</h4><p><a href="https://pan.baidu.com/s/1TRcXDzhw9w9DqrgR5Iem-w" target="_blank" rel="noopener">下载地址</a><br>提取码：xe8o</p>
+<p>解压安装 Shadowsocks-4.1.6 , 服务器配置如下 , 端口可以自定义 , 密码为 shadowsocks 服务端设置的密码 .<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3oxgz9aj1j30cw0cv0t2.jpg" alt=""></p>
+<p>执行 finalspeed.exe 文件<br>配置如下<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3oxpjaly5j30kx09gweu.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/mysql/mysql-how-to-execute-sql/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -339,7 +514,169 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/31/mysql/mysql-how-to-execute-sql/" class="post-title-link" itemprop="url">MySQL 如何执行一条 SQL 语句的</a>
+                <a href="/2019/05/31/mysql/mysql-how-to-execute-sql/" class="post-title-link" itemprop="url">MySQL 日志系统</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-31 18:30:01 / 修改时间：18:55:09" itemprop="dateCreated datePublished" datetime="2019-05-31T18:30:01+08:00">2019-05-31</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="redo-log-重做日志"><a href="#redo-log-重做日志" class="headerlink" title="redo log (重做日志)"></a>redo log (重做日志)</h3><p>InnoDB 引擎独有 , 其他引擎没有次日志 .<br>当有一条记录需要更新时 , InnoDB 引擎会先把记录写到 redo log 里面 , 并更新内存 , 这个时候更新就算完成了 . 同时 InnoDB 引擎会在适当的时候将这个操作记录更新到磁盘里 , 而这个更新往往是在系统比较空闲的时候 .<br>redo log 的文件是固定大小的 , 循环写入 , 一旦可用空间不足就会停止写入 , 先将记录更新到数据文件 .<br>该日志可以保证数据库发生异常的情况下 , 之前提交的记录不会丢失 — crash-safe .</p>
+<h3 id="binlog-归档日志"><a href="#binlog-归档日志" class="headerlink" title="binlog (归档日志)"></a>binlog (归档日志)</h3><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>redo log 是 InnoDB 引擎特有的 , binlog 是所有引擎都可以使用的 , 在 server 层实现 .<br>redo log 是物理日志 , 记录的是 “在某个数据页上做了什么修改”; binlog 是逻辑日志 , 记录的事这个语句的原始逻辑 .<br>redo log 是循环写的 , 空间固定 ; binlog 是可以追加写入的(归档) .</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/mysql/mysql-log/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/31/mysql/mysql-log/" class="post-title-link" itemprop="url">MySQL 如何执行一条 SQL 语句的</a>
               
             
           </h1>
@@ -995,7 +1332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/15/linux/linux-charset/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/15/linux/linux-shadowsocks/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimiAdai">
@@ -1015,7 +1352,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/02/15/linux/linux-charset/" class="post-title-link" itemprop="url">linux-中文编码</a>
+                <a href="/2019/02/15/linux/linux-shadowsocks/" class="post-title-link" itemprop="url">linux-中文编码</a>
               
             
           </h1>
@@ -1649,347 +1986,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/25/hexo-markdown/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimiAdai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kimiAdai">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/25/hexo-markdown/" class="post-title-link" itemprop="url">hexo 写作</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-25 17:16:58 / 修改时间：17:23:25" itemprop="dateCreated datePublished" datetime="2019-01-25T17:16:58+08:00">2019-01-25</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="新增分类页面"><a href="#新增分类页面" class="headerlink" title="新增分类页面"></a>新增分类页面</h3><p>进入项目根目录下 , 生成 page<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure></p>
-<p>在 /source/categories/index.md 的 front-matter 中加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type: &apos;categories&apos;</span><br></pre></td></tr></table></figure></p>
-<h3 id="新增标签页面"><a href="#新增标签页面" class="headerlink" title="新增标签页面"></a>新增标签页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>在 /source/tags/index.md 的 front-matter 中加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type: &apos;tags&apos;</span><br></pre></td></tr></table></figure></p>
-<h3 id="使用标签和分类"><a href="#使用标签和分类" class="headerlink" title="使用标签和分类"></a>使用标签和分类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &apos;filename&apos;</span><br></pre></td></tr></table></figure>
-<p>直接在 md 文件的 front-matter 中加入 分类和标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">category: </span><br><span class="line">- hexo #分类</span><br><span class="line">tags: </span><br><span class="line">- 安装hexo #标签</span><br><span class="line">- 主题 #标签</span><br></pre></td></tr></table></figure></p>
-<p>next 主题下使用超链接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Hexo themes](https://hexo.io/themes/)</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/25/hello-everyone/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimiAdai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kimiAdai">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/25/hello-everyone/" class="post-title-link" itemprop="url">安装 hexo</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-25 15:16:58 / 修改时间：17:10:37" itemprop="dateCreated datePublished" datetime="2019-01-25T15:16:58+08:00">2019-01-25</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="开始使用-HEXO-写-BLOG"><a href="#开始使用-HEXO-写-BLOG" class="headerlink" title="开始使用 HEXO 写 BLOG"></a>开始使用 HEXO 写 BLOG</h2><p>hexo 搭建 , 依赖 node.js 和 git , 需要先安装以上两个环境 .</p>
-<p>安装完成之后进入目录 , 直接运行命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>等到安装完成后 , 开始创建项目</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line"><span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>出现错误的话自行谷歌 , 接下来开始更换主题 , 可以在 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo themes</a> 中查找新的主题 . 选用当下比较流行的 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">next</a> 主题 , 从 git 上 clone 下来 .</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>修改语言和主题 , 在项目根目录下打开 _config.yml 文件 , </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">language: zh-CN</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<p>查看效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
-<p>访问浏览器 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2032,7 +2035,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2094,7 +2097,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

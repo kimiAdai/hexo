@@ -96,20 +96,27 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="kimiAdai">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="流程示意图   连接器连接到数据库 , 连接器负责跟客户建立连接 , 获取权限 , 维持和管理连接 . 1mysql -h$ip -P$port -u$user -p*** 长连接 : 连接成功后 , 如果客户端持续有请求 , 则一直使用同一个连接 .短连接 : 每次执行完很少的几次查询后就断开连接 , 下次需要的时候再重新建立连接 .建立连接的过程通常比较复杂 , 在日常使用中建议使用长连接 .">
+<meta name="keywords" content="mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 如何执行一条 SQL 语句的">
+<meta property="og:url" content="http://yoursite.com/2019/05/31/mysql/mysql-log/index.html">
 <meta property="og:site_name" content="kimiAdai">
+<meta property="og:description" content="流程示意图   连接器连接到数据库 , 连接器负责跟客户建立连接 , 获取权限 , 维持和管理连接 . 1mysql -h$ip -P$port -u$user -p*** 长连接 : 连接成功后 , 如果客户端持续有请求 , 则一直使用同一个连接 .短连接 : 每次执行完很少的几次查询后就断开连接 , 下次需要的时候再重新建立连接 .建立连接的过程通常比较复杂 , 在日常使用中建议使用长连接 .">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0060vrluly1g3kjdprxdgj31hc140wgx.jpg">
+<meta property="og:updated_time" content="2019-05-31T10:08:07.671Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kimiAdai">
+<meta name="twitter:title" content="MySQL 如何执行一条 SQL 语句的">
+<meta name="twitter:description" content="流程示意图   连接器连接到数据库 , 连接器负责跟客户建立连接 , 获取权限 , 维持和管理连接 . 1mysql -h$ip -P$port -u$user -p*** 长连接 : 连接成功后 , 如果客户端持续有请求 , 则一直使用同一个连接 .短连接 : 每次执行完很少的几次查询后就断开连接 , 下次需要的时候再重新建立连接 .建立连接的过程通常比较复杂 , 在日常使用中建议使用长连接 .">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0060vrluly1g3kjdprxdgj31hc140wgx.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/2/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/31/mysql/mysql-log/">
 
 
 
@@ -119,7 +126,7 @@
   };
 </script>
 
-  <title>kimiAdai</title>
+  <title>MySQL 如何执行一条 SQL 语句的 | kimiAdai</title>
   
 
 
@@ -167,8 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -302,9 +308,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -319,7 +325,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/25/hexo-markdown/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/mysql/mysql-log/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimiAdai">
@@ -336,10 +342,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/25/hexo-markdown/" class="post-title-link" itemprop="url">hexo 写作</a>
+          <h1 class="post-title" itemprop="name headline">MySQL 如何执行一条 SQL 语句的
+
               
             
           </h1>
@@ -364,7 +368,7 @@
                 
               
 
-              <time title="创建时间：2019-01-25 17:16:58 / 修改时间：17:23:25" itemprop="dateCreated datePublished" datetime="2019-01-25T17:16:58+08:00">2019-01-25</time>
+              <time title="创建时间：2019-05-31 15:30:01 / 修改时间：18:08:07" itemprop="dateCreated datePublished" datetime="2019-05-31T15:30:01+08:00">2019-05-31</time>
             
 
             
@@ -386,7 +390,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
 
                 
                 
@@ -421,18 +425,17 @@
       
 
       
-        
-          
-            <h3 id="新增分类页面"><a href="#新增分类页面" class="headerlink" title="新增分类页面"></a>新增分类页面</h3><p>进入项目根目录下 , 生成 page<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure></p>
-<p>在 /source/categories/index.md 的 front-matter 中加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type: &apos;categories&apos;</span><br></pre></td></tr></table></figure></p>
-<h3 id="新增标签页面"><a href="#新增标签页面" class="headerlink" title="新增标签页面"></a>新增标签页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>在 /source/tags/index.md 的 front-matter 中加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type: &apos;tags&apos;</span><br></pre></td></tr></table></figure></p>
-<h3 id="使用标签和分类"><a href="#使用标签和分类" class="headerlink" title="使用标签和分类"></a>使用标签和分类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &apos;filename&apos;</span><br></pre></td></tr></table></figure>
-<p>直接在 md 文件的 front-matter 中加入 分类和标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">category: </span><br><span class="line">- hexo #分类</span><br><span class="line">tags: </span><br><span class="line">- 安装hexo #标签</span><br><span class="line">- 主题 #标签</span><br></pre></td></tr></table></figure></p>
-<p>next 主题下使用超链接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Hexo themes](https://hexo.io/themes/)</span><br></pre></td></tr></table></figure></p>
+        <h4 id="流程示意图"><a href="#流程示意图" class="headerlink" title="流程示意图"></a>流程示意图</h4><div style="width: 450px; margin: auto"><img src="https://ws1.sinaimg.cn/large/0060vrluly1g3kjdprxdgj31hc140wgx.jpg" alt="示意图"></div>
 
-          
-        
+
+<h4 id="连接器"><a href="#连接器" class="headerlink" title="连接器"></a>连接器</h4><p>连接到数据库 , 连接器负责跟客户建立连接 , 获取权限 , 维持和管理连接 .</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h$ip -P$port -u$user -p***</span><br></pre></td></tr></table></figure>
+<p>长连接 : 连接成功后 , 如果客户端持续有请求 , 则一直使用同一个连接 .<br>短连接 : 每次执行完很少的几次查询后就断开连接 , 下次需要的时候再重新建立连接 .<br>建立连接的过程通常比较复杂 , 在日常使用中建议使用长连接 . 但是全部使用长连接后 , 可能会导致 MySQL 占用内存过高 , 被系统强行杀掉 , 导致 MySQL 异常重启 .<br>解决方案 : 1.定期断开长连接 . 2.在每次执行一个比较大的操作后 , 通过执行 mysql_reset_connection 来初始化连接资源 , 这个过程不需要重新连接和权限验证 .</p>
+<h4 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h4><p>缓存失效频繁 , 只要有一个更新 , 该表上的所有缓存将全部被清空 . 建议不使用 .<br>需要注意的一点是 , 查询缓存在 MySQL 8.0 中被移除了 .</p>
+<h4 id="分析器"><a href="#分析器" class="headerlink" title="分析器"></a>分析器</h4><p>词法分析 , 判断 SQL 是否满足 MySQL 的语法要求 , 识别表名和字段 , 并判断字段是否存在等 .<br>语法分析 , 判断语法是存在错误 , 如 SELECT 拼成 SELEC , 少了 T 字符串 , 报错 ‘You have an error in your SQL syntax’ .</p>
+<h4 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h4><p>在执行 SQL 语句之前优化处理 , 当表中有多个索引时 , 优化器会决定使用哪个索引 ; 在关联语句中决定表的连接顺序 .</p>
+<h4 id="执行器"><a href="#执行器" class="headerlink" title="执行器"></a>执行器</h4><p>MySQL 通过分析器知道了你要做什么 , 通过优化器知道了该怎么做 , 于是进入执行器 , 开始执行语句 .<br>开始执行的时候 , 需要先判断用户对这个表有没有查询或者更新/插入的权限 , 如果有权限 , 就打开表继续执行 , 打开表的时候 , 执行器会根据表定义的引擎 , 去使用这个引擎提供的接口 .</p>
+
       
     </div>
 
@@ -453,185 +456,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/25/hello-everyone/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimiAdai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kimiAdai">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/25/hello-everyone/" class="post-title-link" itemprop="url">安装 hexo</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-25 15:16:58 / 修改时间：17:10:37" itemprop="dateCreated datePublished" datetime="2019-01-25T15:16:58+08:00">2019-01-25</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
           
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="开始使用-HEXO-写-BLOG"><a href="#开始使用-HEXO-写-BLOG" class="headerlink" title="开始使用 HEXO 写 BLOG"></a>开始使用 HEXO 写 BLOG</h2><p>hexo 搭建 , 依赖 node.js 和 git , 需要先安装以上两个环境 .</p>
-<p>安装完成之后进入目录 , 直接运行命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>等到安装完成后 , 开始创建项目</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line"><span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>出现错误的话自行谷歌 , 接下来开始更换主题 , 可以在 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo themes</a> 中查找新的主题 . 选用当下比较流行的 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">next</a> 主题 , 从 git 上 clone 下来 .</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>修改语言和主题 , 在项目根目录下打开 _config.yml 文件 , </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">language: zh-CN</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<p>查看效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
-<p>访问浏览器 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/25/mysql/mysql-backup/" rel="next" title="linux 系统下备份 mysql 数据库">
+                <i class="fa fa-chevron-left"></i> linux 系统下备份 mysql 数据库
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/31/mysql/mysql-how-to-execute-sql/" rel="prev" title="MySQL 日志系统">
+                MySQL 日志系统 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -641,18 +499,15 @@
   </article>
 
 
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -673,8 +528,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -780,6 +644,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#流程示意图"><span class="nav-number">1.</span> <span class="nav-text">流程示意图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接器"><span class="nav-number">2.</span> <span class="nav-text">连接器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询缓存"><span class="nav-number">3.</span> <span class="nav-text">查询缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析器"><span class="nav-number">4.</span> <span class="nav-text">分析器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优化器"><span class="nav-number">5.</span> <span class="nav-text">优化器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行器"><span class="nav-number">6.</span> <span class="nav-text">执行器</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -909,6 +790,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -919,6 +804,8 @@
 
   
 
+
+  
 
 
   
