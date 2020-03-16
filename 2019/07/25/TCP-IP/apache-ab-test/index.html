@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="什么是 TCP/IPTCP/IP 是一类协议系统 , 它是一套支持网络通信的协议集合 . 有了这种协议 , 计算机和类计算机之间才能进行通信 . 网络协议就是一套通用规则 , 用来定义复杂的数据传输过程 . 数据传输从一台计算机上的应用程序开始 , 通过计算机网络硬件 , 经过传输介质传输到正确的目的地 , 然后上传到目的计算机的网络硬件 , 最后到达负责接收的应用程序 .TCP/IP 协议定义了">
+<meta name="keywords" content="TCP&#x2F;IP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP&#x2F;IP">
+<meta property="og:url" content="http://yoursite.com/2019/07/25/TCP-IP/apache-ab-test/index.html">
+<meta property="og:site_name" content="kimiAdai">
+<meta property="og:description" content="什么是 TCP/IPTCP/IP 是一类协议系统 , 它是一套支持网络通信的协议集合 . 有了这种协议 , 计算机和类计算机之间才能进行通信 . 网络协议就是一套通用规则 , 用来定义复杂的数据传输过程 . 数据传输从一台计算机上的应用程序开始 , 通过计算机网络硬件 , 经过传输介质传输到正确的目的地 , 然后上传到目的计算机的网络硬件 , 最后到达负责接收的应用程序 .TCP/IP 协议定义了">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0060vrlugy1g3w3oysk9yj30m20esgn1.jpg">
+<meta property="og:updated_time" content="2019-07-29T01:37:00.881Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TCP&#x2F;IP">
+<meta name="twitter:description" content="什么是 TCP/IPTCP/IP 是一类协议系统 , 它是一套支持网络通信的协议集合 . 有了这种协议 , 计算机和类计算机之间才能进行通信 . 网络协议就是一套通用规则 , 用来定义复杂的数据传输过程 . 数据传输从一台计算机上的应用程序开始 , 通过计算机网络硬件 , 经过传输介质传输到正确的目的地 , 然后上传到目的计算机的网络硬件 , 最后到达负责接收的应用程序 .TCP/IP 协议定义了">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0060vrlugy1g3w3oysk9yj30m20esgn1.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/25/TCP-IP/apache-ab-test/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>TCP/IP | kimiAdai</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kimiAdai</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/25/TCP-IP/apache-ab-test/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">TCP/IP
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-25 20:00:44" itemprop="dateCreated datePublished" datetime="2019-07-25T20:00:44+08:00">2019-07-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-29 09:37:00" itemprop="dateModified" datetime="2019-07-29T09:37:00+08:00">2019-07-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/TCP-IP/" itemprop="url" rel="index"><span itemprop="name">TCP/IP</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="什么是-TCP-IP"><a href="#什么是-TCP-IP" class="headerlink" title="什么是 TCP/IP"></a>什么是 TCP/IP</h4><p>TCP/IP 是一类协议系统 , 它是一套支持网络通信的协议集合 . 有了这种协议 , 计算机和类计算机之间才能进行通信 .</p>
+<h4 id="网络协议"><a href="#网络协议" class="headerlink" title="网络协议"></a>网络协议</h4><p>就是一套通用规则 , 用来定义复杂的数据传输过程 . 数据传输从一台计算机上的应用程序开始 , 通过计算机网络硬件 , 经过传输介质传输到正确的目的地 , 然后上传到目的计算机的网络硬件 , 最后到达负责接收的应用程序 .<br>TCP/IP 协议定义了网络通信过程 , 更重要的是定义了数据单元的格式和内容 , 以便计算机能够正确的解释接收到的消息 .</p>
+<h4 id="TCP-IP-特性"><a href="#TCP-IP-特性" class="headerlink" title="TCP/IP 特性"></a>TCP/IP 特性</h4><ol>
+<li>逻辑编址<br> 网络适配器有一个唯一的物理地址 , 有时候也叫 MAC 地址 . 每台计算机的网络适配器监听局域网中的每一个传输 , 以确定消息是否是发送到它的物理地址 .<br> 在大型网络中 , 网络适配器不可能监听所有的信息 , 物理地址模式不能有效的发挥作用 . 在路由式的网络中 , TCP/IP 通过逻辑编址提供了将网络细分到更小子网的方法 . 逻辑地址是一个通过网络软件来配置的地址 , 在 TCP/IP 中 , 计算机的逻辑地址称为 IP 地址 .<br> 一个 IP 地址包括 : 一个识别网络的网络 ID 数值 ; 一个识别网络中子网的子网 ID 数值 ; 一个识别子网中计算机的主机 ID 数值.<br> 在 TCP/IP 中 , 逻辑地址与具体硬件的物理地址之间的转换是使用地址解析协议 (Address Reso - lution Protocol,ARP) 和逆向地址解析协议 (Reverse ARP,RARP) 实现的 .</li>
+<li>路由选择<br> 路由器是一种特殊的设备 , 能够读取逻辑地址的信息 , 并将数据通过网络直接传送到它的目的地 . 路由器最简单的应用是将一个局域子网从较大的网络中分离出去 .<br> TCP/IP 定义了路由器如何找到网络路径的协议</li>
+<li>名称解析<br> 域名系统 (Domain Name System,DNS) .<br> TCP/IP 的域名服务系统提供分层的域名服务器 , 这些服务器为网络中注册 DND 的计算机提供域名和 IP 地址之间的映射 .</li>
+<li><p>错误控制和流量控制</p>
+</li>
+<li><p>应用支持</p>
+<h4 id="GET-方式请求"><a href="#GET-方式请求" class="headerlink" title="GET 方式请求"></a>GET 方式请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n 10 -c 10 &quot;http://test.com/index.php?a=1&amp;b=2&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>url 必须用双引号括起来</p>
+<h4 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n 10 -c 10 -p D:\params.txt -T application/x-www-form-urlencoded http://test.com/index.php</span><br></pre></td></tr></table></figure>
+<p>D:/params.txt 的内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gid=14659&amp;user_id=1&amp;token=f870b28e-5c04-4a90-9838-654172607287</span><br></pre></td></tr></table></figure></p>
+<h4 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h4><p><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3w3oysk9yj30m20esgn1.jpg" alt=""></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TCP-IP/" rel="tag"># TCP/IP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/09/linux/linux-crontab/" rel="next" title="linux crontab 计划任务">
+                <i class="fa fa-chevron-left"></i> linux crontab 计划任务
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/09/linux/linux-charset/" rel="prev" title="windows 安装 ubuntu">
+                windows 安装 ubuntu <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132" alt="kimiAdai">
+            
+              <p class="site-author-name" itemprop="name">kimiAdai</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是-TCP-IP"><span class="nav-number">1.</span> <span class="nav-text">什么是 TCP/IP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络协议"><span class="nav-number">2.</span> <span class="nav-text">网络协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP-特性"><span class="nav-number">3.</span> <span class="nav-text">TCP/IP 特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GET-方式请求"><span class="nav-number">4.</span> <span class="nav-text">GET 方式请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#POST-请求"><span class="nav-number">5.</span> <span class="nav-text">POST 请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试结果"><span class="nav-number">6.</span> <span class="nav-text">测试结果</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kimiAdai</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.7.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

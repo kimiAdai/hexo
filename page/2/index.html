@@ -319,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/26/php/develop-wx-pay/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/11/linux/linux-putty/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimiAdai">
@@ -339,7 +339,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/26/php/develop-wx-pay/" class="post-title-link" itemprop="url">细数微信公众号小程序开发中遇到的坑</a>
+                <a href="/2019/11/11/linux/linux-putty/" class="post-title-link" itemprop="url">windows 使用密钥登录 linux 服务器 (putty)</a>
               
             
           </h1>
@@ -364,7 +364,7 @@
                 
               
 
-              <time title="创建时间：2019-01-26 01:57:04" itemprop="dateCreated datePublished" datetime="2019-01-26T01:57:04+08:00">2019-01-26</time>
+              <time title="创建时间：2019-11-11 19:51:00" itemprop="dateCreated datePublished" datetime="2019-11-11T19:51:00+08:00">2019-11-11</time>
             
 
             
@@ -381,7 +381,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-29 21:22:53" itemprop="dateModified" datetime="2019-01-29T21:22:53+08:00">2019-01-29</time>
+                <time title="修改时间：2019-11-12 14:26:42" itemprop="dateModified" datetime="2019-11-12T14:26:42+08:00">2019-11-12</time>
               
             
           </span>
@@ -398,7 +398,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/微信开发/" itemprop="url" rel="index"><span itemprop="name">微信开发</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
 
                 
                 
@@ -435,11 +435,21 @@
       
         
           
-            <h3 id="微信支付"><a href="#微信支付" class="headerlink" title="微信支付"></a>微信支付</h3><p>开发前要准备好架构 , 如果需要使用到微信支付 , 要先确定使用 APP 去申请商户号还是用小程序去申请 .</p>
-<p>今年踩了一个坑就是小程序项目已经上线了 , 需要在 APP 中获取微信的用户信息 , 使用微信登陆 , 没想到 APP 这边不能绑定已申请的商户号 ,<br>只能重新申请一个商户号来对应 , 这样一来小程序的支付信息也要跟着变动 . 所以 APP 微信绑定之后无法使用 openid 进行付款和结算 .</p>
-<h3 id="CURL-58-错误"><a href="#CURL-58-错误" class="headerlink" title="CURL 58 错误"></a>CURL 58 错误</h3><p>微信支付还有一个大坑 , 就是 curl 的协议 , 微信使用的是 openssl 协议 , 而 centOs 默认的 curl 协议是<br> NSS . 碰到这个错误 , 一个就是签名出错了 , 仔细核对 , 或者用微信的签名工具测试 . 如果没有问题 , 基本上可以确定是 curl 协议的问题了 , 重新编译 curl 解决 .</p>
-<h3 id="公众号-access-token"><a href="#公众号-access-token" class="headerlink" title="公众号 access_token"></a>公众号 access_token</h3><p>公众号的 access_token 有两种类型 , 一个是获取用户信息需要用到的 , 用 appid 换取 code ,<br>然后用 code + appid + appsecret 换取 access_token 和 openid 等信息 . 这个获取个人信息的 access_token 每分钟有数万次的获取次数 , 目前没有超出的可能 . </p>
-<p>另一个 access_token 是全局变量 , 一个公众同一时间只有一个 . 刷新了之后 , 其他地方的 access_token 就会失效 ,<br>这个 access_token 有失效时间 , 目前是 7200 s , 即两小时 , 并且有获取次数限制 , 不能实时获取 , 必须做缓存 .</p>
+            <h4 id="先用密码登录-linux-服务器-生成密钥"><a href="#先用密码登录-linux-服务器-生成密钥" class="headerlink" title="先用密码登录 linux 服务器 , 生成密钥"></a>先用密码登录 linux 服务器 , 生成密钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+<p>生成密钥的过程中会提示输入密码 , 可以直接 enter 跳过 . 如果输入密码的话 , 以后每次登录都需要输入密码 .</p>
+<h4 id="部署密钥"><a href="#部署密钥" class="headerlink" title="部署密钥"></a>部署密钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/.ssh</span><br><span class="line">ssh-copy-id -i /root/.ssh/id_rsa.pub root@yourip</span><br><span class="line">yes</span><br></pre></td></tr></table></figure>
+<p>.ssh 文件夹中的 id_rsa 是私钥文件 , 需要下载到本地电脑用来登录 .</p>
+<h4 id="下载-id-rsa-文件到本地"><a href="#下载-id-rsa-文件到本地" class="headerlink" title="下载 id_rsa 文件到本地"></a>下载 id_rsa 文件到本地</h4><p>打开 puttygen<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8uc5tt10nj30dp0da0tg.jpg" alt=""></p>
+<ol>
+<li>load , 选择 id_rsa 文件</li>
+<li>保存私钥到本地 (.ppk 文件)</li>
+<li>复制私钥 , 并将私钥保存到服务器 /root/.ssh/authorized_keys 中</li>
+</ol>
+<h4 id="使用-putty-登录"><a href="#使用-putty-登录" class="headerlink" title="使用 putty 登录"></a>使用 putty 登录</h4><p>填入 IP 地址<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8abmhk1j30cw0ch0t2.jpg" alt=""></p>
+<p>填入用户名<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8cckiooj30cy0ch74x.jpg" alt=""></p>
+<p>选择之前保存的 .ppk 私钥文件<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8e4cy3yj30cy0ch0t8.jpg" alt=""></p>
+<p>返回 session 保存站点<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8f4yi27j30cy0ch0t5.jpg" alt=""></p>
+<p>尝试登录</p>
 
           
         
@@ -496,7 +506,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/25/hexo-markdown/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/09/linux/linux-charset/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimiAdai">
@@ -516,7 +526,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/25/hexo-markdown/" class="post-title-link" itemprop="url">hexo 写作</a>
+                <a href="/2019/11/09/linux/linux-charset/" class="post-title-link" itemprop="url">windows 安装 ubuntu</a>
               
             
           </h1>
@@ -541,7 +551,7 @@
                 
               
 
-              <time title="创建时间：2019-01-25 17:16:58 / 修改时间：17:23:25" itemprop="dateCreated datePublished" datetime="2019-01-25T17:16:58+08:00">2019-01-25</time>
+              <time title="创建时间：2019-11-09 09:51:00 / 修改时间：14:36:30" itemprop="dateCreated datePublished" datetime="2019-11-09T09:51:00+08:00">2019-11-09</time>
             
 
             
@@ -563,7 +573,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
 
                 
                 
@@ -600,13 +610,13 @@
       
         
           
-            <h3 id="新增分类页面"><a href="#新增分类页面" class="headerlink" title="新增分类页面"></a>新增分类页面</h3><p>进入项目根目录下 , 生成 page<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure></p>
-<p>在 /source/categories/index.md 的 front-matter 中加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type: &apos;categories&apos;</span><br></pre></td></tr></table></figure></p>
-<h3 id="新增标签页面"><a href="#新增标签页面" class="headerlink" title="新增标签页面"></a>新增标签页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>在 /source/tags/index.md 的 front-matter 中加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type: &apos;tags&apos;</span><br></pre></td></tr></table></figure></p>
-<h3 id="使用标签和分类"><a href="#使用标签和分类" class="headerlink" title="使用标签和分类"></a>使用标签和分类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &apos;filename&apos;</span><br></pre></td></tr></table></figure>
-<p>直接在 md 文件的 front-matter 中加入 分类和标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">category: </span><br><span class="line">- hexo #分类</span><br><span class="line">tags: </span><br><span class="line">- 安装hexo #标签</span><br><span class="line">- 主题 #标签</span><br></pre></td></tr></table></figure></p>
-<p>next 主题下使用超链接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Hexo themes](https://hexo.io/themes/)</span><br></pre></td></tr></table></figure></p>
+            <h4 id="下载-ubuntu"><a href="#下载-ubuntu" class="headerlink" title="下载 ubuntu"></a>下载 ubuntu</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[国内镜像下载](http:<span class="comment">//mirrors.163.com/ubuntu-releases/)</span></span><br></pre></td></tr></table></figure>
+<p>选择需要下载的版本 , 并准备好一个格式化好的 U 盘</p>
+<h4 id="用软碟通制作启动盘"><a href="#用软碟通制作启动盘" class="headerlink" title="用软碟通制作启动盘"></a>用软碟通制作启动盘</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[UltraISO软碟通](https://cn.ultraiso.net/)</span><br></pre></td></tr></table></figure>
+<p>打开软件 , 选择 &lt;文件&gt; , 选中下载好的 ubuntu 系统<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8rrue9uuxj30lt0g0400.jpg" alt=""></p>
+<p>然后选择 &lt;启动&gt; , &lt;写入硬盘映像&gt; , &lt;写入&gt;<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8rrz0kilcj30f90e2q30.jpg" alt=""></p>
+<p>弹出提示框直接点确定</p>
+<p>写入硬盘映像完成后重启电脑 , 进入 BIOS 设置 , 设置 U 盘启动 .</p>
 
           
         
@@ -663,7 +673,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/25/hello-everyone/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/25/TCP-IP/apache-ab-test/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimiAdai">
@@ -683,7 +693,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/25/hello-everyone/" class="post-title-link" itemprop="url">安装 hexo</a>
+                <a href="/2019/07/25/TCP-IP/apache-ab-test/" class="post-title-link" itemprop="url">TCP/IP</a>
               
             
           </h1>
@@ -708,12 +718,24 @@
                 
               
 
-              <time title="创建时间：2019-01-25 15:16:58 / 修改时间：17:10:37" itemprop="dateCreated datePublished" datetime="2019-01-25T15:16:58+08:00">2019-01-25</time>
+              <time title="创建时间：2019-07-25 20:00:44" itemprop="dateCreated datePublished" datetime="2019-07-25T20:00:44+08:00">2019-07-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-29 09:37:00" itemprop="dateModified" datetime="2019-07-29T09:37:00+08:00">2019-07-29</time>
               
             
           </span>
@@ -730,7 +752,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/TCP-IP/" itemprop="url" rel="index"><span itemprop="name">TCP/IP</span></a></span>
 
                 
                 
@@ -767,17 +789,1204 @@
       
         
           
-            <h2 id="开始使用-HEXO-写-BLOG"><a href="#开始使用-HEXO-写-BLOG" class="headerlink" title="开始使用 HEXO 写 BLOG"></a>开始使用 HEXO 写 BLOG</h2><p>hexo 搭建 , 依赖 node.js 和 git , 需要先安装以上两个环境 .</p>
-<p>安装完成之后进入目录 , 直接运行命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>等到安装完成后 , 开始创建项目</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line"><span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>出现错误的话自行谷歌 , 接下来开始更换主题 , 可以在 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo themes</a> 中查找新的主题 . 选用当下比较流行的 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">next</a> 主题 , 从 git 上 clone 下来 .</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>修改语言和主题 , 在项目根目录下打开 _config.yml 文件 , </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">language: zh-CN</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<p>查看效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
-<p>访问浏览器 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+            <h4 id="什么是-TCP-IP"><a href="#什么是-TCP-IP" class="headerlink" title="什么是 TCP/IP"></a>什么是 TCP/IP</h4><p>TCP/IP 是一类协议系统 , 它是一套支持网络通信的协议集合 . 有了这种协议 , 计算机和类计算机之间才能进行通信 .</p>
+<h4 id="网络协议"><a href="#网络协议" class="headerlink" title="网络协议"></a>网络协议</h4><p>就是一套通用规则 , 用来定义复杂的数据传输过程 . 数据传输从一台计算机上的应用程序开始 , 通过计算机网络硬件 , 经过传输介质传输到正确的目的地 , 然后上传到目的计算机的网络硬件 , 最后到达负责接收的应用程序 .<br>TCP/IP 协议定义了网络通信过程 , 更重要的是定义了数据单元的格式和内容 , 以便计算机能够正确的解释接收到的消息 .</p>
+<h4 id="TCP-IP-特性"><a href="#TCP-IP-特性" class="headerlink" title="TCP/IP 特性"></a>TCP/IP 特性</h4><ol>
+<li>逻辑编址<br> 网络适配器有一个唯一的物理地址 , 有时候也叫 MAC 地址 . 每台计算机的网络适配器监听局域网中的每一个传输 , 以确定消息是否是发送到它的物理地址 .<br> 在大型网络中 , 网络适配器不可能监听所有的信息 , 物理地址模式不能有效的发挥作用 . 在路由式的网络中 , TCP/IP 通过逻辑编址提供了将网络细分到更小子网的方法 . 逻辑地址是一个通过网络软件来配置的地址 , 在 TCP/IP 中 , 计算机的逻辑地址称为 IP 地址 .<br> 一个 IP 地址包括 : 一个识别网络的网络 ID 数值 ; 一个识别网络中子网的子网 ID 数值 ; 一个识别子网中计算机的主机 ID 数值.<br> 在 TCP/IP 中 , 逻辑地址与具体硬件的物理地址之间的转换是使用地址解析协议 (Address Reso - lution Protocol,ARP) 和逆向地址解析协议 (Reverse ARP,RARP) 实现的 .</li>
+<li>路由选择<br> 路由器是一种特殊的设备 , 能够读取逻辑地址的信息 , 并将数据通过网络直接传送到它的目的地 . 路由器最简单的应用是将一个局域子网从较大的网络中分离出去 .<br> TCP/IP 定义了路由器如何找到网络路径的协议</li>
+<li>名称解析<br> 域名系统 (Domain Name System,DNS) .<br> TCP/IP 的域名服务系统提供分层的域名服务器 , 这些服务器为网络中注册 DND 的计算机提供域名和 IP 地址之间的映射 .</li>
+<li><p>错误控制和流量控制</p>
+</li>
+<li><p>应用支持</p>
+<h4 id="GET-方式请求"><a href="#GET-方式请求" class="headerlink" title="GET 方式请求"></a>GET 方式请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n 10 -c 10 &quot;http://test.com/index.php?a=1&amp;b=2&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>url 必须用双引号括起来</p>
+<h4 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n 10 -c 10 -p D:\params.txt -T application/x-www-form-urlencoded http://test.com/index.php</span><br></pre></td></tr></table></figure>
+<p>D:/params.txt 的内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gid=14659&amp;user_id=1&amp;token=f870b28e-5c04-4a90-9838-654172607287</span><br></pre></td></tr></table></figure></p>
+<h4 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h4><p><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3w3oysk9yj30m20esgn1.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/linux/linux-crontab/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/09/linux/linux-crontab/" class="post-title-link" itemprop="url">linux crontab 计划任务</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-09 16:10:52 / 修改时间：16:15:18" itemprop="dateCreated datePublished" datetime="2019-07-09T16:10:52+08:00">2019-07-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="crontab-参数"><a href="#crontab-参数" class="headerlink" title="crontab 参数"></a>crontab 参数</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab -e #编辑计划任务</span><br><span class="line">crontab -l #查看</span><br></pre></td></tr></table></figure>
+<p>crontab 格式 “M H D m d cmd” , 其中 M 为分钟(0-59) , H 为小时(0-23) , D 为天(1-31) , m 为月(1-12) , d 为每周天数(0-6) 0 是周日 , cmd 表示要运行的程序或者 sh 文件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*/10 * * * * command #每 10 分钟执行</span><br><span class="line">0 * * * * command #每小时执行</span><br><span class="line">0 0 * * * command #每天执行</span><br><span class="line">0 0 1 * * command #每月执行</span><br><span class="line">0 0 1 1 * command #每年执行</span><br><span class="line">0 0 * * 0 command #每周执行一次</span><br><span class="line">0 2 * * * command #每天 2 点执行</span><br></pre></td></tr></table></figure></p>
+<p>特殊符号<br> , (逗号) 代表分隔时段<br> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 2,5,8 * * * command #代表每天 2 点 5 点 8 点各执行一次</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>(中划线) 代表时间区间</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 10-20 * * * command #代表每天 10 点到 20 点各执行一次</span><br></pre></td></tr></table></figure>
+<p>/n (n为合理数值)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/5 * * * * command #代表每 5 分钟执行一次</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/linux/linux-used-commands/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/08/linux/linux-used-commands/" class="post-title-link" itemprop="url">linux 常用命令</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-08 11:12:52 / 修改时间：14:50:35" itemprop="dateCreated datePublished" datetime="2019-07-08T11:12:52+08:00">2019-07-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">df -h #显示文件系统磁盘块的使用情况  -h human read</span><br><span class="line">du -h --max-depth=1 #显示文件夹占用的存储空间  --max-depth 文件深度</span><br><span class="line">ls -al #list 列出当前工作目录的内容 -a 列出所有(包含 . ..  -A 不包含) -l 列出所有者 组 以及权限 -t 时间排序 </span><br><span class="line">ll #相当与 ls -l</span><br><span class="line">mkdir #创建目录 </span><br><span class="line">rmdir #删除目录</span><br><span class="line">pwd #print working directory</span><br><span class="line">cp FILE PATH #复制文件</span><br><span class="line">mv FILE PATH #移动文件</span><br></pre></td></tr></table></figure>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>grep </p>
+<h2 id="网络连接"><a href="#网络连接" class="headerlink" title="网络连接"></a>网络连接</h2>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/php/develop-php-install/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/18/php/develop-php-install/" class="post-title-link" itemprop="url">centOs 安装 php 7.3</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-18 21:27:04" itemprop="dateCreated datePublished" datetime="2019-06-18T21:27:04+08:00">2019-06-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-18 19:22:44" itemprop="dateModified" datetime="2019-11-18T19:22:44+08:00">2019-11-18</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">yum -y install libxml2 libxml2-devel</span><br><span class="line">yum -y install openssl openssl-devel</span><br><span class="line">yum -y install curl curl-devel</span><br><span class="line">yum -y install libjpeg libjpeg-devel</span><br><span class="line">yum -y install libpng libpng-devel</span><br><span class="line">yum -y install freetype freetype-devel</span><br><span class="line">yum -y install pcre pcre-devel</span><br><span class="line">yum -y install libxslt libxslt-devel</span><br><span class="line">yum -y install bzip2 bzip2-devel</span><br></pre></td></tr></table></figure>
+<p>安装最新版 libzip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#删除旧版</span><br><span class="line">yum remove libzip</span><br><span class="line"></span><br><span class="line">#下载 libzip-1.5.2</span><br><span class="line">cd /usr/local/src</span><br><span class="line">wget https://nih.at/libzip/libzip-1.5.2.tar.gz</span><br><span class="line"></span><br><span class="line">#新版 libzip 需要 cmake 编译 , 下载 cmake</span><br><span class="line">wget https://github.com/Kitware/CMake/releases/download/v3.15.0-rc1/cmake-3.15.0-rc1-Linux-x86_64.tar.gz</span><br><span class="line">tar -zxvf cmake-3.15.0-rc1-Linux-x86_64.tar.gz</span><br><span class="line">mv cmake-3.15.0-rc1-Linux-x86_64.tar.gz /usr/local/cmake</span><br><span class="line">export PATH=$PATH:/usr/local/cmake/bin</span><br><span class="line"></span><br><span class="line">#解压安装 libzip</span><br><span class="line">tar -zxvf libzip-1.5.2.tar.gz</span><br><span class="line">cd libzip-1.5.2</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make &amp; make install</span><br></pre></td></tr></table></figure></p>
+<h3 id="下载编译-php7-3-0"><a href="#下载编译-php7-3-0" class="headerlink" title="下载编译 php7.3.0"></a>下载编译 php7.3.0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src</span><br><span class="line">wget &quot;https://downloads.php.net/~cmb/php-7.3.0.tar.gz&quot;</span><br><span class="line">tar -zxvf php-7.3.0.tar.gz</span><br><span class="line">cd php-7.3.0</span><br><span class="line">#编译 参数自行添加</span><br><span class="line">./configure --prefix=/usr/local/php \</span><br><span class="line"> --with-curl=/usr/local/curl\</span><br><span class="line"> --with-gd \</span><br><span class="line"> --with-freetype-dir=/usr/include/freetype2\</span><br><span class="line"> --with-gettext \</span><br><span class="line"> --with-iconv-dir \</span><br><span class="line"> --with-kerberos \</span><br><span class="line"> --with-libdir=lib64 \</span><br><span class="line"> --with-libxml-dir \</span><br><span class="line"> --with-mysqli \</span><br><span class="line"> --with-openssl \</span><br><span class="line"> --with-pcre-regex \</span><br><span class="line"> --with-pdo-mysql \</span><br><span class="line"> --with-pdo-sqlite \</span><br><span class="line"> --with-pear \</span><br><span class="line"> --with-png-dir \</span><br><span class="line"> --with-xmlrpc \</span><br><span class="line"> --with-xsl \</span><br><span class="line"> --with-zlib \</span><br><span class="line"> --enable-fpm \</span><br><span class="line"> --enable-bcmath \</span><br><span class="line"> --enable-libxml \</span><br><span class="line"> --enable-inline-optimization \</span><br><span class="line"> --enable-mbregex \</span><br><span class="line"> --enable-mbstring \</span><br><span class="line"> --enable-opcache \</span><br><span class="line"> --enable-pcntl \</span><br><span class="line"> --enable-shmop \</span><br><span class="line"> --enable-soap \</span><br><span class="line"> --enable-sockets \</span><br><span class="line"> --enable-sysvsem \</span><br><span class="line"> --enable-xml \</span><br><span class="line"> --enable-zip</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">#成功输出</span><br><span class="line">Installing shared extensions:     /usr/local/php/lib/php/extensions/no-debug-non-zts-20180731/</span><br><span class="line">Installing PHP CLI binary:        /usr/local/php/bin/</span><br><span class="line">Installing PHP CLI man page:      /usr/local/php/php/man/man1/</span><br><span class="line">Installing PHP FPM binary:        /usr/local/php/sbin/</span><br><span class="line">Installing PHP FPM defconfig:     /usr/local/php/etc/</span><br><span class="line">Installing PHP FPM man page:      /usr/local/php/php/man/man8/</span><br><span class="line">Installing PHP FPM status page:   /usr/local/php/php/php/fpm/</span><br><span class="line">Installing phpdbg binary:         /usr/local/php/bin/</span><br><span class="line">Installing phpdbg man page:       /usr/local/php/php/man/man1/</span><br><span class="line">Installing PHP CGI binary:        /usr/local/php/bin/</span><br><span class="line">Installing PHP CGI man page:      /usr/local/php/php/man/man1/</span><br><span class="line">Installing build environment:     /usr/local/php/lib/php/build/</span><br><span class="line">Installing header files:          /usr/local/php/include/php/</span><br><span class="line">Installing helper programs:       /usr/local/php/bin/</span><br><span class="line">  program: phpize</span><br><span class="line">  program: php-config</span><br><span class="line">Installing man pages:             /usr/local/php/php/man/man1/</span><br><span class="line">  page: phpize.1</span><br><span class="line">  page: php-config.1</span><br><span class="line">Installing PEAR environment:      /usr/local/php/lib/php/</span><br><span class="line"></span><br><span class="line">Warning: &quot;continue&quot; targeting switch is equivalent to &quot;break&quot;. Did you mean to use &quot;continue 2&quot;? in phar:///usr/local/src/php-7.3.0/pear/install-pear-nozlib.phar/PEAR/PackageFile/v2/Validator.php on line 1933</span><br><span class="line">[PEAR] Archive_Tar    - installed: 1.4.3</span><br><span class="line">[PEAR] Console_Getopt - installed: 1.4.1</span><br><span class="line">[PEAR] Structures_Graph- installed: 1.1.1</span><br><span class="line">[PEAR] XML_Util       - installed: 1.4.2</span><br><span class="line">[PEAR] PEAR           - installed: 1.10.5</span><br><span class="line">Wrote PEAR system config file at: /usr/local/php/etc/pear.conf</span><br><span class="line">You may want to add: /usr/local/php/lib/php to your php.ini include_path</span><br><span class="line">/usr/local/src/php-7.3.0/build/shtool install -c ext/phar/phar.phar /usr/local/php/bin</span><br><span class="line">ln -s -f phar.phar /usr/local/php/bin/phar</span><br><span class="line">Installing PDO headers:           /usr/local/php/include/php/ext/pdo/</span><br></pre></td></tr></table></figure>
+<p>配置信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 复制 php.ini php-fpm.conf www.conf 配置文件</span><br><span class="line">cp php.ini-production /usr/local/php/lib/php.ini</span><br><span class="line">cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf</span><br><span class="line">cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf</span><br><span class="line">ln -s /usr/local/php/sbin/php-fpm /usr/local/bin</span><br><span class="line"></span><br><span class="line">#加入服务</span><br><span class="line">cp /usr/local/src/sapi/fpm/php-fpm.service /usr/lib/systemd/system/</span><br><span class="line"></span><br><span class="line">#php 命令</span><br><span class="line">export PATH=$PATH:/usr/local/php/bin/</span><br><span class="line">#测试</span><br><span class="line">php -v</span><br><span class="line">php -m</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/10/php/apache-ab-test/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/10/php/apache-ab-test/" class="post-title-link" itemprop="url">Apache 自带 ab 测试工具使用</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-10 21:27:04 / 修改时间：15:39:46" itemprop="dateCreated datePublished" datetime="2019-06-10T21:27:04+08:00">2019-06-10</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/apache/" itemprop="url" rel="index"><span itemprop="name">apache</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="打开方式"><a href="#打开方式" class="headerlink" title="打开方式"></a>打开方式</h4><p>ab 测试工具在 apache 目录下的 bin 文件夹中 , 进入 bin 目录之后可以直接执行 ab .</p>
+<h4 id="常用请求参数"><a href="#常用请求参数" class="headerlink" title="常用请求参数"></a>常用请求参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-n #总请求次数默认为 1</span><br><span class="line">-c #并发次数 , 不能大于总请求次数</span><br><span class="line">-p #post 参数路径 , 与 -T 参数配合使用</span><br><span class="line">-T #请求头设置</span><br></pre></td></tr></table></figure>
+<h4 id="无参数请求"><a href="#无参数请求" class="headerlink" title="无参数请求"></a>无参数请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n 10 -c 10 http://test.com/index.php</span><br></pre></td></tr></table></figure>
+<h4 id="GET-方式请求"><a href="#GET-方式请求" class="headerlink" title="GET 方式请求"></a>GET 方式请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n 10 -c 10 &quot;http://test.com/index.php?a=1&amp;b=2&quot;</span><br></pre></td></tr></table></figure>
+<p>url 必须用双引号括起来</p>
+<h4 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n 10 -c 10 -p D:\params.txt -T application/x-www-form-urlencoded http://test.com/index.php</span><br></pre></td></tr></table></figure>
+<p>D:/params.txt 的内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gid=14659&amp;user_id=1&amp;token=f870b28e-5c04-4a90-9838-654172607287</span><br></pre></td></tr></table></figure></p>
+<h4 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h4><p><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3w3oysk9yj30m20esgn1.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/linux/linux-install/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/04/linux/linux-install/" class="post-title-link" itemprop="url">shadowsocks & finalspeed 服务端搭建</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-04 09:51:00 / 修改时间：10:54:09" itemprop="dateCreated datePublished" datetime="2019-06-04T09:51:00+08:00">2019-06-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="shadowsocks-服务端"><a href="#shadowsocks-服务端" class="headerlink" title="shadowsocks 服务端"></a>shadowsocks 服务端</h4><p>使用 root 用户登陆 , 安装 shadowsocks .<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https:<span class="comment">//raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh</span></span><br><span class="line">chmod +x shadowsocks-go.sh</span><br><span class="line">./shadowsocks-go.sh <span class="number">2</span>&gt;&amp;<span class="number">1</span> | tee shadowsocks-go.log</span><br></pre></td></tr></table></figure></p>
+<p>脚本安装完成后，已将 shadowsocks-go 加入开机自启动<br>配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/shadowsocks/config.json</span><br></pre></td></tr></table></figure></p>
+<p>单用户 和 多用户 配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="string">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line"> <span class="string">"server_port"</span>: 13839,</span><br><span class="line"> <span class="string">"local_port"</span>:1080,</span><br><span class="line"> <span class="string">"password"</span>:<span class="string">"jkdf7nd33eUj"</span>,</span><br><span class="line"> <span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line"> <span class="string">"timeout"</span>:600</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line"> <span class="string">"port_password"</span>:&#123;</span><br><span class="line">      <span class="string">"13839"</span>:<span class="string">"jkdf7nd33eUj"</span>,</span><br><span class="line">      <span class="string">"12179"</span>:<span class="string">"Ka7KGb4gqwtF"</span>,</span><br><span class="line">      <span class="string">"16713"</span>:<span class="string">"fJArFv1gQ8Ve"</span>,</span><br><span class="line">      <span class="string">"18711"</span>:<span class="string">"4aZtRq4frGf5"</span>,</span><br><span class="line">      <span class="string">"17739"</span>:<span class="string">"e1PDAM35rYG9"</span></span><br><span class="line"> &#125;,</span><br><span class="line"> <span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line"> <span class="string">"timeout"</span>:600</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>管理<br>启动/停止/重启/状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks start/stop/restart/status</span><br></pre></td></tr></table></figure></p>
+<h4 id="FinalSpeed-服务端"><a href="#FinalSpeed-服务端" class="headerlink" title="FinalSpeed 服务端"></a>FinalSpeed 服务端</h4><p>安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -f install_fs.sh</span><br><span class="line">wget  https://github.com/ucoker/finalspeed/raw/master/install_fs.sh</span><br><span class="line">chmod +x install_fs.sh</span><br><span class="line">./install_fs.sh 2&gt;&amp;1 | tee install.log</span><br></pre></td></tr></table></figure></p>
+<p>开机启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/rc.local</span><br></pre></td></tr></table></figure></p>
+<p>加入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/start.sh</span><br></pre></td></tr></table></figure></p>
+<p>确保端口开放<br>管理 执行一键安装会自动更新<br>卸载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/stop.sh ; rm -rf /fs</span><br></pre></td></tr></table></figure></p>
+<p>启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/start.sh</span><br></pre></td></tr></table></figure></p>
+<p>停止<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/stop.sh</span><br></pre></td></tr></table></figure></p>
+<p>重新启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/restart.sh</span><br></pre></td></tr></table></figure></p>
+<p>运行日志<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f /fs/server.log</span><br></pre></td></tr></table></figure></p>
+<h4 id="windows-客户端"><a href="#windows-客户端" class="headerlink" title="windows 客户端"></a>windows 客户端</h4><p><a href="https://pan.baidu.com/s/1TRcXDzhw9w9DqrgR5Iem-w" target="_blank" rel="noopener">下载地址</a><br>提取码：xe8o</p>
+<p>解压安装 Shadowsocks-4.1.6 , 服务器配置如下 , 端口可以自定义 , 密码为 shadowsocks 服务端设置的密码 .<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3oxgz9aj1j30cw0cv0t2.jpg" alt=""></p>
+<p>执行 finalspeed.exe 文件<br>配置如下<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3oxpjaly5j30kx09gweu.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/mysql/mysql-how-to-execute-sql/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/31/mysql/mysql-how-to-execute-sql/" class="post-title-link" itemprop="url">MySQL 日志系统</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-31 18:30:01 / 修改时间：18:55:09" itemprop="dateCreated datePublished" datetime="2019-05-31T18:30:01+08:00">2019-05-31</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="redo-log-重做日志"><a href="#redo-log-重做日志" class="headerlink" title="redo log (重做日志)"></a>redo log (重做日志)</h3><p>InnoDB 引擎独有 , 其他引擎没有次日志 .<br>当有一条记录需要更新时 , InnoDB 引擎会先把记录写到 redo log 里面 , 并更新内存 , 这个时候更新就算完成了 . 同时 InnoDB 引擎会在适当的时候将这个操作记录更新到磁盘里 , 而这个更新往往是在系统比较空闲的时候 .<br>redo log 的文件是固定大小的 , 循环写入 , 一旦可用空间不足就会停止写入 , 先将记录更新到数据文件 .<br>该日志可以保证数据库发生异常的情况下 , 之前提交的记录不会丢失 — crash-safe .</p>
+<h3 id="binlog-归档日志"><a href="#binlog-归档日志" class="headerlink" title="binlog (归档日志)"></a>binlog (归档日志)</h3><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>redo log 是 InnoDB 引擎特有的 , binlog 是所有引擎都可以使用的 , 在 server 层实现 .<br>redo log 是物理日志 , 记录的是 “在某个数据页上做了什么修改”; binlog 是逻辑日志 , 记录的事这个语句的原始逻辑 .<br>redo log 是循环写的 , 空间固定 ; binlog 是可以追加写入的(归档) .</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/mysql/mysql-group_by/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/31/mysql/mysql-group_by/" class="post-title-link" itemprop="url">MySQL 如何执行一条 SQL 语句的</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-31 15:30:01 / 修改时间：18:08:07" itemprop="dateCreated datePublished" datetime="2019-05-31T15:30:01+08:00">2019-05-31</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="流程示意图"><a href="#流程示意图" class="headerlink" title="流程示意图"></a>流程示意图</h4><div style="width: 450px; margin: auto"><img src="https://ws1.sinaimg.cn/large/0060vrluly1g3kjdprxdgj31hc140wgx.jpg" alt="示意图"></div>
+
+
+<h4 id="连接器"><a href="#连接器" class="headerlink" title="连接器"></a>连接器</h4><p>连接到数据库 , 连接器负责跟客户建立连接 , 获取权限 , 维持和管理连接 .</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h$ip -P$port -u$user -p***</span><br></pre></td></tr></table></figure>
+<p>长连接 : 连接成功后 , 如果客户端持续有请求 , 则一直使用同一个连接 .<br>短连接 : 每次执行完很少的几次查询后就断开连接 , 下次需要的时候再重新建立连接 .<br>建立连接的过程通常比较复杂 , 在日常使用中建议使用长连接 . 但是全部使用长连接后 , 可能会导致 MySQL 占用内存过高 , 被系统强行杀掉 , 导致 MySQL 异常重启 .<br>解决方案 : 1.定期断开长连接 . 2.在每次执行一个比较大的操作后 , 通过执行 mysql_reset_connection 来初始化连接资源 , 这个过程不需要重新连接和权限验证 .</p>
+<h4 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h4><p>缓存失效频繁 , 只要有一个更新 , 该表上的所有缓存将全部被清空 . 建议不使用 .<br>需要注意的一点是 , 查询缓存在 MySQL 8.0 中被移除了 .</p>
+<h4 id="分析器"><a href="#分析器" class="headerlink" title="分析器"></a>分析器</h4><p>词法分析 , 判断 SQL 是否满足 MySQL 的语法要求 , 识别表名和字段 , 并判断字段是否存在等 .<br>语法分析 , 判断语法是存在错误 , 如 SELECT 拼成 SELEC , 少了 T 字符串 , 报错 ‘You have an error in your SQL syntax’ .</p>
+<h4 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h4><p>在执行 SQL 语句之前优化处理 , 当表中有多个索引时 , 优化器会决定使用哪个索引 ; 在关联语句中决定表的连接顺序 .</p>
+<h4 id="执行器"><a href="#执行器" class="headerlink" title="执行器"></a>执行器</h4><p>MySQL 通过分析器知道了你要做什么 , 通过优化器知道了该怎么做 , 于是进入执行器 , 开始执行语句 .<br>开始执行的时候 , 需要先判断用户对这个表有没有查询或者更新/插入的权限 , 如果有权限 , 就打开表继续执行 , 打开表的时候 , 执行器会根据表定义的引擎 , 去使用这个引擎提供的接口 .</p>
 
           
         
@@ -823,7 +2032,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -868,7 +2077,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -895,7 +2104,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -934,7 +2147,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -973,7 +2202,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

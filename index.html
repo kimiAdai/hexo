@@ -319,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/php/develop-php-install/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/19/linux/linux-firewall/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimiAdai">
@@ -339,7 +339,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/18/php/develop-php-install/" class="post-title-link" itemprop="url">centOs 安装 php 7.3</a>
+                <a href="/2020/01/19/linux/linux-firewall/" class="post-title-link" itemprop="url">centOs7+ 版本防火墙设置</a>
               
             
           </h1>
@@ -364,346 +364,7 @@
                 
               
 
-              <time title="创建时间：2019-06-18 21:27:04 / 修改时间：10:48:48" itemprop="dateCreated datePublished" datetime="2019-06-18T21:27:04+08:00">2019-06-18</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">yum -y install libxml2 libxml2-devel</span><br><span class="line">yum -y install openssl openssl-devel</span><br><span class="line">yum -y install curl curl-devel</span><br><span class="line">yum -y install libjpeg libjpeg-devel</span><br><span class="line">yum -y install libpng libpng-devel</span><br><span class="line">yum -y install freetype freetype-devel</span><br><span class="line">yum -y install pcre pcre-devel</span><br><span class="line">yum -y install libxslt libxslt-devel</span><br><span class="line">yum -y install bzip2 bzip2-devel</span><br></pre></td></tr></table></figure>
-<p>安装最新版 libzip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#删除旧版</span><br><span class="line">yum remove libzip</span><br><span class="line"></span><br><span class="line">#下载 libzip-1.5.2</span><br><span class="line">cd /usr/local/src</span><br><span class="line">wget https://nih.at/libzip/libzip-1.5.2.tar.gz</span><br><span class="line"></span><br><span class="line">#新版 libzip 需要 cmake 编译 , 下载 cmake</span><br><span class="line">wget https://github.com/Kitware/CMake/releases/download/v3.15.0-rc1/cmake-3.15.0-rc1-Linux-x86_64.tar.gz</span><br><span class="line">tar -zxvf cmake-3.15.0-rc1-Linux-x86_64.tar.gz</span><br><span class="line">mv cmake-3.15.0-rc1-Linux-x86_64.tar.gz /usr/local/cmake</span><br><span class="line">export PATH=$PATH:/usr/local/cmake/bin</span><br><span class="line"></span><br><span class="line">#解压安装 libzip</span><br><span class="line">tar -zxvf libzip-1.5.2.tar.gz</span><br><span class="line">cd libzip-1.5.2</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make &amp; make install</span><br></pre></td></tr></table></figure></p>
-<h3 id="下载编译-php7-3-0"><a href="#下载编译-php7-3-0" class="headerlink" title="下载编译 php7.3.0"></a>下载编译 php7.3.0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src</span><br><span class="line">wget &quot;https://downloads.php.net/~cmb/php-7.3.0.tar.gz&quot;</span><br><span class="line">tar -zxvf php-7.3.0.tar.gz</span><br><span class="line">cd php-7.3.0</span><br><span class="line">#编译 参数自行添加</span><br><span class="line">./configure --prefix=/usr/local/php \</span><br><span class="line"> --with-curl=/usr/local/curl\</span><br><span class="line"> --with-gd \</span><br><span class="line"> --with-freetype-dir=/usr/include/freetype2\</span><br><span class="line"> --with-gettext \</span><br><span class="line"> --with-iconv-dir \</span><br><span class="line"> --with-kerberos \</span><br><span class="line"> --with-libdir=lib64 \</span><br><span class="line"> --with-libxml-dir \</span><br><span class="line"> --with-mysqli \</span><br><span class="line"> --with-openssl \</span><br><span class="line"> --with-pcre-regex \</span><br><span class="line"> --with-pdo-mysql \</span><br><span class="line"> --with-pdo-sqlite \</span><br><span class="line"> --with-pear \</span><br><span class="line"> --with-png-dir \</span><br><span class="line"> --with-xmlrpc \</span><br><span class="line"> --with-xsl \</span><br><span class="line"> --with-zlib \</span><br><span class="line"> --enable-fpm \</span><br><span class="line"> --enable-bcmath \</span><br><span class="line"> --enable-libxml \</span><br><span class="line"> --enable-inline-optimization \</span><br><span class="line"> --enable-mbregex \</span><br><span class="line"> --enable-mbstring \</span><br><span class="line"> --enable-opcache \</span><br><span class="line"> --enable-pcntl \</span><br><span class="line"> --enable-shmop \</span><br><span class="line"> --enable-soap \</span><br><span class="line"> --enable-sockets \</span><br><span class="line"> --enable-sysvsem \</span><br><span class="line"> --enable-xml \</span><br><span class="line"> --enable-zip</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">#成功输出</span><br><span class="line">Installing shared extensions:     /usr/local/php/lib/php/extensions/no-debug-non-zts-20180731/</span><br><span class="line">Installing PHP CLI binary:        /usr/local/php/bin/</span><br><span class="line">Installing PHP CLI man page:      /usr/local/php/php/man/man1/</span><br><span class="line">Installing PHP FPM binary:        /usr/local/php/sbin/</span><br><span class="line">Installing PHP FPM defconfig:     /usr/local/php/etc/</span><br><span class="line">Installing PHP FPM man page:      /usr/local/php/php/man/man8/</span><br><span class="line">Installing PHP FPM status page:   /usr/local/php/php/php/fpm/</span><br><span class="line">Installing phpdbg binary:         /usr/local/php/bin/</span><br><span class="line">Installing phpdbg man page:       /usr/local/php/php/man/man1/</span><br><span class="line">Installing PHP CGI binary:        /usr/local/php/bin/</span><br><span class="line">Installing PHP CGI man page:      /usr/local/php/php/man/man1/</span><br><span class="line">Installing build environment:     /usr/local/php/lib/php/build/</span><br><span class="line">Installing header files:          /usr/local/php/include/php/</span><br><span class="line">Installing helper programs:       /usr/local/php/bin/</span><br><span class="line">  program: phpize</span><br><span class="line">  program: php-config</span><br><span class="line">Installing man pages:             /usr/local/php/php/man/man1/</span><br><span class="line">  page: phpize.1</span><br><span class="line">  page: php-config.1</span><br><span class="line">Installing PEAR environment:      /usr/local/php/lib/php/</span><br><span class="line"></span><br><span class="line">Warning: &quot;continue&quot; targeting switch is equivalent to &quot;break&quot;. Did you mean to use &quot;continue 2&quot;? in phar:///usr/local/src/php-7.3.0/pear/install-pear-nozlib.phar/PEAR/PackageFile/v2/Validator.php on line 1933</span><br><span class="line">[PEAR] Archive_Tar    - installed: 1.4.3</span><br><span class="line">[PEAR] Console_Getopt - installed: 1.4.1</span><br><span class="line">[PEAR] Structures_Graph- installed: 1.1.1</span><br><span class="line">[PEAR] XML_Util       - installed: 1.4.2</span><br><span class="line">[PEAR] PEAR           - installed: 1.10.5</span><br><span class="line">Wrote PEAR system config file at: /usr/local/php/etc/pear.conf</span><br><span class="line">You may want to add: /usr/local/php/lib/php to your php.ini include_path</span><br><span class="line">/usr/local/src/php-7.3.0/build/shtool install -c ext/phar/phar.phar /usr/local/php/bin</span><br><span class="line">ln -s -f phar.phar /usr/local/php/bin/phar</span><br><span class="line">Installing PDO headers:           /usr/local/php/include/php/ext/pdo/</span><br></pre></td></tr></table></figure>
-<p>配置信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 复制 php.ini php-fpm.conf www.conf 配置文件</span><br><span class="line">cp php.ini-production /usr/local/php/lib/php.ini</span><br><span class="line">cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf</span><br><span class="line">cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf</span><br><span class="line">ln -s /usr/local/php/sbin/php-fpm /usr/local/bin</span><br><span class="line"></span><br><span class="line">#加入服务</span><br><span class="line">cp /usr/local/src/sapi/fpm/php-fpm.service /usr/lib/systemd/system/</span><br><span class="line"></span><br><span class="line">#php 命令</span><br><span class="line">export PATH=$PATH:/usr/local/php/bin/</span><br><span class="line">#测试</span><br><span class="line">php -v</span><br><span class="line">php -m</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/10/php/apache-ab-test/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimiAdai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kimiAdai">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/10/php/apache-ab-test/" class="post-title-link" itemprop="url">Apache 自带 ab 测试工具使用</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-10 21:27:04 / 修改时间：15:39:46" itemprop="dateCreated datePublished" datetime="2019-06-10T21:27:04+08:00">2019-06-10</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/apache/" itemprop="url" rel="index"><span itemprop="name">apache</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="打开方式"><a href="#打开方式" class="headerlink" title="打开方式"></a>打开方式</h4><p>ab 测试工具在 apache 目录下的 bin 文件夹中 , 进入 bin 目录之后可以直接执行 ab .</p>
-<h4 id="常用请求参数"><a href="#常用请求参数" class="headerlink" title="常用请求参数"></a>常用请求参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-n #总请求次数默认为 1</span><br><span class="line">-c #并发次数 , 不能大于总请求次数</span><br><span class="line">-p #post 参数路径 , 与 -T 参数配合使用</span><br><span class="line">-T #请求头设置</span><br></pre></td></tr></table></figure>
-<h4 id="无参数请求"><a href="#无参数请求" class="headerlink" title="无参数请求"></a>无参数请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n 10 -c 10 http://test.com/index.php</span><br></pre></td></tr></table></figure>
-<h4 id="GET-方式请求"><a href="#GET-方式请求" class="headerlink" title="GET 方式请求"></a>GET 方式请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n 10 -c 10 &quot;http://test.com/index.php?a=1&amp;b=2&quot;</span><br></pre></td></tr></table></figure>
-<p>url 必须用双引号括起来</p>
-<h4 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n 10 -c 10 -p D:\params.txt -T application/x-www-form-urlencoded http://test.com/index.php</span><br></pre></td></tr></table></figure>
-<p>D:/params.txt 的内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gid=14659&amp;user_id=1&amp;token=f870b28e-5c04-4a90-9838-654172607287</span><br></pre></td></tr></table></figure></p>
-<h4 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h4><p><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3w3oysk9yj30m20esgn1.jpg" alt=""></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/linux/linux-charset/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimiAdai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kimiAdai">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/04/linux/linux-charset/" class="post-title-link" itemprop="url">shadowsocks & finalspeed 服务端搭建</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-04 09:51:00 / 修改时间：10:54:09" itemprop="dateCreated datePublished" datetime="2019-06-04T09:51:00+08:00">2019-06-04</time>
+              <time title="创建时间：2020-01-19 14:51:00 / 修改时间：14:28:26" itemprop="dateCreated datePublished" datetime="2020-01-19T14:51:00+08:00">2020-01-19</time>
             
 
             
@@ -762,21 +423,13 @@
       
         
           
-            <h4 id="shadowsocks-服务端"><a href="#shadowsocks-服务端" class="headerlink" title="shadowsocks 服务端"></a>shadowsocks 服务端</h4><p>使用 root 用户登陆 , 安装 shadowsocks .<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https:<span class="comment">//raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh</span></span><br><span class="line">chmod +x shadowsocks-go.sh</span><br><span class="line">./shadowsocks-go.sh <span class="number">2</span>&gt;&amp;<span class="number">1</span> | tee shadowsocks-go.log</span><br></pre></td></tr></table></figure></p>
-<p>脚本安装完成后，已将 shadowsocks-go 加入开机自启动<br>配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/shadowsocks/config.json</span><br></pre></td></tr></table></figure></p>
-<p>单用户 和 多用户 配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="string">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line"> <span class="string">"server_port"</span>: 13839,</span><br><span class="line"> <span class="string">"local_port"</span>:1080,</span><br><span class="line"> <span class="string">"password"</span>:<span class="string">"jkdf7nd33eUj"</span>,</span><br><span class="line"> <span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line"> <span class="string">"timeout"</span>:600</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line"> <span class="string">"port_password"</span>:&#123;</span><br><span class="line">      <span class="string">"13839"</span>:<span class="string">"jkdf7nd33eUj"</span>,</span><br><span class="line">      <span class="string">"12179"</span>:<span class="string">"Ka7KGb4gqwtF"</span>,</span><br><span class="line">      <span class="string">"16713"</span>:<span class="string">"fJArFv1gQ8Ve"</span>,</span><br><span class="line">      <span class="string">"18711"</span>:<span class="string">"4aZtRq4frGf5"</span>,</span><br><span class="line">      <span class="string">"17739"</span>:<span class="string">"e1PDAM35rYG9"</span></span><br><span class="line"> &#125;,</span><br><span class="line"> <span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line"> <span class="string">"timeout"</span>:600</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
-<p>管理<br>启动/停止/重启/状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks start/stop/restart/status</span><br></pre></td></tr></table></figure></p>
-<h4 id="FinalSpeed-服务端"><a href="#FinalSpeed-服务端" class="headerlink" title="FinalSpeed 服务端"></a>FinalSpeed 服务端</h4><p>安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -f install_fs.sh</span><br><span class="line">wget  https://github.com/ucoker/finalspeed/raw/master/install_fs.sh</span><br><span class="line">chmod +x install_fs.sh</span><br><span class="line">./install_fs.sh 2&gt;&amp;1 | tee install.log</span><br></pre></td></tr></table></figure></p>
-<p>开机启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/rc.local</span><br></pre></td></tr></table></figure></p>
-<p>加入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/start.sh</span><br></pre></td></tr></table></figure></p>
-<p>确保端口开放<br>管理 执行一键安装会自动更新<br>卸载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/stop.sh ; rm -rf /fs</span><br></pre></td></tr></table></figure></p>
-<p>启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/start.sh</span><br></pre></td></tr></table></figure></p>
-<p>停止<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/stop.sh</span><br></pre></td></tr></table></figure></p>
-<p>重新启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /fs/restart.sh</span><br></pre></td></tr></table></figure></p>
-<p>运行日志<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f /fs/server.log</span><br></pre></td></tr></table></figure></p>
-<h4 id="windows-客户端"><a href="#windows-客户端" class="headerlink" title="windows 客户端"></a>windows 客户端</h4><p><a href="https://pan.baidu.com/s/1TRcXDzhw9w9DqrgR5Iem-w" target="_blank" rel="noopener">下载地址</a><br>提取码：xe8o</p>
-<p>解压安装 Shadowsocks-4.1.6 , 服务器配置如下 , 端口可以自定义 , 密码为 shadowsocks 服务端设置的密码 .<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3oxgz9aj1j30cw0cv0t2.jpg" alt=""></p>
-<p>执行 finalspeed.exe 文件<br>配置如下<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3oxpjaly5j30kx09gweu.jpg" alt=""></p>
+            <h4 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a>服务管理</h4><p>安装 firewall<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install firewalld firewall-config</span><br></pre></td></tr></table></figure></p>
+<p>开机启动 | 关闭开机启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable|disable firewalld</span><br></pre></td></tr></table></figure></p>
+<p>启动 | 关闭 | 重启 | 查看状态<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start|stop|restart|status firewalld</span><br></pre></td></tr></table></figure></p>
+<h4 id="firewalld-cmd-命令管理端口"><a href="#firewalld-cmd-命令管理端口" class="headerlink" title="firewalld-cmd 命令管理端口"></a>firewalld-cmd 命令管理端口</h4><p>查看防火墙是否正在运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure></p>
+<p>查看所有开启的端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure></p>
+<p>开启关闭端口 以 80 端口为例 (–permanent 为永久生效 , 否则重启后失效)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --remove-port=80/tcp --permanent</span><br></pre></td></tr></table></figure></p>
+<p>修改端口后需要重载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -833,7 +486,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/mysql/mysql-how-to-execute-sql/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/linux/linux-inotify/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimiAdai">
@@ -853,7 +506,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/31/mysql/mysql-how-to-execute-sql/" class="post-title-link" itemprop="url">MySQL 日志系统</a>
+                <a href="/2019/11/26/linux/linux-inotify/" class="post-title-link" itemprop="url">rsync + inotify 实时同步</a>
               
             
           </h1>
@@ -878,7 +531,1202 @@
                 
               
 
-              <time title="创建时间：2019-05-31 18:30:01 / 修改时间：18:55:09" itemprop="dateCreated datePublished" datetime="2019-05-31T18:30:01+08:00">2019-05-31</time>
+              <time title="创建时间：2019-11-26 16:02:00" itemprop="dateCreated datePublished" datetime="2019-11-26T16:02:00+08:00">2019-11-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-12-17 15:27:20" itemprop="dateModified" datetime="2019-12-17T15:27:20+08:00">2019-12-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="inotify-tool"><a href="#inotify-tool" class="headerlink" title="inotify-tool"></a>inotify-tool</h3><p>Inotify可以监控文件系统中添加、删除，修改、移动等各种事件</p>
+<h5 id="检查环境"><a href="#检查环境" class="headerlink" title="检查环境"></a>检查环境</h5><p><code>uname -r</code> 检查内核版本 , 2.6.13 之后的版本才能支持 inotify<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# uname -r</span><br><span class="line">3.10.0-957.el7.x86_64</span><br><span class="line">[root@localhost /]# cat /etc/redhat-release</span><br><span class="line">CentOS Linux release 7.6.1810 (Core)</span><br></pre></td></tr></table></figure></p>
+<p>2.6.13 之后的版本可以查到这三个文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# ll /proc/sys/fs/inotify/</span><br><span class="line">总用量 0</span><br><span class="line">-rw-r--r-- 1 root root 0 11月 26 12:35 max_queued_events</span><br><span class="line">-rw-r--r-- 1 root root 0 11月 26 12:35 max_user_instances</span><br><span class="line">-rw-r--r-- 1 root root 0 11月 26 12:35 max_user_watches</span><br></pre></td></tr></table></figure></p>
+<p>文件说明<br><code>max_user_watches</code> 设置inotifywait或inotifywatch命令可以监视的文件数量（单进程）<br><code>max_user_instances</code> 设置每个用户可以运行的inotifywait或inotifywatch命令的进程数<br><code>max_queued_events</code> 设置inotify实例事件（event）队列可容纳的事件数量</p>
+<h5 id="yum-安装"><a href="#yum-安装" class="headerlink" title="yum 安装"></a>yum 安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y inotify-tools</span><br></pre></td></tr></table></figure>
+<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/inotifywait -mrq --fromfile /www/server/scripts/inotify_exclude.list --format &apos;%w%f&apos; -e create,close_write,delete $Path</span><br><span class="line"></span><br><span class="line">--fromfile 忽略监听文件 , 当需要忽略多个文件或文件夹的时候使用 , inotify_exclude.list 中使用 @/www/www/test_back/data 来忽略 data 文件夹 , 每个一行 .</span><br></pre></td></tr></table></figure>
+<h3 id="文件同步工具-rsync-remote-sync"><a href="#文件同步工具-rsync-remote-sync" class="headerlink" title="文件同步工具 rsync(remote sync)"></a>文件同步工具 rsync(remote sync)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync -aze &apos;ssh -i ~/.ssh/id_rsa_dev&apos; $LocalPath --delete $remoteUser@$RemoteServer:$RemotePath</span><br></pre></td></tr></table></figure>
+<h5 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$LocalPath 本地需要同步的文件路径</span><br><span class="line">$remoteUser 远程服务器用户 与 ssh 密钥指定的用户相同</span><br><span class="line">$RemoteServer 远程服务器 IP 地址</span><br><span class="line">$RemotePath 远程服务器的文件路径</span><br><span class="line">-a 包含-rtplgoD选项</span><br><span class="line">-r 同步目录时要加上，类似 cp 命令的 -r 选项</span><br><span class="line">-v 同步时显示一些信息，让我们知道同步的过程</span><br><span class="line">-l 保留软链接</span><br><span class="line">-L 同步软链接时会把源文件一起同步</span><br><span class="line">-p 保持文件的权限属性</span><br><span class="line">-o 保持文件的属主</span><br><span class="line">-g 保持文件的属组</span><br><span class="line">-D 保持设备文件信息</span><br><span class="line">-t 保持文件的时间属性</span><br><span class="line">--delete 删除 RemotePath 中 LocalPath 没有的文件</span><br><span class="line">--exclude 过滤指定文件 , 如 --exclude &quot;logs&quot; 会把文件名包含 logs 的文件或者目录过滤掉</span><br><span class="line">-u 如果 RemotePath 中的文件比 LocalPath 新，就不会同步</span><br><span class="line">-z 传输时压缩</span><br><span class="line">-e 使用 ssh 连接 remote 服务器</span><br></pre></td></tr></table></figure>
+<h5 id="脚本示例"><a href="#脚本示例" class="headerlink" title="脚本示例"></a>脚本示例</h5><p><code>vim /www/server/scripts/inotify.sh</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">#id_rsa path</span><br><span class="line">#IdRsaPath=/root/.ssh/id_rsa_dev</span><br><span class="line">Path=/var/test_back</span><br><span class="line">BackPath=/var/test_back</span><br><span class="line">BackupServer=192.168.9.122</span><br><span class="line"></span><br><span class="line">/usr/bin/inotifywait -mrq --fromfile /www/server/scripts/inotify_exclude.list --format &apos;%w%f&apos; -e create,close_write,delete $Path  | while read line  </span><br><span class="line">do</span><br><span class="line">    if [ -f $line ];then</span><br><span class="line">		BackPathLine=$&#123;line%/*&#125;/</span><br><span class="line">        rsync -aze &apos;ssh -i ~/.ssh/id_rsa_dev&apos; $line --delete root@$BackupServer:$BackPathLine</span><br><span class="line">    else</span><br><span class="line">        echo $line</span><br><span class="line">    fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
+<h6 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h6><p>启动前先在 bash 同级目录下新建 inotify.log 文件 , 用来记录监听事件 .<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./inotify.sh &gt;&gt; inotify.log &amp;</span><br></pre></td></tr></table></figure></p>
+<h6 id="权限问题"><a href="#权限问题" class="headerlink" title="权限问题"></a>权限问题</h6><p>使用 git hooks 自动部署的时候 , 部署文件夹的用户和用户组都是 git . 如果使用脚本同步该部署文件夹的话 , 会把文件权限和属主属组一起传输过去 . 所以在目标服务器中使用 inotify 监听文件夹 , 发现文件改动就将整个文件夹的权限改成 web 用户 www .<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">#id_rsa path</span><br><span class="line">#IdRsaPath=/root/.ssh/id_rsa_dev</span><br><span class="line">Path=/var/test_back</span><br><span class="line"></span><br><span class="line">/usr/bin/inotifywait -mrq --fromfile /www/server/scripts/exclude_inotify.list --format &apos;%w%f&apos; -e create,close_write,delete $Path  | while read line  </span><br><span class="line">do</span><br><span class="line">    echo $line</span><br><span class="line">    if [ -f $line ];then</span><br><span class="line">		chmod -R 777 /var/test_back &amp;&amp; chown -R www:www /var/test_back</span><br><span class="line">    else</span><br><span class="line">        echo &apos;no line&apos;</span><br><span class="line">    fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
+<h6 id="不使用-inotify-实现文件传输"><a href="#不使用-inotify-实现文件传输" class="headerlink" title="不使用 inotify 实现文件传输"></a>不使用 inotify 实现文件传输</h6><p>修改 git hooks , 在 post-recieve 中使用 rsync 传输文件 , 并在传输完成后调用远程服务器的脚本改变文件夹权限 .<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#exec git update-server-info</span><br><span class="line">homeDir=/var/www/html/diary/</span><br><span class="line">testDir=/var/www/test/diary/</span><br><span class="line">unset GIT_DIR</span><br><span class="line"></span><br><span class="line">while read oldrev newrev refname</span><br><span class="line">do</span><br><span class="line">    branch=$(git rev-parse --symbolic --abbrev-ref $refname)</span><br><span class="line">    echo $branch</span><br><span class="line">    if [ &quot;develop&quot; == $branch ];</span><br><span class="line">    then</span><br><span class="line">        cd $homeDir</span><br><span class="line">        echo &apos; ----------- git checkout ---------- &apos;</span><br><span class="line">        #git checkout $branch</span><br><span class="line">        echo &apos; ----------- git pull and rsync files ---------- &apos;</span><br><span class="line">        git pull &amp;&amp; rsync -aze &apos;ssh -i ~/.ssh/id_rsa_dev&apos; $homeDir --delete root@$BackupServer:$testDir &amp;&amp; ssh -i ~/.ssh/id_rsa_dev root@$BackupServer /www/script/change_mod_own.sh</span><br><span class="line">    else</span><br><span class="line">        echo &quot;nothing to do with this branch&quot;</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/git/git-hooks/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/11/26/git/git-hooks/" class="post-title-link" itemprop="url">同步代码</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-26 15:12:04 / 修改时间：15:21:40" itemprop="dateCreated datePublished" datetime="2019-11-26T15:12:04+08:00">2019-11-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="同步代码"><a href="#同步代码" class="headerlink" title="同步代码"></a>同步代码</h2><p>服务器上的仓库位置 <code>/www/server/project.git</code> , 服务器上项目代码位置 <code>/www/wwwroot/project</code> .</p>
+<p>进入 <code>/www/server/project.git</code> 的 <code>hooks</code> 目录下 , 复制一份 post-update.sample<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp post-update.sample post-update</span><br><span class="line">vim post-update</span><br></pre></td></tr></table></figure></p>
+<p>post-update 内容如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">unset</span> GIT_DIR</span><br><span class="line"></span><br><span class="line">NowPath=`<span class="built_in">pwd</span>`</span><br><span class="line">DeployPath=<span class="string">"/www/wwwroot/project"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$DeployPath</span></span><br><span class="line"></span><br><span class="line">git pull origin master</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$NowPath</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure></p>
+<p>如果出现 error , 大部分是权限错误 .</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/25/git/git-origin/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/11/25/git/git-origin/" class="post-title-link" itemprop="url">远程仓库</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-25 17:16:58 / 修改时间：17:29:37" itemprop="dateCreated datePublished" datetime="2019-11-25T17:16:58+08:00">2019-11-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h2><h4 id="先有本地库-后创建远程库"><a href="#先有本地库-后创建远程库" class="headerlink" title="先有本地库 , 后创建远程库"></a>先有本地库 , 后创建远程库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@server_name:php/community.git</span><br></pre></td></tr></table></figure>
+<p>首次推送<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
+<p>后续推送<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<h4 id="先创建远程库"><a href="#先创建远程库" class="headerlink" title="先创建远程库"></a>先创建远程库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@server_name:php/community.git</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/25/git/git-branch/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/11/25/git/git-branch/" class="post-title-link" itemprop="url">分支管理</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-25 17:16:58 / 修改时间：18:18:25" itemprop="dateCreated datePublished" datetime="2019-11-25T17:16:58+08:00">2019-11-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="创建与合并"><a href="#创建与合并" class="headerlink" title="创建与合并"></a>创建与合并</h2><h4 id="创建分支并切换"><a href="#创建分支并切换" class="headerlink" title="创建分支并切换"></a>创建分支并切换</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev</span><br></pre></td></tr></table></figure>
+<p>相当于 创建分支 <code>git branch dev</code> 切换分支 <code>git checkout dev</code> 两条命令</p>
+<p>查看当前分支 , <code>git branch</code> 会列出所有分支 , 分支前带 * 号的是当前分支 .<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure></p>
+<p>切换完分支之后 , 可以在该分支下正常的修改提交 .</p>
+<h4 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h4><p>在 dev 分支上开发完毕后 , 切换回 master 分支 .<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure></p>
+<p>合并 dev 分支到主分支 master 上 , <code>git merge</code> 用于合并指定分支到当前分支 .<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge dev</span><br></pre></td></tr></table></figure></p>
+<h4 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h4><p>创建并切换分支 git switch 部分版本不可用 .<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git switch -c dev</span><br></pre></td></tr></table></figure></p>
+<p>切换分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git switch master</span><br></pre></td></tr></table></figure></p>
+<h4 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h4><p>删除 dev 分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d dev</span><br></pre></td></tr></table></figure></p>
+<h2 id="冲突解决"><a href="#冲突解决" class="headerlink" title="冲突解决"></a>冲突解决</h2><p>两个分支在同一行进行修改的时候 , 会在 <code>git merge</code> 的时候出现冲突 .<br>可以在 <code>git status</code> 查看冲突文件 .</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">这是 dev-yang 分支修改的东西 改 MASTER 里面的东西</span><br><span class="line">=======</span><br><span class="line">这是 dev-yang 分支修改的东西 </span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev-y</span><br></pre></td></tr></table></figure>
+<p>git 用 <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> <code>=======</code> <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 标记出不同的分支<br>修改完冲突文件后 , <code>git add</code> <code>git commit</code> .</p>
+<p>使用带参数的 <code>git log</code> 查看分支的合并情况<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --graph --pretty=oneline --abbrev-commit</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g9agdqecsyj30b604cwef.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/25/git/git-init/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/11/25/git/git-init/" class="post-title-link" itemprop="url">创建版本库</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-25 14:16:58 / 修改时间：14:26:08" itemprop="dateCreated datePublished" datetime="2019-11-25T14:16:58+08:00">2019-11-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><p>新建一个文件夹 , 并在该文件夹内运行命令行 .<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></p>
+<p>可以在文件夹内看到自动生成的 .git 文件夹 , 自行修改此文件夹内容会破坏 git 仓库 .</p>
+<h2 id="把文件添加到版本库"><a href="#把文件添加到版本库" class="headerlink" title="把文件添加到版本库"></a>把文件添加到版本库</h2><p>新建 readme.txt 文件 . 写入文字介绍 .<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add readme.txt</span><br></pre></td></tr></table></figure></p>
+<p>git add 没有返回信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;commit text&quot;</span><br></pre></td></tr></table></figure></p>
+<p>-m 参数是提交说明<br>返回改动的文件数量和改动行数 .</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/25/git/git-ssh-connect/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/11/25/git/git-ssh-connect/" class="post-title-link" itemprop="url">windows 下使用 ssh 连接</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-25 14:16:58" itemprop="dateCreated datePublished" datetime="2019-11-25T14:16:58+08:00">2019-11-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-26 15:37:23" itemprop="dateModified" datetime="2019-11-26T15:37:23+08:00">2019-11-26</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>todo</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/25/git/git-reset/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/11/25/git/git-reset/" class="post-title-link" itemprop="url">版本回退与撤销修改</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-25 14:16:58 / 修改时间：17:19:03" itemprop="dateCreated datePublished" datetime="2019-11-25T14:16:58+08:00">2019-11-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g9a9zo0fsrj30eq08cglm.jpg" alt=""></p>
+<p>commit 之后的字符串代表版本号(commit id) , HEAD =&gt; 当前版本 , Author =&gt; 作者 , Date =&gt; 上传时间<br>git log 可以加上 –pretty=oneline 参数 , 只显示单行 . </p>
+<p><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g9aa4il22uj30g202eq2s.jpg" alt=""></p>
+<h2 id="回退到上一版本"><a href="#回退到上一版本" class="headerlink" title="回退到上一版本"></a>回退到上一版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
+<p>HEAD^ =&gt; 上个版本 , HEAD^^ =&gt; 上上个版本 , 以此类推 .<br>HEAD~10 回退到之前第 10 个版本 .<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard bb2998</span><br></pre></td></tr></table></figure></p>
+<p>回退到指定版本 , 版本号不需要写全 , 一般 5 位即可 , 太少可能会无法正确回退</p>
+<h2 id="查看执行过的命令"><a href="#查看执行过的命令" class="headerlink" title="查看执行过的命令"></a>查看执行过的命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+<p>可以看到执行过的命令 , 回退版本之后 , 如果想切换回最新版本 , 可以用这个命令查看最新版本的版本号 . </p>
+<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><h4 id="git-checkout-–-filename"><a href="#git-checkout-–-filename" class="headerlink" title="git checkout – filename"></a>git checkout – filename</h4><p>文件还在工作区 , 未添加到暂存区 . 可以用 <code>git checkout -- filename</code> 来丢弃工作区的修改 .<br><code>git checkout -- filename</code> 让文件恢复到最近一次 <code>git add</code> 或者 <code>git commit</code> 的状态 .</p>
+<h4 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a><code>git reset</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD filename</span><br></pre></td></tr></table></figure>
+<p>撤销所有更改 , 回到最新版本</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/mysql/mysql-log/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimiAdai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/11/18/mysql/mysql-log/" class="post-title-link" itemprop="url">MySQL GROUP BY</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-18 19:30:01 / 修改时间：19:27:08" itemprop="dateCreated datePublished" datetime="2019-11-18T19:30:01+08:00">2019-11-18</time>
             
 
             
@@ -937,9 +1785,7 @@
       
         
           
-            <h3 id="redo-log-重做日志"><a href="#redo-log-重做日志" class="headerlink" title="redo log (重做日志)"></a>redo log (重做日志)</h3><p>InnoDB 引擎独有 , 其他引擎没有次日志 .<br>当有一条记录需要更新时 , InnoDB 引擎会先把记录写到 redo log 里面 , 并更新内存 , 这个时候更新就算完成了 . 同时 InnoDB 引擎会在适当的时候将这个操作记录更新到磁盘里 , 而这个更新往往是在系统比较空闲的时候 .<br>redo log 的文件是固定大小的 , 循环写入 , 一旦可用空间不足就会停止写入 , 先将记录更新到数据文件 .<br>该日志可以保证数据库发生异常的情况下 , 之前提交的记录不会丢失 — crash-safe .</p>
-<h3 id="binlog-归档日志"><a href="#binlog-归档日志" class="headerlink" title="binlog (归档日志)"></a>binlog (归档日志)</h3><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>redo log 是 InnoDB 引擎特有的 , binlog 是所有引擎都可以使用的 , 在 server 层实现 .<br>redo log 是物理日志 , 记录的是 “在某个数据页上做了什么修改”; binlog 是逻辑日志 , 记录的事这个语句的原始逻辑 .<br>redo log 是循环写的 , 空间固定 ; binlog 是可以追加写入的(归档) .</p>
-
+            <h4 id="MYSQL-执行顺序"><a href="#MYSQL-执行顺序" class="headerlink" title="MYSQL 执行顺序"></a>MYSQL 执行顺序</h4>
           
         
       
@@ -995,7 +1841,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/mysql/mysql-log/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/15/php/phpstorm-plugin/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimiAdai">
@@ -1015,7 +1861,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/31/mysql/mysql-log/" class="post-title-link" itemprop="url">MySQL 如何执行一条 SQL 语句的</a>
+                <a href="/2019/11/15/php/phpstorm-plugin/" class="post-title-link" itemprop="url">phpstorm 常用插件</a>
               
             
           </h1>
@@ -1040,7 +1886,7 @@
                 
               
 
-              <time title="创建时间：2019-05-31 15:30:01 / 修改时间：18:08:07" itemprop="dateCreated datePublished" datetime="2019-05-31T15:30:01+08:00">2019-05-31</time>
+              <time title="创建时间：2019-11-15 17:20:28 / 修改时间：17:07:53" itemprop="dateCreated datePublished" datetime="2019-11-15T17:20:28+08:00">2019-11-15</time>
             
 
             
@@ -1062,7 +1908,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/TOOL/" itemprop="url" rel="index"><span itemprop="name">TOOL</span></a></span>
 
                 
                 
@@ -1099,852 +1945,12 @@
       
         
           
-            <h4 id="流程示意图"><a href="#流程示意图" class="headerlink" title="流程示意图"></a>流程示意图</h4><div style="width: 450px; margin: auto"><img src="https://ws1.sinaimg.cn/large/0060vrluly1g3kjdprxdgj31hc140wgx.jpg" alt="示意图"></div>
-
-
-<h4 id="连接器"><a href="#连接器" class="headerlink" title="连接器"></a>连接器</h4><p>连接到数据库 , 连接器负责跟客户建立连接 , 获取权限 , 维持和管理连接 .</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h$ip -P$port -u$user -p***</span><br></pre></td></tr></table></figure>
-<p>长连接 : 连接成功后 , 如果客户端持续有请求 , 则一直使用同一个连接 .<br>短连接 : 每次执行完很少的几次查询后就断开连接 , 下次需要的时候再重新建立连接 .<br>建立连接的过程通常比较复杂 , 在日常使用中建议使用长连接 . 但是全部使用长连接后 , 可能会导致 MySQL 占用内存过高 , 被系统强行杀掉 , 导致 MySQL 异常重启 .<br>解决方案 : 1.定期断开长连接 . 2.在每次执行一个比较大的操作后 , 通过执行 mysql_reset_connection 来初始化连接资源 , 这个过程不需要重新连接和权限验证 .</p>
-<h4 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h4><p>缓存失效频繁 , 只要有一个更新 , 该表上的所有缓存将全部被清空 . 建议不使用 .<br>需要注意的一点是 , 查询缓存在 MySQL 8.0 中被移除了 .</p>
-<h4 id="分析器"><a href="#分析器" class="headerlink" title="分析器"></a>分析器</h4><p>词法分析 , 判断 SQL 是否满足 MySQL 的语法要求 , 识别表名和字段 , 并判断字段是否存在等 .<br>语法分析 , 判断语法是存在错误 , 如 SELECT 拼成 SELEC , 少了 T 字符串 , 报错 ‘You have an error in your SQL syntax’ .</p>
-<h4 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h4><p>在执行 SQL 语句之前优化处理 , 当表中有多个索引时 , 优化器会决定使用哪个索引 ; 在关联语句中决定表的连接顺序 .</p>
-<h4 id="执行器"><a href="#执行器" class="headerlink" title="执行器"></a>执行器</h4><p>MySQL 通过分析器知道了你要做什么 , 通过优化器知道了该怎么做 , 于是进入执行器 , 开始执行语句 .<br>开始执行的时候 , 需要先判断用户对这个表有没有查询或者更新/插入的权限 , 如果有权限 , 就打开表继续执行 , 打开表的时候 , 执行器会根据表定义的引擎 , 去使用这个引擎提供的接口 .</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/mysql/mysql-backup/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimiAdai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kimiAdai">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/25/mysql/mysql-backup/" class="post-title-link" itemprop="url">linux 系统下备份 mysql 数据库</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-25 11:26:01 / 修改时间：14:12:52" itemprop="dateCreated datePublished" datetime="2019-02-25T11:26:01+08:00">2019-02-25</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="mysql-backup"><a href="#mysql-backup" class="headerlink" title="mysql-backup"></a>mysql-backup</h3><p>创建 shell script 备份脚本<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim mysql-backup.sh</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/sh</span></span><br><span class="line"><span class="comment"># This is a mysql datbase backup shell script.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set mysql info</span></span><br><span class="line">hostname=<span class="string">"localhost"</span></span><br><span class="line">user=<span class="string">"root"</span></span><br><span class="line">password=<span class="string">"my password"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set database info</span></span><br><span class="line">database=<span class="string">"bak database name"</span></span><br><span class="line">bakpath=<span class="string">"path to backup"</span></span><br><span class="line">date=$(date +%Y%m%d_%H%M%S)</span><br><span class="line"></span><br><span class="line"><span class="comment"># backup</span></span><br><span class="line">mkdir -p $bakpath</span><br><span class="line">mysqldump -h$hostname -u$user -p$password $database | gzip \ </span><br><span class="line">&gt; $bakpath/$database_$date_sql.gz</span><br></pre></td></tr></table></figure>
-<h3 id="创建定时任务执行-shell-script"><a href="#创建定时任务执行-shell-script" class="headerlink" title="创建定时任务执行 shell script"></a>创建定时任务执行 shell script</h3><h3 id="手动备份"><a href="#手动备份" class="headerlink" title="手动备份"></a>手动备份</h3><p>备份一个数据库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -hhostname -uusername -pmypwd databasename &gt; /path to backup/bakname.sql</span><br></pre></td></tr></table></figure></p>
-<p>备份并压缩<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -hhostname -uusername -pmypwd databasename ｜ gzip &gt; /path to backup/bakname.sql.gz</span><br></pre></td></tr></table></figure></p>
-<p>备份数据库一些表<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -hhostname -uusername -pmypwd databasename table1 table2 table3 &gt; /path to backup/bakname.sql</span><br></pre></td></tr></table></figure></p>
-<p>仅备份数据库结构<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -no-data -databases databasename1 databasename2 databasename3 &gt; /path to backup/bakname.sql</span><br></pre></td></tr></table></figure></p>
-<p>备份所有数据库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -all-databases &gt; /path to backup/bakname.sql</span><br></pre></td></tr></table></figure></p>
-<h3 id="还原数据库"><a href="#还原数据库" class="headerlink" title="还原数据库"></a>还原数据库</h3><p>还原无压缩数据库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql －hhostname -uuser -pmypwd databasename &lt; /path to backup/bakname.sql</span><br></pre></td></tr></table></figure></p>
-<p>还原压缩数据库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gunzip &lt; /path to backup/bakname.sql.gz | mysql -hhostname -uusername -pmypwd databasename</span><br></pre></td></tr></table></figure></p>
-<h3 id="迁移到新的服务器"><a href="#迁移到新的服务器" class="headerlink" title="迁移到新的服务器"></a>迁移到新的服务器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -hhostname -uuser -pmypwd databasename | mysql -hnew_hostname -C databasename</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.jianshu.com/p/b77dfd6d998b" target="_blank" rel="noopener">链接https://www.jianshu.com/p/b77dfd6d998b</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/15/linux/linux-start/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimiAdai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kimiAdai">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/15/linux/linux-start/" class="post-title-link" itemprop="url">linux 系统下的启动和重启命令</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-15 11:12:52 / 修改时间：11:21:46" itemprop="dateCreated datePublished" datetime="2019-02-15T11:12:52+08:00">2019-02-15</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure>
-<h3 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep nginx</span><br></pre></td></tr></table></figure>
-<h2 id="php-fpm"><a href="#php-fpm" class="headerlink" title="php-fpm"></a>php-fpm</h2><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/php/sbin/php-fpm</span><br></pre></td></tr></table></figure>
-<h3 id="重启-1"><a href="#重启-1" class="headerlink" title="重启"></a>重启</h3><p>查看 master 进程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux|grep php-fpm</span><br></pre></td></tr></table></figure></p>
-<p>kill -USR2 master 进程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -USR2 42891</span><br></pre></td></tr></table></figure></p>
-<p>INT, TERM 立刻终止<br>QUIT 平滑终止</p>
-<p>USR1 重新打开日志文件</p>
-<p>USR2 平滑重载所有worker进程并重新载入配置和二进制模块</p>
-<h2 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h2><h3 id="查看是否启动"><a href="#查看是否启动" class="headerlink" title="查看是否启动"></a>查看是否启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep redis</span><br></pre></td></tr></table></figure>
-<h3 id="启动redis"><a href="#启动redis" class="headerlink" title="启动redis"></a>启动redis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/15/php/php-redis-install/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimiAdai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kimiAdai">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/15/php/php-redis-install/" class="post-title-link" itemprop="url">linux 安装 php-redis 扩展</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-15 10:20:28 / 修改时间：11:12:01" itemprop="dateCreated datePublished" datetime="2019-02-15T10:20:28+08:00">2019-02-15</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="下载-redis-扩展"><a href="#下载-redis-扩展" class="headerlink" title="下载 redis 扩展"></a>下载 redis 扩展</h2><p>下载地址 <a href="http://pecl.php.net/package/redis" target="_blank" rel="noopener">http://pecl.php.net/package/redis</a> 选择对应版本 , 也可以直接执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://pecl.php.net/get/redis-4.0.0.tgz</span><br></pre></td></tr></table></figure></p>
-<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf redis-4.0.0.tgz</span><br><span class="line">cd redis-4.0.0</span><br></pre></td></tr></table></figure>
-<h2 id="在解压的-redis-文件夹下生成-configure-配置文件"><a href="#在解压的-redis-文件夹下生成-configure-配置文件" class="headerlink" title="在解压的 redis 文件夹下生成 configure 配置文件"></a>在解压的 redis 文件夹下生成 configure 配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/php/bin/phpize</span><br><span class="line">./configure --with-php-config=/usr/local/php/bin/php-config</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
-<h2 id="编译完成后配置-php-ini"><a href="#编译完成后配置-php-ini" class="headerlink" title="编译完成后配置 php.ini"></a>编译完成后配置 php.ini</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extension=redis.so</span><br></pre></td></tr></table></figure>
-<p>如果找不到 php.ini , 可以在 phpinfo() 中查看 Loaded Configuration File .<br>如果值为 none , 可以在编译目录下把 php.ini-development 复制一份到 /usr/local/php/lib 下</p>
-<h2 id="重启-nginx-或者-apache"><a href="#重启-nginx-或者-apache" class="headerlink" title="重启 nginx 或者 apache"></a>重启 nginx 或者 apache</h2>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/15/linux/linux-shadowsocks/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimiAdai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kimiAdai">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/15/linux/linux-shadowsocks/" class="post-title-link" itemprop="url">linux-中文编码</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-15 09:51:00 / 修改时间：10:14:27" itemprop="dateCreated datePublished" datetime="2019-02-15T09:51:00+08:00">2019-02-15</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="linux-下中文乱码"><a href="#linux-下中文乱码" class="headerlink" title="linux 下中文乱码"></a>linux 下中文乱码</h2><p>修改文件</p>
-<p>centOs 6x  /etc/sysconfig/i18n</p>
-<p>centOs 7x /etc/locale.conf</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/15/linux/linux-install-redis/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimiAdai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://thirdwx.qlogo.cn/mmopen/vi_32/m91Odbzxhr7j5jVs8JOMiasbGg6UfFnAxCMIu12FCBTdJEUqcmPNHyvSx8cEJCvyfM8iazhRLic2227Fo0EfXpDPg/132">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kimiAdai">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/15/linux/linux-install-redis/" class="post-title-link" itemprop="url">linux 下安装 redis</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-15 09:27:49 / 修改时间：10:17:56" itemprop="dateCreated datePublished" datetime="2019-02-15T09:27:49+08:00">2019-02-15</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="下载-redis"><a href="#下载-redis" class="headerlink" title="下载 redis"></a>下载 redis</h2><p>进入  /usr/local/src 目录 , 下载 redis , 解压安装.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-4.0.0.tar.gz</span><br><span class="line">tar zxvf redis-4.0.0.tar.gz </span><br><span class="line"><span class="built_in">cd</span> redis-4.0.0</span><br><span class="line">make</span><br><span class="line"><span class="built_in">cd</span> src</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p>
-<h2 id="创建-redis-管理目录"><a href="#创建-redis-管理目录" class="headerlink" title="创建 redis 管理目录"></a>创建 redis 管理目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/local/redis/bin </span><br><span class="line">mkdir -p /usr/local/redis/etc</span><br><span class="line">mv /usr/local/src/redis-4.0.0/redis.conf /usr/local/redis/etc</span><br><span class="line">cd /usr/local/src/redis-4.0.0/src</span><br><span class="line">mv mkreleasehdr.sh redis-benchmark redis-check-aof redis-check-dump redis-cli redis-server /usr/local/redis/bin</span><br></pre></td></tr></table></figure>
-<h2 id="修改-redis-conf-让-redis-后台运行"><a href="#修改-redis-conf-让-redis-后台运行" class="headerlink" title="修改 redis.conf , 让 redis 后台运行"></a>修改 redis.conf , 让 redis 后台运行</h2><p>找到 daemonize , 将值设置为 yes</p>
-<h2 id="启动与连接"><a href="#启动与连接" class="headerlink" title="启动与连接"></a>启动与连接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf</span><br><span class="line">/usr/local/redis/bin/redis-cli</span><br></pre></td></tr></table></figure>
-<h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><p>查看是否启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep redis</span><br></pre></td></tr></table></figure></p>
-<p>端口占用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunpl | grep 6379</span><br></pre></td></tr></table></figure></p>
-<p>停止 redis<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/redis/bin/redis-cli shutdown</span><br></pre></td></tr></table></figure></p>
+            <h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><p>File =&gt; settings 选择 plugin , 显示插件页面<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8ytuiir63j30sh0jrtad.jpg" alt="插件界面"></p>
+<h4 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h4><ol>
+<li>Translation<br> IDE 内翻译插件 , ctrl + shift + O (字母O) 选中单词后直接翻译 .</li>
+<li>CodeGlance<br> 类似 subline text 右侧代码地图 .</li>
+<li>.env files support</li>
+</ol>
 
           
         
@@ -1990,7 +1996,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2035,7 +2041,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2062,7 +2068,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2101,7 +2111,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2140,7 +2166,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
