@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo 写作</title>
-    <url>/2019/01/25/hexo-markdown/</url>
-    <content><![CDATA[<h3 id="新增分类页面"><a href="#新增分类页面" class="headerlink" title="新增分类页面"></a>新增分类页面</h3><p>进入项目根目录下 , 生成 page</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
-<p>在 /source/categories/index.md 的 front-matter 中加入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">type: &#39;categories&#39;</span><br></pre></td></tr></table></figure>
-<h3 id="新增标签页面"><a href="#新增标签页面" class="headerlink" title="新增标签页面"></a>新增标签页面</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>在 /source/tags/index.md 的 front-matter 中加入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">type: &#39;tags&#39;</span><br></pre></td></tr></table></figure>
-<h3 id="使用标签和分类"><a href="#使用标签和分类" class="headerlink" title="使用标签和分类"></a>使用标签和分类</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new post &#39;filename&#39;</span><br></pre></td></tr></table></figure>
-<p>直接在 md 文件的 front-matter 中加入 分类和标签</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">category: </span><br><span class="line">- hexo #分类</span><br><span class="line">tags: </span><br><span class="line">- 安装hexo #标签</span><br><span class="line">- 主题 #标签</span><br></pre></td></tr></table></figure>
-<p>next 主题下使用超链接 </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Hexo themes](https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo 写作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>安装 hexo</title>
     <url>/2019/01/25/hello-everyone/</url>
     <content><![CDATA[<h2 id="开始使用-HEXO-写-BLOG"><a href="#开始使用-HEXO-写-BLOG" class="headerlink" title="开始使用 HEXO 写 BLOG"></a>开始使用 HEXO 写 BLOG</h2><p>hexo 搭建 , 依赖 node.js 和 git , 需要先安装以上两个环境 .</p>
@@ -67,6 +45,57 @@ D:/params.txt 的内容如下<figure class="highlight plain"><table><tr><td clas
       </categories>
       <tags>
         <tag>TCP/IP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo 写作</title>
+    <url>/2019/01/25/hexo-markdown/</url>
+    <content><![CDATA[<h3 id="新增分类页面"><a href="#新增分类页面" class="headerlink" title="新增分类页面"></a>新增分类页面</h3><p>进入项目根目录下 , 生成 page</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+<p>在 /source/categories/index.md 的 front-matter 中加入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">type: &#39;categories&#39;</span><br></pre></td></tr></table></figure>
+<h3 id="新增标签页面"><a href="#新增标签页面" class="headerlink" title="新增标签页面"></a>新增标签页面</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>在 /source/tags/index.md 的 front-matter 中加入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">type: &#39;tags&#39;</span><br></pre></td></tr></table></figure>
+<h3 id="使用标签和分类"><a href="#使用标签和分类" class="headerlink" title="使用标签和分类"></a>使用标签和分类</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new post &#39;filename&#39;</span><br></pre></td></tr></table></figure>
+<p>直接在 md 文件的 front-matter 中加入 分类和标签</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">category: </span><br><span class="line">- hexo #分类</span><br><span class="line">tags: </span><br><span class="line">- 安装hexo #标签</span><br><span class="line">- 主题 #标签</span><br></pre></td></tr></table></figure>
+<p>next 主题下使用超链接 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Hexo themes](https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo 写作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初始化 Fabric</title>
+    <url>/2021/02/25/block%20chain/init/</url>
+    <content><![CDATA[<h3 id="创建通道-channel"><a href="#创建通道-channel" class="headerlink" title="创建通道 channel"></a>创建通道 channel</h3>]]></content>
+      <categories>
+        <category>block chain</category>
+      </categories>
+      <tags>
+        <tag>block_chain</tag>
+        <tag>Hyperledger Fabric</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hyperledger Fabric</title>
+    <url>/2021/02/25/block%20chain/hyperledger%20fabric/</url>
+    <content><![CDATA[<p>Hyperledger Fabric是一个开放源代码的企业级许可分布式账本技术（DLT）平台，设计用于企业环境，与其他流行的分布式账本或区块链平台相比，它提供了一些关键的区分功能。</p>
+<h3 id="Hyperledger-Fabric-结构模型"><a href="#Hyperledger-Fabric-结构模型" class="headerlink" title="Hyperledger Fabric 结构模型"></a>Hyperledger Fabric 结构模型</h3><h4 id="资产-Assets"><a href="#资产-Assets" class="headerlink" title="资产 Assets"></a>资产 Assets</h4><p>资产范围从有形资产（房地产和硬件）到无形资产（合同和知识产权）。Hyperledger Fabric提供了使用链码交易修改资产的功能。<br>资产在Hyperledger Fabric中表示为键值对的集合，状态更改记录为通道 分类账中的事务。资产可以二进制和/或JSON形式表示。</p>
+<h4 id="链码-Chaincode"><a href="#链码-Chaincode" class="headerlink" title="链码 Chaincode"></a>链码 Chaincode</h4><p>Chaincode是定义一项或多项资产的软件，以及用于修改资产的交易指令；换句话说，这是业务逻辑。Chaincode强制执行用于读取或更改键值对或其他状态数据库信息的规则。链码功能针对分类帐的当前状态数据库执行，并通过交易建议启动。链码执行产生了一组键值写操作（写集），这些键值写操作可以提交给网络，并应用于所有对等方的分类帐中。</p>
+<h4 id="分类账-Ledger-Features"><a href="#分类账-Ledger-Features" class="headerlink" title="分类账 Ledger Features"></a>分类账 Ledger Features</h4><p>分类帐是结构中所有状态转换的有序，防篡改记录。状态转换是参与方提交的链码调用（“交易”）的结果。每个交易都会产生一组资产键值对，这些键值对会在创建，更新或删除时提交到分类账。</p>
+<p>分类帐由一个区块链（“ chain”）和一个状态数据库组成，该区块链将不可变的顺序记录存储在块中，该状态数据库用于维护当前的结构状态。每个通道有一个分类帐。每个对等方都为其所属的每个通道维护一个分类帐的副本</p>
+<h4 id="隐私-Private"><a href="#隐私-Private" class="headerlink" title="隐私 Private"></a>隐私 Private</h4><h4 id="安全和会员服务-Security-amp-Membership-Services"><a href="#安全和会员服务-Security-amp-Membership-Services" class="headerlink" title="安全和会员服务 Security &amp; Membership Services"></a>安全和会员服务 Security &amp; Membership Services</h4><h4 id="共识-Consensus"><a href="#共识-Consensus" class="headerlink" title="共识 Consensus"></a>共识 Consensus</h4>]]></content>
+      <categories>
+        <category>block chain</category>
+      </categories>
+      <tags>
+        <tag>block_chain</tag>
+        <tag>Hyperledger Fabric</tag>
       </tags>
   </entry>
   <entry>
@@ -166,352 +195,6 @@ D:/params.txt 的内容如下<figure class="highlight plain"><table><tr><td clas
       </tags>
   </entry>
   <entry>
-    <title>版本回退与撤销修改</title>
-    <url>/2019/11/25/git/git-reset/</url>
-    <content><![CDATA[<h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g9a9zo0fsrj30eq08cglm.jpg"></p>
-<p>commit 之后的字符串代表版本号(commit id) , HEAD =&gt; 当前版本 , Author =&gt; 作者 , Date =&gt; 上传时间<br>git log 可以加上 –pretty=oneline 参数 , 只显示单行 . </p>
-<p><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g9aa4il22uj30g202eq2s.jpg"></p>
-<h2 id="回退到上一版本"><a href="#回退到上一版本" class="headerlink" title="回退到上一版本"></a>回退到上一版本</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
-<p>HEAD^ =&gt; 上个版本 , HEAD^^ =&gt; 上上个版本 , 以此类推 .<br>HEAD~10 回退到之前第 10 个版本 . </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard bb2998</span><br></pre></td></tr></table></figure>
-<p>回退到指定版本 , 版本号不需要写全 , 一般 5 位即可 , 太少可能会无法正确回退</p>
-<h2 id="查看执行过的命令"><a href="#查看执行过的命令" class="headerlink" title="查看执行过的命令"></a>查看执行过的命令</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
-<p>可以看到执行过的命令 , 回退版本之后 , 如果想切换回最新版本 , 可以用这个命令查看最新版本的版本号 . </p>
-<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><h4 id="git-checkout-–-filename"><a href="#git-checkout-–-filename" class="headerlink" title="git checkout – filename"></a>git checkout – filename</h4><p>文件还在工作区 , 未添加到暂存区 . 可以用 <code>git checkout -- filename</code> 来丢弃工作区的修改 .<br><code>git checkout -- filename</code> 让文件恢复到最近一次 <code>git add</code> 或者 <code>git commit</code> 的状态 .</p>
-<h4 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a><code>git reset</code></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset HEAD filename</span><br></pre></td></tr></table></figure>
-<p>撤销所有更改 , 回到最新版本</p>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>版本回退</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>windows 安装 ubuntu</title>
-    <url>/2019/11/09/linux/linux-charset/</url>
-    <content><![CDATA[<h4 id="下载-ubuntu"><a href="#下载-ubuntu" class="headerlink" title="下载 ubuntu"></a>下载 ubuntu</h4><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">[国内镜像下载](http:<span class="comment">//mirrors.163.com/ubuntu-releases/)</span></span><br></pre></td></tr></table></figure>
-<p>选择需要下载的版本 , 并准备好一个格式化好的 U 盘</p>
-<h4 id="用软碟通制作启动盘"><a href="#用软碟通制作启动盘" class="headerlink" title="用软碟通制作启动盘"></a>用软碟通制作启动盘</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[UltraISO软碟通](https://cn.ultraiso.net/)</span><br></pre></td></tr></table></figure>
-<p>打开软件 , 选择 &lt;文件&gt; , 选中下载好的 ubuntu 系统<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8rrue9uuxj30lt0g0400.jpg"></p>
-<p>然后选择 &lt;启动&gt; , &lt;写入硬盘映像&gt; , &lt;写入&gt;<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8rrz0kilcj30f90e2q30.jpg"></p>
-<p>弹出提示框直接点确定</p>
-<p>写入硬盘映像完成后重启电脑 , 进入 BIOS 设置 , 设置 U 盘启动 .</p>
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>安装双系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linux crontab 计划任务</title>
-    <url>/2019/07/09/linux/linux-crontab/</url>
-    <content><![CDATA[<h2 id="crontab-参数"><a href="#crontab-参数" class="headerlink" title="crontab 参数"></a>crontab 参数</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">crontab -e #编辑计划任务</span><br><span class="line">crontab -l #查看</span><br></pre></td></tr></table></figure>
-<p>crontab 格式 “M H D m d cmd” , 其中 M 为分钟(0-59) , H 为小时(0-23) , D 为天(1-31) , m 为月(1-12) , d 为每周天数(0-6) 0 是周日 , cmd 表示要运行的程序或者 sh 文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">*/10 * * * * command #每 10 分钟执行</span><br><span class="line">0 * * * * command #每小时执行</span><br><span class="line">0 0 * * * command #每天执行</span><br><span class="line">0 0 1 * * command #每月执行</span><br><span class="line">0 0 1 1 * command #每年执行</span><br><span class="line">0 0 * * 0 command #每周执行一次</span><br><span class="line">0 2 * * * command #每天 2 点执行</span><br></pre></td></tr></table></figure>
-<p>特殊符号<br> , (逗号) 代表分隔时段<br> <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">0 2,5,8 * * * command #代表每天 2 点 5 点 8 点各执行一次</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>(中划线) 代表时间区间<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">0 10-20 * * * command #代表每天 10 点到 20 点各执行一次</span><br></pre></td></tr></table></figure>
-/n (n为合理数值)<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">*/5 * * * * command #代表每 5 分钟执行一次</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>centOs7+ 版本防火墙设置</title>
-    <url>/2020/01/19/linux/linux-firewall/</url>
-    <content><![CDATA[<h4 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a>服务管理</h4><p>安装 firewall</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">yum -y install firewalld firewall-config </span><br></pre></td></tr></table></figure>
-<p>开机启动 | 关闭开机启动</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl enable|disable firewalld</span><br></pre></td></tr></table></figure>
-<p>启动 | 关闭 | 重启 | 查看状态</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl start|stop|restart|status firewalld</span><br></pre></td></tr></table></figure>
-<h4 id="firewalld-cmd-命令管理端口"><a href="#firewalld-cmd-命令管理端口" class="headerlink" title="firewalld-cmd 命令管理端口"></a>firewalld-cmd 命令管理端口</h4><p>查看防火墙是否正在运行</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
-<p>查看所有开启的端口</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone&#x3D;public --list-ports</span><br></pre></td></tr></table></figure>
-<p>开启关闭端口 以 80 端口为例 (–permanent 为永久生效 , 否则重启后失效)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --zone&#x3D;public --remove-port&#x3D;80&#x2F;tcp --permanent</span><br></pre></td></tr></table></figure>
-<p>修改端口后需要重载</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>防火墙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>shadowsocks &amp; finalspeed 服务端搭建</title>
-    <url>/2019/06/04/linux/linux-install/</url>
-    <content><![CDATA[<h4 id="shadowsocks-服务端"><a href="#shadowsocks-服务端" class="headerlink" title="shadowsocks 服务端"></a>shadowsocks 服务端</h4><p>使用 root 用户登陆 , 安装 shadowsocks .</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">wget --no-check-certificate https:<span class="comment">//raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh</span></span><br><span class="line">chmod +x shadowsocks-go.sh</span><br><span class="line">./shadowsocks-go.sh <span class="number">2</span>&gt;&amp;<span class="number">1</span> | tee shadowsocks-go.log</span><br></pre></td></tr></table></figure>
-<p>脚本安装完成后，已将 shadowsocks-go 加入开机自启动<br>配置文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/shadowsocks/config.json</span><br></pre></td></tr></table></figure>
-<p>单用户 和 多用户 配置</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="string">&quot;server&quot;</span>:<span class="string">&quot;0.0.0.0&quot;</span>,</span><br><span class="line"> <span class="string">&quot;server_port&quot;</span>: 13839,</span><br><span class="line"> <span class="string">&quot;local_port&quot;</span>:1080,</span><br><span class="line"> <span class="string">&quot;password&quot;</span>:<span class="string">&quot;jkdf7nd33eUj&quot;</span>,</span><br><span class="line"> <span class="string">&quot;method&quot;</span>:<span class="string">&quot;aes-256-cfb&quot;</span>,</span><br><span class="line"> <span class="string">&quot;timeout&quot;</span>:600</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line"> <span class="string">&quot;port_password&quot;</span>:&#123;</span><br><span class="line">      <span class="string">&quot;13839&quot;</span>:<span class="string">&quot;jkdf7nd33eUj&quot;</span>,</span><br><span class="line">      <span class="string">&quot;12179&quot;</span>:<span class="string">&quot;Ka7KGb4gqwtF&quot;</span>,</span><br><span class="line">      <span class="string">&quot;16713&quot;</span>:<span class="string">&quot;fJArFv1gQ8Ve&quot;</span>,</span><br><span class="line">      <span class="string">&quot;18711&quot;</span>:<span class="string">&quot;4aZtRq4frGf5&quot;</span>,</span><br><span class="line">      <span class="string">&quot;17739&quot;</span>:<span class="string">&quot;e1PDAM35rYG9&quot;</span></span><br><span class="line"> &#125;,</span><br><span class="line"> <span class="string">&quot;method&quot;</span>:<span class="string">&quot;aes-256-cfb&quot;</span>,</span><br><span class="line"> <span class="string">&quot;timeout&quot;</span>:600</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>管理<br>启动/停止/重启/状态</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/etc/init.d/shadowsocks start/stop/restart/status</span><br></pre></td></tr></table></figure>
-<h4 id="FinalSpeed-服务端"><a href="#FinalSpeed-服务端" class="headerlink" title="FinalSpeed 服务端"></a>FinalSpeed 服务端</h4><p>安装</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm -f install_fs.sh</span><br><span class="line">wget  https://github.com/ucoker/finalspeed/raw/master/install_fs.sh</span><br><span class="line">chmod +x install_fs.sh</span><br><span class="line">./install_fs.sh 2&gt;&amp;1 | tee install.log</span><br></pre></td></tr></table></figure>
-<p>开机启动</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/rc.local</span><br></pre></td></tr></table></figure>
-<p>加入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/start.sh</span><br></pre></td></tr></table></figure>
-<p>确保端口开放<br>管理 执行一键安装会自动更新<br>卸载</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/stop.sh ; rm -rf /fs</span><br></pre></td></tr></table></figure>
-<p>启动</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/start.sh</span><br></pre></td></tr></table></figure>
-<p>停止</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/stop.sh</span><br></pre></td></tr></table></figure>
-<p>重新启动</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/restart.sh</span><br></pre></td></tr></table></figure>
-<p>运行日志</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tail -f /fs/server.log</span><br></pre></td></tr></table></figure>
-<h4 id="windows-客户端"><a href="#windows-客户端" class="headerlink" title="windows 客户端"></a>windows 客户端</h4><p><a href="https://pan.baidu.com/s/1TRcXDzhw9w9DqrgR5Iem-w">下载地址</a><br>提取码：xe8o</p>
-<p>解压安装 Shadowsocks-4.1.6 , 服务器配置如下 , 端口可以自定义 , 密码为 shadowsocks 服务端设置的密码 .<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3oxgz9aj1j30cw0cv0t2.jpg"></p>
-<p>执行 finalspeed.exe 文件<br>配置如下<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3oxpjaly5j30kx09gweu.jpg"></p>
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>搭建 shadowsocks</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>rsync + inotify 实时同步</title>
-    <url>/2019/11/26/linux/linux-inotify/</url>
-    <content><![CDATA[<h3 id="inotify-tool"><a href="#inotify-tool" class="headerlink" title="inotify-tool"></a>inotify-tool</h3><p>Inotify可以监控文件系统中添加、删除，修改、移动等各种事件</p>
-<h5 id="检查环境"><a href="#检查环境" class="headerlink" title="检查环境"></a>检查环境</h5><p><code>uname -r</code> 检查内核版本 , 2.6.13 之后的版本才能支持 inotify</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@localhost &#x2F;]# uname -r</span><br><span class="line">3.10.0-957.el7.x86_64</span><br><span class="line">[root@localhost &#x2F;]# cat &#x2F;etc&#x2F;redhat-release</span><br><span class="line">CentOS Linux release 7.6.1810 (Core)</span><br></pre></td></tr></table></figure>
-<p>2.6.13 之后的版本可以查到这三个文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@localhost &#x2F;]# ll &#x2F;proc&#x2F;sys&#x2F;fs&#x2F;inotify&#x2F;</span><br><span class="line">总用量 0</span><br><span class="line">-rw-r--r-- 1 root root 0 11月 26 12:35 max_queued_events</span><br><span class="line">-rw-r--r-- 1 root root 0 11月 26 12:35 max_user_instances</span><br><span class="line">-rw-r--r-- 1 root root 0 11月 26 12:35 max_user_watches</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>文件说明<br><code>max_user_watches</code> 设置inotifywait或inotifywatch命令可以监视的文件数量（单进程）<br><code>max_user_instances</code> 设置每个用户可以运行的inotifywait或inotifywatch命令的进程数<br><code>max_queued_events</code> 设置inotify实例事件（event）队列可容纳的事件数量</p>
-<h5 id="yum-安装"><a href="#yum-安装" class="headerlink" title="yum 安装"></a>yum 安装</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install -y inotify-tools</span><br></pre></td></tr></table></figure>
-<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;inotifywait -mrq --fromfile &#x2F;www&#x2F;server&#x2F;scripts&#x2F;inotify_exclude.list --format &#39;%w%f&#39; -e create,close_write,delete $Path</span><br><span class="line"></span><br><span class="line">--fromfile 忽略监听文件 , 当需要忽略多个文件或文件夹的时候使用 , inotify_exclude.list 中使用 @&#x2F;www&#x2F;www&#x2F;test_back&#x2F;data 来忽略 data 文件夹 , 每个一行 .</span><br></pre></td></tr></table></figure>
-<h3 id="文件同步工具-rsync-remote-sync"><a href="#文件同步工具-rsync-remote-sync" class="headerlink" title="文件同步工具 rsync(remote sync)"></a>文件同步工具 rsync(remote sync)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rsync -aze &#39;ssh -i ~&#x2F;.ssh&#x2F;id_rsa_dev&#39; $LocalPath --delete $remoteUser@$RemoteServer:$RemotePath</span><br></pre></td></tr></table></figure>
-<h5 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$LocalPath 本地需要同步的文件路径</span><br><span class="line">$remoteUser 远程服务器用户 与 ssh 密钥指定的用户相同</span><br><span class="line">$RemoteServer 远程服务器 IP 地址</span><br><span class="line">$RemotePath 远程服务器的文件路径</span><br><span class="line">-a 包含-rtplgoD选项</span><br><span class="line">-r 同步目录时要加上，类似 cp 命令的 -r 选项</span><br><span class="line">-v 同步时显示一些信息，让我们知道同步的过程</span><br><span class="line">-l 保留软链接</span><br><span class="line">-L 同步软链接时会把源文件一起同步</span><br><span class="line">-p 保持文件的权限属性</span><br><span class="line">-o 保持文件的属主</span><br><span class="line">-g 保持文件的属组</span><br><span class="line">-D 保持设备文件信息</span><br><span class="line">-t 保持文件的时间属性</span><br><span class="line">--delete 删除 RemotePath 中 LocalPath 没有的文件</span><br><span class="line">--exclude 过滤指定文件 , 如 --exclude &quot;logs&quot; 会把文件名包含 logs 的文件或者目录过滤掉</span><br><span class="line">-u 如果 RemotePath 中的文件比 LocalPath 新，就不会同步</span><br><span class="line">-z 传输时压缩</span><br><span class="line">-e 使用 ssh 连接 remote 服务器</span><br></pre></td></tr></table></figure>
-<h5 id="脚本示例"><a href="#脚本示例" class="headerlink" title="脚本示例"></a>脚本示例</h5><p><code>vim /www/server/scripts/inotify.sh</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">#id_rsa path</span><br><span class="line">#IdRsaPath&#x3D;&#x2F;root&#x2F;.ssh&#x2F;id_rsa_dev</span><br><span class="line">Path&#x3D;&#x2F;var&#x2F;test_back</span><br><span class="line">BackPath&#x3D;&#x2F;var&#x2F;test_back</span><br><span class="line">BackupServer&#x3D;192.168.9.122</span><br><span class="line"></span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;inotifywait -mrq --fromfile &#x2F;www&#x2F;server&#x2F;scripts&#x2F;inotify_exclude.list --format &#39;%w%f&#39; -e create,close_write,delete $Path  | while read line  </span><br><span class="line">do</span><br><span class="line">    if [ -f $line ];then</span><br><span class="line">		BackPathLine&#x3D;$&#123;line%&#x2F;*&#125;&#x2F;</span><br><span class="line">        rsync -aze &#39;ssh -i ~&#x2F;.ssh&#x2F;id_rsa_dev&#39; $line --delete root@$BackupServer:$BackPathLine</span><br><span class="line">    else</span><br><span class="line">        echo $line</span><br><span class="line">    fi</span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h6 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h6><p>启动前先在 bash 同级目录下新建 inotify.log 文件 , 用来记录监听事件 .</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nohup .&#x2F;inotify.sh &gt;&gt; inotify.log &amp;</span><br></pre></td></tr></table></figure>
-<h6 id="权限问题"><a href="#权限问题" class="headerlink" title="权限问题"></a>权限问题</h6><p>使用 git hooks 自动部署的时候 , 部署文件夹的用户和用户组都是 git . 如果使用脚本同步该部署文件夹的话 , 会把文件权限和属主属组一起传输过去 . 所以在目标服务器中使用 inotify 监听文件夹 , 发现文件改动就将整个文件夹的权限改成 web 用户 www .</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">#id_rsa path</span><br><span class="line">#IdRsaPath&#x3D;&#x2F;root&#x2F;.ssh&#x2F;id_rsa_dev</span><br><span class="line">Path&#x3D;&#x2F;var&#x2F;test_back</span><br><span class="line"></span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;inotifywait -mrq --fromfile &#x2F;www&#x2F;server&#x2F;scripts&#x2F;exclude_inotify.list --format &#39;%w%f&#39; -e create,close_write,delete $Path  | while read line  </span><br><span class="line">do</span><br><span class="line">    echo $line</span><br><span class="line">    if [ -f $line ];then</span><br><span class="line">		chmod -R 777 &#x2F;var&#x2F;test_back &amp;&amp; chown -R www:www &#x2F;var&#x2F;test_back</span><br><span class="line">    else</span><br><span class="line">        echo &#39;no line&#39;</span><br><span class="line">    fi</span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h6 id="不使用-inotify-实现文件传输"><a href="#不使用-inotify-实现文件传输" class="headerlink" title="不使用 inotify 实现文件传输"></a>不使用 inotify 实现文件传输</h6><p>修改 git hooks , 在 post-recieve 中使用 rsync 传输文件 , 并在传输完成后调用远程服务器的脚本改变文件夹权限 .</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#exec git update-server-info</span><br><span class="line">homeDir&#x3D;&#x2F;var&#x2F;www&#x2F;html&#x2F;diary&#x2F;</span><br><span class="line">testDir&#x3D;&#x2F;var&#x2F;www&#x2F;test&#x2F;diary&#x2F;</span><br><span class="line">unset GIT_DIR</span><br><span class="line"></span><br><span class="line">while read oldrev newrev refname</span><br><span class="line">do</span><br><span class="line">    branch&#x3D;$(git rev-parse --symbolic --abbrev-ref $refname)</span><br><span class="line">    echo $branch</span><br><span class="line">    if [ &quot;develop&quot; &#x3D;&#x3D; $branch ];</span><br><span class="line">    then</span><br><span class="line">        cd $homeDir</span><br><span class="line">        echo &#39; ----------- git checkout ---------- &#39;</span><br><span class="line">        #git checkout $branch</span><br><span class="line">        echo &#39; ----------- git pull and rsync files ---------- &#39;</span><br><span class="line">        git pull &amp;&amp; rsync -aze &#39;ssh -i ~&#x2F;.ssh&#x2F;id_rsa_dev&#39; $homeDir --delete root@$BackupServer:$testDir &amp;&amp; ssh -i ~&#x2F;.ssh&#x2F;id_rsa_dev root@$BackupServer &#x2F;www&#x2F;script&#x2F;change_mod_own.sh</span><br><span class="line">    else</span><br><span class="line">        echo &quot;nothing to do with this branch&quot;</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linux 下安装 redis</title>
-    <url>/2019/02/15/linux/linux-install-redis/</url>
-    <content><![CDATA[<h2 id="下载-redis"><a href="#下载-redis" class="headerlink" title="下载 redis"></a>下载 redis</h2><p>进入  /usr/local/src 目录 , 下载 redis , 解压安装. </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-4.0.0.tar.gz</span><br><span class="line">tar zxvf redis-4.0.0.tar.gz </span><br><span class="line"><span class="built_in">cd</span> redis-4.0.0</span><br><span class="line">make</span><br><span class="line"><span class="built_in">cd</span> src</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<h2 id="创建-redis-管理目录"><a href="#创建-redis-管理目录" class="headerlink" title="创建 redis 管理目录"></a>创建 redis 管理目录</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir -p &#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin </span><br><span class="line">mkdir -p &#x2F;usr&#x2F;local&#x2F;redis&#x2F;etc</span><br><span class="line">mv &#x2F;usr&#x2F;local&#x2F;src&#x2F;redis-4.0.0&#x2F;redis.conf &#x2F;usr&#x2F;local&#x2F;redis&#x2F;etc</span><br><span class="line">cd &#x2F;usr&#x2F;local&#x2F;src&#x2F;redis-4.0.0&#x2F;src</span><br><span class="line">cp mkreleasehdr.sh redis-benchmark redis-check-aof redis-check-dump redis-cli redis-server &#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin</span><br></pre></td></tr></table></figure>
-<h2 id="修改-redis-conf-让-redis-后台运行"><a href="#修改-redis-conf-让-redis-后台运行" class="headerlink" title="修改 redis.conf , 让 redis 后台运行"></a>修改 redis.conf , 让 redis 后台运行</h2><p>找到 daemonize , 将值设置为 yes</p>
-<h2 id="启动与连接"><a href="#启动与连接" class="headerlink" title="启动与连接"></a>启动与连接</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin&#x2F;redis-server &#x2F;usr&#x2F;local&#x2F;redis&#x2F;etc&#x2F;redis.conf</span><br><span class="line">&#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin&#x2F;redis-cli</span><br></pre></td></tr></table></figure>
-<h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><p>查看是否启动</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -ef | grep redis</span><br></pre></td></tr></table></figure>
-<p>端口占用</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">netstat -tunpl | grep 6379</span><br></pre></td></tr></table></figure>
-<p>停止 redis</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin&#x2F;redis-cli shutdown</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>redis</tag>
-        <tag>开发</tag>
-        <tag>安装</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>windows 使用密钥登录 linux 服务器 (putty)</title>
-    <url>/2019/11/11/linux/linux-putty/</url>
-    <content><![CDATA[<h4 id="先用密码登录-linux-服务器-生成密钥"><a href="#先用密码登录-linux-服务器-生成密钥" class="headerlink" title="先用密码登录 linux 服务器 , 生成密钥"></a>先用密码登录 linux 服务器 , 生成密钥</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
-<p>生成密钥的过程中会提示输入密码 , 可以直接 enter 跳过 . 如果输入密码的话 , 以后每次登录都需要输入密码 .</p>
-<h4 id="部署密钥"><a href="#部署密钥" class="headerlink" title="部署密钥"></a>部署密钥</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/.ssh</span><br><span class="line">ssh-copy-id -i /root/.ssh/id_rsa.pub root@yourip</span><br><span class="line">yes</span><br></pre></td></tr></table></figure>
-<p>.ssh 文件夹中的 id_rsa 是私钥文件 , 需要下载到本地电脑用来登录 .</p>
-<h4 id="下载-id-rsa-文件到本地"><a href="#下载-id-rsa-文件到本地" class="headerlink" title="下载 id_rsa 文件到本地"></a>下载 id_rsa 文件到本地</h4><p>打开 puttygen<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8uc5tt10nj30dp0da0tg.jpg"></p>
-<ol>
-<li>load , 选择 id_rsa 文件</li>
-<li>保存私钥到本地 (.ppk 文件)</li>
-<li>复制私钥 , 并将私钥保存到服务器 /root/.ssh/authorized_keys 中</li>
-</ol>
-<h4 id="使用-putty-登录"><a href="#使用-putty-登录" class="headerlink" title="使用 putty 登录"></a>使用 putty 登录</h4><p>填入 IP 地址<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8abmhk1j30cw0ch0t2.jpg"></p>
-<p>填入用户名<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8cckiooj30cy0ch74x.jpg"></p>
-<p>选择之前保存的 .ppk 私钥文件<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8e4cy3yj30cy0ch0t8.jpg"></p>
-<p>返回 session 保存站点<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8f4yi27j30cy0ch0t5.jpg"></p>
-<p>尝试登录</p>
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>putty 实现密钥登录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linux-中文编码</title>
-    <url>/2019/02/15/linux/linux-shadowsocks/</url>
-    <content><![CDATA[<h2 id="linux-下中文乱码"><a href="#linux-下中文乱码" class="headerlink" title="linux 下中文乱码"></a>linux 下中文乱码</h2><p>修改文件</p>
-<p>centOs 6x  /etc/sysconfig/i18n</p>
-<p>centOs 7x /etc/locale.conf</p>
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>编码</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linux 常用命令</title>
-    <url>/2019/07/08/linux/linux-used-commands/</url>
-    <content><![CDATA[<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">df -h #显示文件系统磁盘块的使用情况  -h human read</span><br><span class="line">du -h --max-depth=1 #显示文件夹占用的存储空间  --max-depth 文件深度</span><br><span class="line">ls -al #list 列出当前工作目录的内容 -a 列出所有(包含 . ..  -A 不包含) -l 列出所有者 组 以及权限 -t 时间排序 </span><br><span class="line">ll #相当与 ls -l</span><br><span class="line">mkdir #创建目录 </span><br><span class="line">rmdir #删除目录</span><br><span class="line">pwd #print working directory</span><br><span class="line">cp FILE PATH #复制文件</span><br><span class="line">mv FILE PATH #移动文件</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>grep </p>
-<h2 id="网络连接"><a href="#网络连接" class="headerlink" title="网络连接"></a>网络连接</h2>]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>linux 系统下的启动和重启命令</title>
-    <url>/2019/02/15/linux/linux-start/</url>
-    <content><![CDATA[<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx -s reload</span><br></pre></td></tr></table></figure>
-<h3 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -ef | grep nginx</span><br></pre></td></tr></table></figure>
-<h2 id="php-fpm"><a href="#php-fpm" class="headerlink" title="php-fpm"></a>php-fpm</h2><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;php&#x2F;sbin&#x2F;php-fpm</span><br></pre></td></tr></table></figure>
-<h3 id="重启-1"><a href="#重启-1" class="headerlink" title="重启"></a>重启</h3><p>查看 master 进程</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps aux|grep php-fpm</span><br></pre></td></tr></table></figure>
-<p>kill -USR2 master 进程</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">kill -USR2 42891</span><br></pre></td></tr></table></figure>
-<p>INT, TERM 立刻终止<br>QUIT 平滑终止</p>
-<p>USR1 重新打开日志文件</p>
-<p>USR2 平滑重载所有worker进程并重新载入配置和二进制模块</p>
-<h2 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h2><h3 id="查看是否启动"><a href="#查看是否启动" class="headerlink" title="查看是否启动"></a>查看是否启动</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -ef | grep redis</span><br></pre></td></tr></table></figure>
-<h3 id="启动redis"><a href="#启动redis" class="headerlink" title="启动redis"></a>启动redis</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin&#x2F;redis-server &#x2F;usr&#x2F;local&#x2F;redis&#x2F;etc&#x2F;redis.conf</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Apache 自带 ab 测试工具使用</title>
-    <url>/2019/06/10/php/apache-ab-test/</url>
-    <content><![CDATA[<h4 id="打开方式"><a href="#打开方式" class="headerlink" title="打开方式"></a>打开方式</h4><p>ab 测试工具在 apache 目录下的 bin 文件夹中 , 进入 bin 目录之后可以直接执行 ab .</p>
-<h4 id="常用请求参数"><a href="#常用请求参数" class="headerlink" title="常用请求参数"></a>常用请求参数</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-n #总请求次数默认为 1</span><br><span class="line">-c #并发次数 , 不能大于总请求次数</span><br><span class="line">-p #post 参数路径 , 与 -T 参数配合使用</span><br><span class="line">-T #请求头设置 </span><br></pre></td></tr></table></figure>
-<h4 id="无参数请求"><a href="#无参数请求" class="headerlink" title="无参数请求"></a>无参数请求</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ab -n 10 -c 10 http:&#x2F;&#x2F;test.com&#x2F;index.php</span><br></pre></td></tr></table></figure>
-<h4 id="GET-方式请求"><a href="#GET-方式请求" class="headerlink" title="GET 方式请求"></a>GET 方式请求</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ab -n 10 -c 10 &quot;http:&#x2F;&#x2F;test.com&#x2F;index.php?a&#x3D;1&amp;b&#x3D;2&quot;</span><br></pre></td></tr></table></figure>
-<p>url 必须用双引号括起来</p>
-<h4 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ab -n 10 -c 10 -p D:\params.txt -T application&#x2F;x-www-form-urlencoded http:&#x2F;&#x2F;test.com&#x2F;index.php</span><br></pre></td></tr></table></figure>
-<p>D:/params.txt 的内容如下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gid&#x3D;14659&amp;user_id&#x3D;1&amp;token&#x3D;f870b28e-5c04-4a90-9838-654172607287</span><br></pre></td></tr></table></figure>
-<h4 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h4><p><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3w3oysk9yj30m20esgn1.jpg"></p>
-]]></content>
-      <categories>
-        <category>apache</category>
-      </categories>
-      <tags>
-        <tag>开发</tag>
-        <tag>PHP</tag>
-        <tag>apache</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>centOs 安装 php 7.3</title>
-    <url>/2019/06/18/php/develop-php-install/</url>
-    <content><![CDATA[<h3 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y install libxml2 libxml2-devel</span><br><span class="line">yum -y install openssl openssl-devel</span><br><span class="line">yum -y install curl curl-devel</span><br><span class="line">yum -y install libjpeg libjpeg-devel</span><br><span class="line">yum -y install libpng libpng-devel</span><br><span class="line">yum -y install freetype freetype-devel</span><br><span class="line">yum -y install pcre pcre-devel</span><br><span class="line">yum -y install libxslt libxslt-devel</span><br><span class="line">yum -y install bzip2 bzip2-devel</span><br></pre></td></tr></table></figure>
-<p>安装最新版 libzip</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#删除旧版</span><br><span class="line">yum remove libzip</span><br><span class="line"></span><br><span class="line">#下载 libzip-1.5.2</span><br><span class="line">cd &#x2F;usr&#x2F;local&#x2F;src</span><br><span class="line">wget https:&#x2F;&#x2F;nih.at&#x2F;libzip&#x2F;libzip-1.5.2.tar.gz</span><br><span class="line"></span><br><span class="line">#新版 libzip 需要 cmake 编译 , 下载 cmake</span><br><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;Kitware&#x2F;CMake&#x2F;releases&#x2F;download&#x2F;v3.15.0-rc1&#x2F;cmake-3.15.0-rc1-Linux-x86_64.tar.gz</span><br><span class="line">tar -zxvf cmake-3.15.0-rc1-Linux-x86_64.tar.gz</span><br><span class="line">mv cmake-3.15.0-rc1-Linux-x86_64.tar.gz &#x2F;usr&#x2F;local&#x2F;cmake</span><br><span class="line">export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;cmake&#x2F;bin</span><br><span class="line"></span><br><span class="line">#解压安装 libzip</span><br><span class="line">tar -zxvf libzip-1.5.2.tar.gz</span><br><span class="line">cd libzip-1.5.2</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make &amp; make install</span><br></pre></td></tr></table></figure>
-<h3 id="下载编译-php7-3-0"><a href="#下载编译-php7-3-0" class="headerlink" title="下载编译 php7.3.0"></a>下载编译 php7.3.0</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;local&#x2F;src</span><br><span class="line">wget &quot;https:&#x2F;&#x2F;downloads.php.net&#x2F;~cmb&#x2F;php-7.3.0.tar.gz&quot;</span><br><span class="line">tar -zxvf php-7.3.0.tar.gz</span><br><span class="line">cd php-7.3.0</span><br><span class="line">#编译 参数自行添加</span><br><span class="line">.&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;php \</span><br><span class="line"> --with-curl&#x3D;&#x2F;usr&#x2F;local&#x2F;curl\</span><br><span class="line"> --with-gd \</span><br><span class="line"> --with-freetype-dir&#x3D;&#x2F;usr&#x2F;include&#x2F;freetype2\</span><br><span class="line"> --with-gettext \</span><br><span class="line"> --with-iconv-dir \</span><br><span class="line"> --with-kerberos \</span><br><span class="line"> --with-libdir&#x3D;lib64 \</span><br><span class="line"> --with-libxml-dir \</span><br><span class="line"> --with-mysqli \</span><br><span class="line"> --with-openssl \</span><br><span class="line"> --with-pcre-regex \</span><br><span class="line"> --with-pdo-mysql \</span><br><span class="line"> --with-pdo-sqlite \</span><br><span class="line"> --with-pear \</span><br><span class="line"> --with-png-dir \</span><br><span class="line"> --with-xmlrpc \</span><br><span class="line"> --with-xsl \</span><br><span class="line"> --with-zlib \</span><br><span class="line"> --enable-fpm \</span><br><span class="line"> --enable-bcmath \</span><br><span class="line"> --enable-libxml \</span><br><span class="line"> --enable-inline-optimization \</span><br><span class="line"> --enable-mbregex \</span><br><span class="line"> --enable-mbstring \</span><br><span class="line"> --enable-opcache \</span><br><span class="line"> --enable-pcntl \</span><br><span class="line"> --enable-shmop \</span><br><span class="line"> --enable-soap \</span><br><span class="line"> --enable-sockets \</span><br><span class="line"> --enable-sysvsem \</span><br><span class="line"> --enable-xml \</span><br><span class="line"> --enable-zip</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">#成功输出</span><br><span class="line">Installing shared extensions:     &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php&#x2F;extensions&#x2F;no-debug-non-zts-20180731&#x2F;</span><br><span class="line">Installing PHP CLI binary:        &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">Installing PHP CLI man page:      &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man1&#x2F;</span><br><span class="line">Installing PHP FPM binary:        &#x2F;usr&#x2F;local&#x2F;php&#x2F;sbin&#x2F;</span><br><span class="line">Installing PHP FPM defconfig:     &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;</span><br><span class="line">Installing PHP FPM man page:      &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man8&#x2F;</span><br><span class="line">Installing PHP FPM status page:   &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;php&#x2F;fpm&#x2F;</span><br><span class="line">Installing phpdbg binary:         &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">Installing phpdbg man page:       &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man1&#x2F;</span><br><span class="line">Installing PHP CGI binary:        &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">Installing PHP CGI man page:      &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man1&#x2F;</span><br><span class="line">Installing build environment:     &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php&#x2F;build&#x2F;</span><br><span class="line">Installing header files:          &#x2F;usr&#x2F;local&#x2F;php&#x2F;include&#x2F;php&#x2F;</span><br><span class="line">Installing helper programs:       &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">  program: phpize</span><br><span class="line">  program: php-config</span><br><span class="line">Installing man pages:             &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man1&#x2F;</span><br><span class="line">  page: phpize.1</span><br><span class="line">  page: php-config.1</span><br><span class="line">Installing PEAR environment:      &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php&#x2F;</span><br><span class="line"></span><br><span class="line">Warning: &quot;continue&quot; targeting switch is equivalent to &quot;break&quot;. Did you mean to use &quot;continue 2&quot;? in phar:&#x2F;&#x2F;&#x2F;usr&#x2F;local&#x2F;src&#x2F;php-7.3.0&#x2F;pear&#x2F;install-pear-nozlib.phar&#x2F;PEAR&#x2F;PackageFile&#x2F;v2&#x2F;Validator.php on line 1933</span><br><span class="line">[PEAR] Archive_Tar    - installed: 1.4.3</span><br><span class="line">[PEAR] Console_Getopt - installed: 1.4.1</span><br><span class="line">[PEAR] Structures_Graph- installed: 1.1.1</span><br><span class="line">[PEAR] XML_Util       - installed: 1.4.2</span><br><span class="line">[PEAR] PEAR           - installed: 1.10.5</span><br><span class="line">Wrote PEAR system config file at: &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;pear.conf</span><br><span class="line">You may want to add: &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php to your php.ini include_path</span><br><span class="line">&#x2F;usr&#x2F;local&#x2F;src&#x2F;php-7.3.0&#x2F;build&#x2F;shtool install -c ext&#x2F;phar&#x2F;phar.phar &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin</span><br><span class="line">ln -s -f phar.phar &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;phar</span><br><span class="line">Installing PDO headers:           &#x2F;usr&#x2F;local&#x2F;php&#x2F;include&#x2F;php&#x2F;ext&#x2F;pdo&#x2F;</span><br></pre></td></tr></table></figure>
-<p>配置信息</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 复制 php.ini php-fpm.conf www.conf 配置文件</span><br><span class="line">cp php.ini-production &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php.ini</span><br><span class="line">cp &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php-fpm.conf.default &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php-fpm.conf</span><br><span class="line">cp &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php-fpm.d&#x2F;www.conf.default &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php-fpm.d&#x2F;www.conf</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;php&#x2F;sbin&#x2F;php-fpm &#x2F;usr&#x2F;local&#x2F;bin</span><br><span class="line"></span><br><span class="line">#加入服务</span><br><span class="line">cp &#x2F;usr&#x2F;local&#x2F;src&#x2F;sapi&#x2F;fpm&#x2F;php-fpm.service &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;</span><br><span class="line"></span><br><span class="line">#php 命令</span><br><span class="line">export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">#测试</span><br><span class="line">php -v</span><br><span class="line">php -m</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>开发</tag>
-        <tag>安装</tag>
-        <tag>PHP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>细数微信公众号小程序开发中遇到的坑</title>
-    <url>/2019/01/26/php/develop-wx-pay/</url>
-    <content><![CDATA[<h3 id="微信支付"><a href="#微信支付" class="headerlink" title="微信支付"></a>微信支付</h3><p>开发前要准备好架构 , 如果需要使用到微信支付 , 要先确定使用 APP 去申请商户号还是用小程序去申请 .</p>
-<p>今年踩了一个坑就是小程序项目已经上线了 , 需要在 APP 中获取微信的用户信息 , 使用微信登陆 , 没想到 APP 这边不能绑定已申请的商户号 ,<br>只能重新申请一个商户号来对应 , 这样一来小程序的支付信息也要跟着变动 . 所以 APP 微信绑定之后无法使用 openid 进行付款和结算 .</p>
-<h3 id="CURL-58-错误"><a href="#CURL-58-错误" class="headerlink" title="CURL 58 错误"></a>CURL 58 错误</h3><p>微信支付还有一个大坑 , 就是 curl 的协议 , 微信使用的是 openssl 协议 , 而 centOs 默认的 curl 协议是<br> NSS . 碰到这个错误 , 一个就是签名出错了 , 仔细核对 , 或者用微信的签名工具测试 . 如果没有问题 , 基本上可以确定是 curl 协议的问题了 , 重新编译 curl 解决 .</p>
-<h3 id="公众号-access-token"><a href="#公众号-access-token" class="headerlink" title="公众号 access_token"></a>公众号 access_token</h3><p>公众号的 access_token 有两种类型 , 一个是获取用户信息需要用到的 , 用 appid 换取 code ,<br>然后用 code + appid + appsecret 换取 access_token 和 openid 等信息 . 这个获取个人信息的 access_token 每分钟有数万次的获取次数 , 目前没有超出的可能 . </p>
-<p>另一个 access_token 是全局变量 , 一个公众同一时间只有一个 . 刷新了之后 , 其他地方的 access_token 就会失效 ,<br>这个 access_token 有失效时间 , 目前是 7200 s , 即两小时 , 并且有获取次数限制 , 不能实时获取 , 必须做缓存 .</p>
-]]></content>
-      <categories>
-        <category>wechat</category>
-      </categories>
-      <tags>
-        <tag>开发</tag>
-        <tag>微信</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>phpstorm 常用插件</title>
-    <url>/2019/11/15/php/phpstorm-plugin/</url>
-    <content><![CDATA[<h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><p>File =&gt; settings 选择 plugin , 显示插件页面<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8ytuiir63j30sh0jrtad.jpg" alt="插件界面"></p>
-<h4 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h4><ol>
-<li>Translation<br> IDE 内翻译插件 , ctrl + shift + O (字母O) 选中单词后直接翻译 .</li>
-<li>CodeGlance<br> 类似 subline text 右侧代码地图 .</li>
-<li>.env files support</li>
-</ol>
-]]></content>
-      <categories>
-        <category>TOOL</category>
-      </categories>
-      <tags>
-        <tag>phpstorm</tag>
-        <tag>plugin</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linux 安装 php-redis 扩展</title>
-    <url>/2019/02/15/php/php-redis-install/</url>
-    <content><![CDATA[<h2 id="下载-redis-扩展"><a href="#下载-redis-扩展" class="headerlink" title="下载 redis 扩展"></a>下载 redis 扩展</h2><p>下载地址 <a href="http://pecl.php.net/package/redis">http://pecl.php.net/package/redis</a> 选择对应版本 , 也可以直接执行 </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;pecl.php.net&#x2F;get&#x2F;redis-4.0.0.tgz</span><br></pre></td></tr></table></figure>
-<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar zxvf redis-4.0.0.tgz</span><br><span class="line">cd redis-4.0.0</span><br></pre></td></tr></table></figure>
-<h2 id="在解压的-redis-文件夹下生成-configure-配置文件"><a href="#在解压的-redis-文件夹下生成-configure-配置文件" class="headerlink" title="在解压的 redis 文件夹下生成 configure 配置文件"></a>在解压的 redis 文件夹下生成 configure 配置文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;phpize</span><br><span class="line">.&#x2F;configure --with-php-config&#x3D;&#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;php-config</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
-<h2 id="编译完成后配置-php-ini"><a href="#编译完成后配置-php-ini" class="headerlink" title="编译完成后配置 php.ini"></a>编译完成后配置 php.ini</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extension&#x3D;redis.so</span><br></pre></td></tr></table></figure>
-<p>如果找不到 php.ini , 可以在 phpinfo() 中查看 Loaded Configuration File .<br>如果值为 none , 可以在编译目录下把 php.ini-development 复制一份到 /usr/local/php/lib 下</p>
-<h2 id="重启-nginx-或者-apache"><a href="#重启-nginx-或者-apache" class="headerlink" title="重启 nginx 或者 apache"></a>重启 nginx 或者 apache</h2>]]></content>
-      <categories>
-        <category>PHP</category>
-      </categories>
-      <tags>
-        <tag>redis</tag>
-        <tag>开发</tag>
-        <tag>安装</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>linux 系统下备份 mysql 数据库</title>
     <url>/2019/02/25/mysql/mysql-backup/</url>
     <content><![CDATA[<h3 id="mysql-backup"><a href="#mysql-backup" class="headerlink" title="mysql-backup"></a>mysql-backup</h3><p>创建 shell script 备份脚本</p>
@@ -539,112 +222,33 @@ D:/params.txt 的内容如下<figure class="highlight plain"><table><tr><td clas
         <category>mysql</category>
       </categories>
       <tags>
+        <tag>mysql</tag>
         <tag>linux</tag>
-        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
-    <title>MySQL 如何执行一条 SQL 语句的</title>
-    <url>/2019/05/31/mysql/mysql-group_by/</url>
-    <content><![CDATA[<h4 id="流程示意图"><a href="#流程示意图" class="headerlink" title="流程示意图"></a>流程示意图</h4><div style="width: 450px; margin: auto">![示意图](https://ws1.sinaimg.cn/large/0060vrluly1g3kjdprxdgj31hc140wgx.jpg)</div>
-
-
-<h4 id="连接器"><a href="#连接器" class="headerlink" title="连接器"></a>连接器</h4><p>连接到数据库 , 连接器负责跟客户建立连接 , 获取权限 , 维持和管理连接 .</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">mysql -h<span class="variable">$ip</span> -P<span class="variable">$port</span> -u<span class="variable">$user</span> -p***</span><br></pre></td></tr></table></figure>
-<p>长连接 : 连接成功后 , 如果客户端持续有请求 , 则一直使用同一个连接 .<br>短连接 : 每次执行完很少的几次查询后就断开连接 , 下次需要的时候再重新建立连接 .<br>建立连接的过程通常比较复杂 , 在日常使用中建议使用长连接 . 但是全部使用长连接后 , 可能会导致 MySQL 占用内存过高 , 被系统强行杀掉 , 导致 MySQL 异常重启 .<br>解决方案 : 1.定期断开长连接 . 2.在每次执行一个比较大的操作后 , 通过执行 mysql_reset_connection 来初始化连接资源 , 这个过程不需要重新连接和权限验证 .</p>
-<h4 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h4><p>缓存失效频繁 , 只要有一个更新 , 该表上的所有缓存将全部被清空 . 建议不使用 .<br>需要注意的一点是 , 查询缓存在 MySQL 8.0 中被移除了 .</p>
-<h4 id="分析器"><a href="#分析器" class="headerlink" title="分析器"></a>分析器</h4><p>词法分析 , 判断 SQL 是否满足 MySQL 的语法要求 , 识别表名和字段 , 并判断字段是否存在等 .<br>语法分析 , 判断语法是存在错误 , 如 SELECT 拼成 SELEC , 少了 T 字符串 , 报错 ‘You have an error in your SQL syntax’ .</p>
-<h4 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h4><p>在执行 SQL 语句之前优化处理 , 当表中有多个索引时 , 优化器会决定使用哪个索引 ; 在关联语句中决定表的连接顺序 .</p>
-<h4 id="执行器"><a href="#执行器" class="headerlink" title="执行器"></a>执行器</h4><p>MySQL 通过分析器知道了你要做什么 , 通过优化器知道了该怎么做 , 于是进入执行器 , 开始执行语句 .<br>开始执行的时候 , 需要先判断用户对这个表有没有查询或者更新/插入的权限 , 如果有权限 , 就打开表继续执行 , 打开表的时候 , 执行器会根据表定义的引擎 , 去使用这个引擎提供的接口 .</p>
+    <title>版本回退与撤销修改</title>
+    <url>/2019/11/25/git/git-reset/</url>
+    <content><![CDATA[<h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g9a9zo0fsrj30eq08cglm.jpg"></p>
+<p>commit 之后的字符串代表版本号(commit id) , HEAD =&gt; 当前版本 , Author =&gt; 作者 , Date =&gt; 上传时间<br>git log 可以加上 –pretty=oneline 参数 , 只显示单行 . </p>
+<p><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g9aa4il22uj30g202eq2s.jpg"></p>
+<h2 id="回退到上一版本"><a href="#回退到上一版本" class="headerlink" title="回退到上一版本"></a>回退到上一版本</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
+<p>HEAD^ =&gt; 上个版本 , HEAD^^ =&gt; 上上个版本 , 以此类推 .<br>HEAD~10 回退到之前第 10 个版本 . </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard bb2998</span><br></pre></td></tr></table></figure>
+<p>回退到指定版本 , 版本号不需要写全 , 一般 5 位即可 , 太少可能会无法正确回退</p>
+<h2 id="查看执行过的命令"><a href="#查看执行过的命令" class="headerlink" title="查看执行过的命令"></a>查看执行过的命令</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+<p>可以看到执行过的命令 , 回退版本之后 , 如果想切换回最新版本 , 可以用这个命令查看最新版本的版本号 . </p>
+<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><h4 id="git-checkout-–-filename"><a href="#git-checkout-–-filename" class="headerlink" title="git checkout – filename"></a>git checkout – filename</h4><p>文件还在工作区 , 未添加到暂存区 . 可以用 <code>git checkout -- filename</code> 来丢弃工作区的修改 .<br><code>git checkout -- filename</code> 让文件恢复到最近一次 <code>git add</code> 或者 <code>git commit</code> 的状态 .</p>
+<h4 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a><code>git reset</code></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset HEAD filename</span><br></pre></td></tr></table></figure>
+<p>撤销所有更改 , 回到最新版本</p>
 ]]></content>
       <categories>
-        <category>mysql</category>
+        <category>git</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
+        <tag>版本回退</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>MySQL 日志系统</title>
-    <url>/2019/05/31/mysql/mysql-how-to-execute-sql/</url>
-    <content><![CDATA[<h3 id="redo-log-重做日志"><a href="#redo-log-重做日志" class="headerlink" title="redo log (重做日志)"></a>redo log (重做日志)</h3><p>InnoDB 引擎独有 , 其他引擎没有次日志 .<br>当有一条记录需要更新时 , InnoDB 引擎会先把记录写到 redo log 里面 , 并更新内存 , 这个时候更新就算完成了 . 同时 InnoDB 引擎会在适当的时候将这个操作记录更新到磁盘里 , 而这个更新往往是在系统比较空闲的时候 .<br>redo log 的文件是固定大小的 , 循环写入 , 一旦可用空间不足就会停止写入 , 先将记录更新到数据文件 .<br>该日志可以保证数据库发生异常的情况下 , 之前提交的记录不会丢失 — crash-safe .</p>
-<h3 id="binlog-归档日志"><a href="#binlog-归档日志" class="headerlink" title="binlog (归档日志)"></a>binlog (归档日志)</h3><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>redo log 是 InnoDB 引擎特有的 , binlog 是所有引擎都可以使用的 , 在 server 层实现 .<br>redo log 是物理日志 , 记录的是 “在某个数据页上做了什么修改”; binlog 是逻辑日志 , 记录的事这个语句的原始逻辑 .<br>redo log 是循环写的 , 空间固定 ; binlog 是可以追加写入的(归档) .</p>
-]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL GROUP BY</title>
-    <url>/2019/11/18/mysql/mysql-log/</url>
-    <content><![CDATA[<h4 id="MYSQL-执行顺序"><a href="#MYSQL-执行顺序" class="headerlink" title="MYSQL 执行顺序"></a>MYSQL 执行顺序</h4>]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PHP 版本支持</title>
-    <url>/2021/02/04/php/version-support-md/</url>
-    <content><![CDATA[<h3 id="PHP-版本支持时间表"><a href="#PHP-版本支持时间表" class="headerlink" title="PHP 版本支持时间表"></a>PHP 版本支持时间表</h3><p>PHP 每个发行版支持从发布开始的两年内完全支持 , 之后有一年的安全支持 . 意味着一个 PHP 版本支持三年 , 三年之后 , PHP 版本就走到尽头 , 不再支持了 .</p>
-<table>
-<thead>
-<tr>
-<th align="center">版本</th>
-<th align="center">发布时间</th>
-<th align="center">积极支持</th>
-<th align="center">安全支持</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">8.0</td>
-<td align="center">2020-11-26</td>
-<td align="center">2022-11-26</td>
-<td align="center">2023-11-26</td>
-</tr>
-<tr>
-<td align="center">7.4</td>
-<td align="center">2019-11-28</td>
-<td align="center">2021-11-28</td>
-<td align="center">2022-11-28</td>
-</tr>
-<tr>
-<td align="center">7.3</td>
-<td align="center">2018-12-06</td>
-<td align="center">2020-12-06</td>
-<td align="center">2021-12-06</td>
-</tr>
-<tr>
-<td align="center">7.2</td>
-<td align="center">–</td>
-<td align="center">–</td>
-<td align="center">2020-11-30</td>
-</tr>
-<tr>
-<td align="center">7.1</td>
-<td align="center">–</td>
-<td align="center">–</td>
-<td align="center">2019-12-01</td>
-</tr>
-<tr>
-<td align="center">7.0</td>
-<td align="center">–</td>
-<td align="center">–</td>
-<td align="center">2019-01-10</td>
-</tr>
-<tr>
-<td align="center">5.6</td>
-<td align="center">–</td>
-<td align="center">–</td>
-<td align="center">2018-12-31</td>
-</tr>
-</tbody></table>
-]]></content>
   </entry>
   <entry>
     <title>mysql EXPLAIN 详解</title>
@@ -757,32 +361,428 @@ D:/params.txt 的内容如下<figure class="highlight plain"><table><tr><td clas
       </tags>
   </entry>
   <entry>
-    <title>Hyperledger Fabric</title>
-    <url>/2021/02/25/block%20chain/hyperledger%20fabric/</url>
-    <content><![CDATA[<p>Hyperledger Fabric是一个开放源代码的企业级许可分布式账本技术（DLT）平台，设计用于企业环境，与其他流行的分布式账本或区块链平台相比，它提供了一些关键的区分功能。</p>
-<h3 id="Hyperledger-Fabric-结构模型"><a href="#Hyperledger-Fabric-结构模型" class="headerlink" title="Hyperledger Fabric 结构模型"></a>Hyperledger Fabric 结构模型</h3><h4 id="资产-Assets"><a href="#资产-Assets" class="headerlink" title="资产 Assets"></a>资产 Assets</h4><p>资产范围从有形资产（房地产和硬件）到无形资产（合同和知识产权）。Hyperledger Fabric提供了使用链码交易修改资产的功能。<br>资产在Hyperledger Fabric中表示为键值对的集合，状态更改记录为通道 分类账中的事务。资产可以二进制和/或JSON形式表示。</p>
-<h4 id="链码-Chaincode"><a href="#链码-Chaincode" class="headerlink" title="链码 Chaincode"></a>链码 Chaincode</h4><p>Chaincode是定义一项或多项资产的软件，以及用于修改资产的交易指令；换句话说，这是业务逻辑。Chaincode强制执行用于读取或更改键值对或其他状态数据库信息的规则。链码功能针对分类帐的当前状态数据库执行，并通过交易建议启动。链码执行产生了一组键值写操作（写集），这些键值写操作可以提交给网络，并应用于所有对等方的分类帐中。</p>
-<h4 id="分类账-Ledger-Features"><a href="#分类账-Ledger-Features" class="headerlink" title="分类账 Ledger Features"></a>分类账 Ledger Features</h4><p>分类帐是结构中所有状态转换的有序，防篡改记录。状态转换是参与方提交的链码调用（“交易”）的结果。每个交易都会产生一组资产键值对，这些键值对会在创建，更新或删除时提交到分类账。</p>
-<p>分类帐由一个区块链（“ chain”）和一个状态数据库组成，该区块链将不可变的顺序记录存储在块中，该状态数据库用于维护当前的结构状态。每个通道有一个分类帐。每个对等方都为其所属的每个通道维护一个分类帐的副本</p>
-<h4 id="隐私-Private"><a href="#隐私-Private" class="headerlink" title="隐私 Private"></a>隐私 Private</h4><h4 id="安全和会员服务-Security-amp-Membership-Services"><a href="#安全和会员服务-Security-amp-Membership-Services" class="headerlink" title="安全和会员服务 Security &amp; Membership Services"></a>安全和会员服务 Security &amp; Membership Services</h4><h4 id="共识-Consensus"><a href="#共识-Consensus" class="headerlink" title="共识 Consensus"></a>共识 Consensus</h4>]]></content>
+    <title>MySQL GROUP BY</title>
+    <url>/2019/11/18/mysql/mysql-log/</url>
+    <content><![CDATA[<h4 id="MYSQL-执行顺序"><a href="#MYSQL-执行顺序" class="headerlink" title="MYSQL 执行顺序"></a>MYSQL 执行顺序</h4>]]></content>
       <categories>
-        <category>block chain</category>
+        <category>mysql</category>
       </categories>
       <tags>
-        <tag>block_chain</tag>
-        <tag>Hyperledger Fabric</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
-    <title>初始化 Fabric</title>
-    <url>/2021/02/25/block%20chain/init/</url>
-    <content><![CDATA[<h3 id="创建通道-channel"><a href="#创建通道-channel" class="headerlink" title="创建通道 channel"></a>创建通道 channel</h3>]]></content>
+    <title>MySQL 如何执行一条 SQL 语句的</title>
+    <url>/2019/05/31/mysql/mysql-group_by/</url>
+    <content><![CDATA[<h4 id="流程示意图"><a href="#流程示意图" class="headerlink" title="流程示意图"></a>流程示意图</h4><div style="width: 450px; margin: auto">![示意图](https://ws1.sinaimg.cn/large/0060vrluly1g3kjdprxdgj31hc140wgx.jpg)</div>
+
+
+<h4 id="连接器"><a href="#连接器" class="headerlink" title="连接器"></a>连接器</h4><p>连接到数据库 , 连接器负责跟客户建立连接 , 获取权限 , 维持和管理连接 .</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">mysql -h<span class="variable">$ip</span> -P<span class="variable">$port</span> -u<span class="variable">$user</span> -p***</span><br></pre></td></tr></table></figure>
+<p>长连接 : 连接成功后 , 如果客户端持续有请求 , 则一直使用同一个连接 .<br>短连接 : 每次执行完很少的几次查询后就断开连接 , 下次需要的时候再重新建立连接 .<br>建立连接的过程通常比较复杂 , 在日常使用中建议使用长连接 . 但是全部使用长连接后 , 可能会导致 MySQL 占用内存过高 , 被系统强行杀掉 , 导致 MySQL 异常重启 .<br>解决方案 : 1.定期断开长连接 . 2.在每次执行一个比较大的操作后 , 通过执行 mysql_reset_connection 来初始化连接资源 , 这个过程不需要重新连接和权限验证 .</p>
+<h4 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h4><p>缓存失效频繁 , 只要有一个更新 , 该表上的所有缓存将全部被清空 . 建议不使用 .<br>需要注意的一点是 , 查询缓存在 MySQL 8.0 中被移除了 .</p>
+<h4 id="分析器"><a href="#分析器" class="headerlink" title="分析器"></a>分析器</h4><p>词法分析 , 判断 SQL 是否满足 MySQL 的语法要求 , 识别表名和字段 , 并判断字段是否存在等 .<br>语法分析 , 判断语法是存在错误 , 如 SELECT 拼成 SELEC , 少了 T 字符串 , 报错 ‘You have an error in your SQL syntax’ .</p>
+<h4 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h4><p>在执行 SQL 语句之前优化处理 , 当表中有多个索引时 , 优化器会决定使用哪个索引 ; 在关联语句中决定表的连接顺序 .</p>
+<h4 id="执行器"><a href="#执行器" class="headerlink" title="执行器"></a>执行器</h4><p>MySQL 通过分析器知道了你要做什么 , 通过优化器知道了该怎么做 , 于是进入执行器 , 开始执行语句 .<br>开始执行的时候 , 需要先判断用户对这个表有没有查询或者更新/插入的权限 , 如果有权限 , 就打开表继续执行 , 打开表的时候 , 执行器会根据表定义的引擎 , 去使用这个引擎提供的接口 .</p>
+]]></content>
       <categories>
-        <category>block chain</category>
+        <category>mysql</category>
       </categories>
       <tags>
-        <tag>block_chain</tag>
-        <tag>Hyperledger Fabric</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux crontab 计划任务</title>
+    <url>/2019/07/09/linux/linux-crontab/</url>
+    <content><![CDATA[<h2 id="crontab-参数"><a href="#crontab-参数" class="headerlink" title="crontab 参数"></a>crontab 参数</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">crontab -e #编辑计划任务</span><br><span class="line">crontab -l #查看</span><br></pre></td></tr></table></figure>
+<p>crontab 格式 “M H D m d cmd” , 其中 M 为分钟(0-59) , H 为小时(0-23) , D 为天(1-31) , m 为月(1-12) , d 为每周天数(0-6) 0 是周日 , cmd 表示要运行的程序或者 sh 文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">*/10 * * * * command #每 10 分钟执行</span><br><span class="line">0 * * * * command #每小时执行</span><br><span class="line">0 0 * * * command #每天执行</span><br><span class="line">0 0 1 * * command #每月执行</span><br><span class="line">0 0 1 1 * command #每年执行</span><br><span class="line">0 0 * * 0 command #每周执行一次</span><br><span class="line">0 2 * * * command #每天 2 点执行</span><br></pre></td></tr></table></figure>
+<p>特殊符号<br> , (逗号) 代表分隔时段<br> <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">0 2,5,8 * * * command #代表每天 2 点 5 点 8 点各执行一次</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>(中划线) 代表时间区间<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">0 10-20 * * * command #代表每天 10 点到 20 点各执行一次</span><br></pre></td></tr></table></figure>
+/n (n为合理数值)<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">*/5 * * * * command #代表每 5 分钟执行一次</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>MySQL 日志系统</title>
+    <url>/2019/05/31/mysql/mysql-how-to-execute-sql/</url>
+    <content><![CDATA[<h3 id="redo-log-重做日志"><a href="#redo-log-重做日志" class="headerlink" title="redo log (重做日志)"></a>redo log (重做日志)</h3><p>InnoDB 引擎独有 , 其他引擎没有次日志 .<br>当有一条记录需要更新时 , InnoDB 引擎会先把记录写到 redo log 里面 , 并更新内存 , 这个时候更新就算完成了 . 同时 InnoDB 引擎会在适当的时候将这个操作记录更新到磁盘里 , 而这个更新往往是在系统比较空闲的时候 .<br>redo log 的文件是固定大小的 , 循环写入 , 一旦可用空间不足就会停止写入 , 先将记录更新到数据文件 .<br>该日志可以保证数据库发生异常的情况下 , 之前提交的记录不会丢失 — crash-safe .</p>
+<h3 id="binlog-归档日志"><a href="#binlog-归档日志" class="headerlink" title="binlog (归档日志)"></a>binlog (归档日志)</h3><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>redo log 是 InnoDB 引擎特有的 , binlog 是所有引擎都可以使用的 , 在 server 层实现 .<br>redo log 是物理日志 , 记录的是 “在某个数据页上做了什么修改”; binlog 是逻辑日志 , 记录的事这个语句的原始逻辑 .<br>redo log 是循环写的 , 空间固定 ; binlog 是可以追加写入的(归档) .</p>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centOs7+ 版本防火墙设置</title>
+    <url>/2020/01/19/linux/linux-firewall/</url>
+    <content><![CDATA[<h4 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a>服务管理</h4><p>安装 firewall</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">yum -y install firewalld firewall-config </span><br></pre></td></tr></table></figure>
+<p>开机启动 | 关闭开机启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl enable|disable firewalld</span><br></pre></td></tr></table></figure>
+<p>启动 | 关闭 | 重启 | 查看状态</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl start|stop|restart|status firewalld</span><br></pre></td></tr></table></figure>
+<h4 id="firewalld-cmd-命令管理端口"><a href="#firewalld-cmd-命令管理端口" class="headerlink" title="firewalld-cmd 命令管理端口"></a>firewalld-cmd 命令管理端口</h4><p>查看防火墙是否正在运行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+<p>查看所有开启的端口</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone&#x3D;public --list-ports</span><br></pre></td></tr></table></figure>
+<p>开启关闭端口 以 80 端口为例 (–permanent 为永久生效 , 否则重启后失效)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --zone&#x3D;public --remove-port&#x3D;80&#x2F;tcp --permanent</span><br></pre></td></tr></table></figure>
+<p>修改端口后需要重载</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>防火墙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>windows 安装 ubuntu</title>
+    <url>/2019/11/09/linux/linux-charset/</url>
+    <content><![CDATA[<h4 id="下载-ubuntu"><a href="#下载-ubuntu" class="headerlink" title="下载 ubuntu"></a>下载 ubuntu</h4><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">[国内镜像下载](http:<span class="comment">//mirrors.163.com/ubuntu-releases/)</span></span><br></pre></td></tr></table></figure>
+<p>选择需要下载的版本 , 并准备好一个格式化好的 U 盘</p>
+<h4 id="用软碟通制作启动盘"><a href="#用软碟通制作启动盘" class="headerlink" title="用软碟通制作启动盘"></a>用软碟通制作启动盘</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[UltraISO软碟通](https://cn.ultraiso.net/)</span><br></pre></td></tr></table></figure>
+<p>打开软件 , 选择 &lt;文件&gt; , 选中下载好的 ubuntu 系统<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8rrue9uuxj30lt0g0400.jpg"></p>
+<p>然后选择 &lt;启动&gt; , &lt;写入硬盘映像&gt; , &lt;写入&gt;<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8rrz0kilcj30f90e2q30.jpg"></p>
+<p>弹出提示框直接点确定</p>
+<p>写入硬盘映像完成后重启电脑 , 进入 BIOS 设置 , 设置 U 盘启动 .</p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>安装双系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux 下安装 redis</title>
+    <url>/2019/02/15/linux/linux-install-redis/</url>
+    <content><![CDATA[<h2 id="下载-redis"><a href="#下载-redis" class="headerlink" title="下载 redis"></a>下载 redis</h2><p>进入  /usr/local/src 目录 , 下载 redis , 解压安装. </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-4.0.0.tar.gz</span><br><span class="line">tar zxvf redis-4.0.0.tar.gz </span><br><span class="line"><span class="built_in">cd</span> redis-4.0.0</span><br><span class="line">make</span><br><span class="line"><span class="built_in">cd</span> src</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h2 id="创建-redis-管理目录"><a href="#创建-redis-管理目录" class="headerlink" title="创建 redis 管理目录"></a>创建 redis 管理目录</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir -p &#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin </span><br><span class="line">mkdir -p &#x2F;usr&#x2F;local&#x2F;redis&#x2F;etc</span><br><span class="line">mv &#x2F;usr&#x2F;local&#x2F;src&#x2F;redis-4.0.0&#x2F;redis.conf &#x2F;usr&#x2F;local&#x2F;redis&#x2F;etc</span><br><span class="line">cd &#x2F;usr&#x2F;local&#x2F;src&#x2F;redis-4.0.0&#x2F;src</span><br><span class="line">cp mkreleasehdr.sh redis-benchmark redis-check-aof redis-check-dump redis-cli redis-server &#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin</span><br></pre></td></tr></table></figure>
+<h2 id="修改-redis-conf-让-redis-后台运行"><a href="#修改-redis-conf-让-redis-后台运行" class="headerlink" title="修改 redis.conf , 让 redis 后台运行"></a>修改 redis.conf , 让 redis 后台运行</h2><p>找到 daemonize , 将值设置为 yes</p>
+<h2 id="启动与连接"><a href="#启动与连接" class="headerlink" title="启动与连接"></a>启动与连接</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin&#x2F;redis-server &#x2F;usr&#x2F;local&#x2F;redis&#x2F;etc&#x2F;redis.conf</span><br><span class="line">&#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin&#x2F;redis-cli</span><br></pre></td></tr></table></figure>
+<h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><p>查看是否启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -ef | grep redis</span><br></pre></td></tr></table></figure>
+<p>端口占用</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">netstat -tunpl | grep 6379</span><br></pre></td></tr></table></figure>
+<p>停止 redis</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin&#x2F;redis-cli shutdown</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+        <tag>开发</tag>
+        <tag>安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>rsync + inotify 实时同步</title>
+    <url>/2019/11/26/linux/linux-inotify/</url>
+    <content><![CDATA[<h3 id="inotify-tool"><a href="#inotify-tool" class="headerlink" title="inotify-tool"></a>inotify-tool</h3><p>Inotify可以监控文件系统中添加、删除，修改、移动等各种事件</p>
+<h5 id="检查环境"><a href="#检查环境" class="headerlink" title="检查环境"></a>检查环境</h5><p><code>uname -r</code> 检查内核版本 , 2.6.13 之后的版本才能支持 inotify</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@localhost &#x2F;]# uname -r</span><br><span class="line">3.10.0-957.el7.x86_64</span><br><span class="line">[root@localhost &#x2F;]# cat &#x2F;etc&#x2F;redhat-release</span><br><span class="line">CentOS Linux release 7.6.1810 (Core)</span><br></pre></td></tr></table></figure>
+<p>2.6.13 之后的版本可以查到这三个文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@localhost &#x2F;]# ll &#x2F;proc&#x2F;sys&#x2F;fs&#x2F;inotify&#x2F;</span><br><span class="line">总用量 0</span><br><span class="line">-rw-r--r-- 1 root root 0 11月 26 12:35 max_queued_events</span><br><span class="line">-rw-r--r-- 1 root root 0 11月 26 12:35 max_user_instances</span><br><span class="line">-rw-r--r-- 1 root root 0 11月 26 12:35 max_user_watches</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>文件说明<br><code>max_user_watches</code> 设置inotifywait或inotifywatch命令可以监视的文件数量（单进程）<br><code>max_user_instances</code> 设置每个用户可以运行的inotifywait或inotifywatch命令的进程数<br><code>max_queued_events</code> 设置inotify实例事件（event）队列可容纳的事件数量</p>
+<h5 id="yum-安装"><a href="#yum-安装" class="headerlink" title="yum 安装"></a>yum 安装</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install -y inotify-tools</span><br></pre></td></tr></table></figure>
+<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;inotifywait -mrq --fromfile &#x2F;www&#x2F;server&#x2F;scripts&#x2F;inotify_exclude.list --format &#39;%w%f&#39; -e create,close_write,delete $Path</span><br><span class="line"></span><br><span class="line">--fromfile 忽略监听文件 , 当需要忽略多个文件或文件夹的时候使用 , inotify_exclude.list 中使用 @&#x2F;www&#x2F;www&#x2F;test_back&#x2F;data 来忽略 data 文件夹 , 每个一行 .</span><br></pre></td></tr></table></figure>
+<h3 id="文件同步工具-rsync-remote-sync"><a href="#文件同步工具-rsync-remote-sync" class="headerlink" title="文件同步工具 rsync(remote sync)"></a>文件同步工具 rsync(remote sync)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rsync -aze &#39;ssh -i ~&#x2F;.ssh&#x2F;id_rsa_dev&#39; $LocalPath --delete $remoteUser@$RemoteServer:$RemotePath</span><br></pre></td></tr></table></figure>
+<h5 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$LocalPath 本地需要同步的文件路径</span><br><span class="line">$remoteUser 远程服务器用户 与 ssh 密钥指定的用户相同</span><br><span class="line">$RemoteServer 远程服务器 IP 地址</span><br><span class="line">$RemotePath 远程服务器的文件路径</span><br><span class="line">-a 包含-rtplgoD选项</span><br><span class="line">-r 同步目录时要加上，类似 cp 命令的 -r 选项</span><br><span class="line">-v 同步时显示一些信息，让我们知道同步的过程</span><br><span class="line">-l 保留软链接</span><br><span class="line">-L 同步软链接时会把源文件一起同步</span><br><span class="line">-p 保持文件的权限属性</span><br><span class="line">-o 保持文件的属主</span><br><span class="line">-g 保持文件的属组</span><br><span class="line">-D 保持设备文件信息</span><br><span class="line">-t 保持文件的时间属性</span><br><span class="line">--delete 删除 RemotePath 中 LocalPath 没有的文件</span><br><span class="line">--exclude 过滤指定文件 , 如 --exclude &quot;logs&quot; 会把文件名包含 logs 的文件或者目录过滤掉</span><br><span class="line">-u 如果 RemotePath 中的文件比 LocalPath 新，就不会同步</span><br><span class="line">-z 传输时压缩</span><br><span class="line">-e 使用 ssh 连接 remote 服务器</span><br></pre></td></tr></table></figure>
+<h5 id="脚本示例"><a href="#脚本示例" class="headerlink" title="脚本示例"></a>脚本示例</h5><p><code>vim /www/server/scripts/inotify.sh</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">#id_rsa path</span><br><span class="line">#IdRsaPath&#x3D;&#x2F;root&#x2F;.ssh&#x2F;id_rsa_dev</span><br><span class="line">Path&#x3D;&#x2F;var&#x2F;test_back</span><br><span class="line">BackPath&#x3D;&#x2F;var&#x2F;test_back</span><br><span class="line">BackupServer&#x3D;192.168.9.122</span><br><span class="line"></span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;inotifywait -mrq --fromfile &#x2F;www&#x2F;server&#x2F;scripts&#x2F;inotify_exclude.list --format &#39;%w%f&#39; -e create,close_write,delete $Path  | while read line  </span><br><span class="line">do</span><br><span class="line">    if [ -f $line ];then</span><br><span class="line">		BackPathLine&#x3D;$&#123;line%&#x2F;*&#125;&#x2F;</span><br><span class="line">        rsync -aze &#39;ssh -i ~&#x2F;.ssh&#x2F;id_rsa_dev&#39; $line --delete root@$BackupServer:$BackPathLine</span><br><span class="line">    else</span><br><span class="line">        echo $line</span><br><span class="line">    fi</span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h6 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h6><p>启动前先在 bash 同级目录下新建 inotify.log 文件 , 用来记录监听事件 .</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nohup .&#x2F;inotify.sh &gt;&gt; inotify.log &amp;</span><br></pre></td></tr></table></figure>
+<h6 id="权限问题"><a href="#权限问题" class="headerlink" title="权限问题"></a>权限问题</h6><p>使用 git hooks 自动部署的时候 , 部署文件夹的用户和用户组都是 git . 如果使用脚本同步该部署文件夹的话 , 会把文件权限和属主属组一起传输过去 . 所以在目标服务器中使用 inotify 监听文件夹 , 发现文件改动就将整个文件夹的权限改成 web 用户 www .</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">#id_rsa path</span><br><span class="line">#IdRsaPath&#x3D;&#x2F;root&#x2F;.ssh&#x2F;id_rsa_dev</span><br><span class="line">Path&#x3D;&#x2F;var&#x2F;test_back</span><br><span class="line"></span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;inotifywait -mrq --fromfile &#x2F;www&#x2F;server&#x2F;scripts&#x2F;exclude_inotify.list --format &#39;%w%f&#39; -e create,close_write,delete $Path  | while read line  </span><br><span class="line">do</span><br><span class="line">    echo $line</span><br><span class="line">    if [ -f $line ];then</span><br><span class="line">		chmod -R 777 &#x2F;var&#x2F;test_back &amp;&amp; chown -R www:www &#x2F;var&#x2F;test_back</span><br><span class="line">    else</span><br><span class="line">        echo &#39;no line&#39;</span><br><span class="line">    fi</span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h6 id="不使用-inotify-实现文件传输"><a href="#不使用-inotify-实现文件传输" class="headerlink" title="不使用 inotify 实现文件传输"></a>不使用 inotify 实现文件传输</h6><p>修改 git hooks , 在 post-recieve 中使用 rsync 传输文件 , 并在传输完成后调用远程服务器的脚本改变文件夹权限 .</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#exec git update-server-info</span><br><span class="line">homeDir&#x3D;&#x2F;var&#x2F;www&#x2F;html&#x2F;diary&#x2F;</span><br><span class="line">testDir&#x3D;&#x2F;var&#x2F;www&#x2F;test&#x2F;diary&#x2F;</span><br><span class="line">unset GIT_DIR</span><br><span class="line"></span><br><span class="line">while read oldrev newrev refname</span><br><span class="line">do</span><br><span class="line">    branch&#x3D;$(git rev-parse --symbolic --abbrev-ref $refname)</span><br><span class="line">    echo $branch</span><br><span class="line">    if [ &quot;develop&quot; &#x3D;&#x3D; $branch ];</span><br><span class="line">    then</span><br><span class="line">        cd $homeDir</span><br><span class="line">        echo &#39; ----------- git checkout ---------- &#39;</span><br><span class="line">        #git checkout $branch</span><br><span class="line">        echo &#39; ----------- git pull and rsync files ---------- &#39;</span><br><span class="line">        git pull &amp;&amp; rsync -aze &#39;ssh -i ~&#x2F;.ssh&#x2F;id_rsa_dev&#39; $homeDir --delete root@$BackupServer:$testDir &amp;&amp; ssh -i ~&#x2F;.ssh&#x2F;id_rsa_dev root@$BackupServer &#x2F;www&#x2F;script&#x2F;change_mod_own.sh</span><br><span class="line">    else</span><br><span class="line">        echo &quot;nothing to do with this branch&quot;</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>shadowsocks &amp; finalspeed 服务端搭建</title>
+    <url>/2019/06/04/linux/linux-install/</url>
+    <content><![CDATA[<h4 id="shadowsocks-服务端"><a href="#shadowsocks-服务端" class="headerlink" title="shadowsocks 服务端"></a>shadowsocks 服务端</h4><p>使用 root 用户登陆 , 安装 shadowsocks .</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">wget --no-check-certificate https:<span class="comment">//raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh</span></span><br><span class="line">chmod +x shadowsocks-go.sh</span><br><span class="line">./shadowsocks-go.sh <span class="number">2</span>&gt;&amp;<span class="number">1</span> | tee shadowsocks-go.log</span><br></pre></td></tr></table></figure>
+<p>脚本安装完成后，已将 shadowsocks-go 加入开机自启动<br>配置文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/shadowsocks/config.json</span><br></pre></td></tr></table></figure>
+<p>单用户 和 多用户 配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="string">&quot;server&quot;</span>:<span class="string">&quot;0.0.0.0&quot;</span>,</span><br><span class="line"> <span class="string">&quot;server_port&quot;</span>: 13839,</span><br><span class="line"> <span class="string">&quot;local_port&quot;</span>:1080,</span><br><span class="line"> <span class="string">&quot;password&quot;</span>:<span class="string">&quot;jkdf7nd33eUj&quot;</span>,</span><br><span class="line"> <span class="string">&quot;method&quot;</span>:<span class="string">&quot;aes-256-cfb&quot;</span>,</span><br><span class="line"> <span class="string">&quot;timeout&quot;</span>:600</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line"> <span class="string">&quot;port_password&quot;</span>:&#123;</span><br><span class="line">      <span class="string">&quot;13839&quot;</span>:<span class="string">&quot;jkdf7nd33eUj&quot;</span>,</span><br><span class="line">      <span class="string">&quot;12179&quot;</span>:<span class="string">&quot;Ka7KGb4gqwtF&quot;</span>,</span><br><span class="line">      <span class="string">&quot;16713&quot;</span>:<span class="string">&quot;fJArFv1gQ8Ve&quot;</span>,</span><br><span class="line">      <span class="string">&quot;18711&quot;</span>:<span class="string">&quot;4aZtRq4frGf5&quot;</span>,</span><br><span class="line">      <span class="string">&quot;17739&quot;</span>:<span class="string">&quot;e1PDAM35rYG9&quot;</span></span><br><span class="line"> &#125;,</span><br><span class="line"> <span class="string">&quot;method&quot;</span>:<span class="string">&quot;aes-256-cfb&quot;</span>,</span><br><span class="line"> <span class="string">&quot;timeout&quot;</span>:600</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>管理<br>启动/停止/重启/状态</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/etc/init.d/shadowsocks start/stop/restart/status</span><br></pre></td></tr></table></figure>
+<h4 id="FinalSpeed-服务端"><a href="#FinalSpeed-服务端" class="headerlink" title="FinalSpeed 服务端"></a>FinalSpeed 服务端</h4><p>安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm -f install_fs.sh</span><br><span class="line">wget  https://github.com/ucoker/finalspeed/raw/master/install_fs.sh</span><br><span class="line">chmod +x install_fs.sh</span><br><span class="line">./install_fs.sh 2&gt;&amp;1 | tee install.log</span><br></pre></td></tr></table></figure>
+<p>开机启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/rc.local</span><br></pre></td></tr></table></figure>
+<p>加入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/start.sh</span><br></pre></td></tr></table></figure>
+<p>确保端口开放<br>管理 执行一键安装会自动更新<br>卸载</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/stop.sh ; rm -rf /fs</span><br></pre></td></tr></table></figure>
+<p>启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/start.sh</span><br></pre></td></tr></table></figure>
+<p>停止</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/stop.sh</span><br></pre></td></tr></table></figure>
+<p>重新启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/restart.sh</span><br></pre></td></tr></table></figure>
+<p>运行日志</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tail -f /fs/server.log</span><br></pre></td></tr></table></figure>
+<h4 id="windows-客户端"><a href="#windows-客户端" class="headerlink" title="windows 客户端"></a>windows 客户端</h4><p><a href="https://pan.baidu.com/s/1TRcXDzhw9w9DqrgR5Iem-w">下载地址</a><br>提取码：xe8o</p>
+<p>解压安装 Shadowsocks-4.1.6 , 服务器配置如下 , 端口可以自定义 , 密码为 shadowsocks 服务端设置的密码 .<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3oxgz9aj1j30cw0cv0t2.jpg"></p>
+<p>执行 finalspeed.exe 文件<br>配置如下<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3oxpjaly5j30kx09gweu.jpg"></p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>搭建 shadowsocks</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>windows 使用密钥登录 linux 服务器 (putty)</title>
+    <url>/2019/11/11/linux/linux-putty/</url>
+    <content><![CDATA[<h4 id="先用密码登录-linux-服务器-生成密钥"><a href="#先用密码登录-linux-服务器-生成密钥" class="headerlink" title="先用密码登录 linux 服务器 , 生成密钥"></a>先用密码登录 linux 服务器 , 生成密钥</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+<p>生成密钥的过程中会提示输入密码 , 可以直接 enter 跳过 . 如果输入密码的话 , 以后每次登录都需要输入密码 .</p>
+<h4 id="部署密钥"><a href="#部署密钥" class="headerlink" title="部署密钥"></a>部署密钥</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/.ssh</span><br><span class="line">ssh-copy-id -i /root/.ssh/id_rsa.pub root@yourip</span><br><span class="line">yes</span><br></pre></td></tr></table></figure>
+<p>.ssh 文件夹中的 id_rsa 是私钥文件 , 需要下载到本地电脑用来登录 .</p>
+<h4 id="下载-id-rsa-文件到本地"><a href="#下载-id-rsa-文件到本地" class="headerlink" title="下载 id_rsa 文件到本地"></a>下载 id_rsa 文件到本地</h4><p>打开 puttygen<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8uc5tt10nj30dp0da0tg.jpg"></p>
+<ol>
+<li>load , 选择 id_rsa 文件</li>
+<li>保存私钥到本地 (.ppk 文件)</li>
+<li>复制私钥 , 并将私钥保存到服务器 /root/.ssh/authorized_keys 中</li>
+</ol>
+<h4 id="使用-putty-登录"><a href="#使用-putty-登录" class="headerlink" title="使用 putty 登录"></a>使用 putty 登录</h4><p>填入 IP 地址<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8abmhk1j30cw0ch0t2.jpg"></p>
+<p>填入用户名<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8cckiooj30cy0ch74x.jpg"></p>
+<p>选择之前保存的 .ppk 私钥文件<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8e4cy3yj30cy0ch0t8.jpg"></p>
+<p>返回 session 保存站点<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8f4yi27j30cy0ch0t5.jpg"></p>
+<p>尝试登录</p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>putty 实现密钥登录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux-中文编码</title>
+    <url>/2019/02/15/linux/linux-shadowsocks/</url>
+    <content><![CDATA[<h2 id="linux-下中文乱码"><a href="#linux-下中文乱码" class="headerlink" title="linux 下中文乱码"></a>linux 下中文乱码</h2><p>修改文件</p>
+<p>centOs 6x  /etc/sysconfig/i18n</p>
+<p>centOs 7x /etc/locale.conf</p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>编码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux 系统下的启动和重启命令</title>
+    <url>/2019/02/15/linux/linux-start/</url>
+    <content><![CDATA[<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx -s reload</span><br></pre></td></tr></table></figure>
+<h3 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -ef | grep nginx</span><br></pre></td></tr></table></figure>
+<h2 id="php-fpm"><a href="#php-fpm" class="headerlink" title="php-fpm"></a>php-fpm</h2><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;php&#x2F;sbin&#x2F;php-fpm</span><br></pre></td></tr></table></figure>
+<h3 id="重启-1"><a href="#重启-1" class="headerlink" title="重启"></a>重启</h3><p>查看 master 进程</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps aux|grep php-fpm</span><br></pre></td></tr></table></figure>
+<p>kill -USR2 master 进程</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">kill -USR2 42891</span><br></pre></td></tr></table></figure>
+<p>INT, TERM 立刻终止<br>QUIT 平滑终止</p>
+<p>USR1 重新打开日志文件</p>
+<p>USR2 平滑重载所有worker进程并重新载入配置和二进制模块</p>
+<h2 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h2><h3 id="查看是否启动"><a href="#查看是否启动" class="headerlink" title="查看是否启动"></a>查看是否启动</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -ef | grep redis</span><br></pre></td></tr></table></figure>
+<h3 id="启动redis"><a href="#启动redis" class="headerlink" title="启动redis"></a>启动redis</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin&#x2F;redis-server &#x2F;usr&#x2F;local&#x2F;redis&#x2F;etc&#x2F;redis.conf</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>linux 常用命令</title>
+    <url>/2019/07/08/linux/linux-used-commands/</url>
+    <content><![CDATA[<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">df -h #显示文件系统磁盘块的使用情况  -h human read</span><br><span class="line">du -h --max-depth=1 #显示文件夹占用的存储空间  --max-depth 文件深度</span><br><span class="line">ls -al #list 列出当前工作目录的内容 -a 列出所有(包含 . ..  -A 不包含) -l 列出所有者 组 以及权限 -t 时间排序 </span><br><span class="line">ll #相当与 ls -l</span><br><span class="line">mkdir #创建目录 </span><br><span class="line">rmdir #删除目录</span><br><span class="line">pwd #print working directory</span><br><span class="line">cp FILE PATH #复制文件</span><br><span class="line">mv FILE PATH #移动文件</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>grep </p>
+<h2 id="网络连接"><a href="#网络连接" class="headerlink" title="网络连接"></a>网络连接</h2>]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>centOs 安装 php 7.3</title>
+    <url>/2019/06/18/php/develop-php-install/</url>
+    <content><![CDATA[<h3 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y install libxml2 libxml2-devel</span><br><span class="line">yum -y install openssl openssl-devel</span><br><span class="line">yum -y install curl curl-devel</span><br><span class="line">yum -y install libjpeg libjpeg-devel</span><br><span class="line">yum -y install libpng libpng-devel</span><br><span class="line">yum -y install freetype freetype-devel</span><br><span class="line">yum -y install pcre pcre-devel</span><br><span class="line">yum -y install libxslt libxslt-devel</span><br><span class="line">yum -y install bzip2 bzip2-devel</span><br></pre></td></tr></table></figure>
+<p>安装最新版 libzip</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#删除旧版</span><br><span class="line">yum remove libzip</span><br><span class="line"></span><br><span class="line">#下载 libzip-1.5.2</span><br><span class="line">cd &#x2F;usr&#x2F;local&#x2F;src</span><br><span class="line">wget https:&#x2F;&#x2F;nih.at&#x2F;libzip&#x2F;libzip-1.5.2.tar.gz</span><br><span class="line"></span><br><span class="line">#新版 libzip 需要 cmake 编译 , 下载 cmake</span><br><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;Kitware&#x2F;CMake&#x2F;releases&#x2F;download&#x2F;v3.15.0-rc1&#x2F;cmake-3.15.0-rc1-Linux-x86_64.tar.gz</span><br><span class="line">tar -zxvf cmake-3.15.0-rc1-Linux-x86_64.tar.gz</span><br><span class="line">mv cmake-3.15.0-rc1-Linux-x86_64.tar.gz &#x2F;usr&#x2F;local&#x2F;cmake</span><br><span class="line">export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;cmake&#x2F;bin</span><br><span class="line"></span><br><span class="line">#解压安装 libzip</span><br><span class="line">tar -zxvf libzip-1.5.2.tar.gz</span><br><span class="line">cd libzip-1.5.2</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make &amp; make install</span><br></pre></td></tr></table></figure>
+<h3 id="下载编译-php7-3-0"><a href="#下载编译-php7-3-0" class="headerlink" title="下载编译 php7.3.0"></a>下载编译 php7.3.0</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;local&#x2F;src</span><br><span class="line">wget &quot;https:&#x2F;&#x2F;downloads.php.net&#x2F;~cmb&#x2F;php-7.3.0.tar.gz&quot;</span><br><span class="line">tar -zxvf php-7.3.0.tar.gz</span><br><span class="line">cd php-7.3.0</span><br><span class="line">#编译 参数自行添加</span><br><span class="line">.&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;php \</span><br><span class="line"> --with-curl&#x3D;&#x2F;usr&#x2F;local&#x2F;curl\</span><br><span class="line"> --with-gd \</span><br><span class="line"> --with-freetype-dir&#x3D;&#x2F;usr&#x2F;include&#x2F;freetype2\</span><br><span class="line"> --with-gettext \</span><br><span class="line"> --with-iconv-dir \</span><br><span class="line"> --with-kerberos \</span><br><span class="line"> --with-libdir&#x3D;lib64 \</span><br><span class="line"> --with-libxml-dir \</span><br><span class="line"> --with-mysqli \</span><br><span class="line"> --with-openssl \</span><br><span class="line"> --with-pcre-regex \</span><br><span class="line"> --with-pdo-mysql \</span><br><span class="line"> --with-pdo-sqlite \</span><br><span class="line"> --with-pear \</span><br><span class="line"> --with-png-dir \</span><br><span class="line"> --with-xmlrpc \</span><br><span class="line"> --with-xsl \</span><br><span class="line"> --with-zlib \</span><br><span class="line"> --enable-fpm \</span><br><span class="line"> --enable-bcmath \</span><br><span class="line"> --enable-libxml \</span><br><span class="line"> --enable-inline-optimization \</span><br><span class="line"> --enable-mbregex \</span><br><span class="line"> --enable-mbstring \</span><br><span class="line"> --enable-opcache \</span><br><span class="line"> --enable-pcntl \</span><br><span class="line"> --enable-shmop \</span><br><span class="line"> --enable-soap \</span><br><span class="line"> --enable-sockets \</span><br><span class="line"> --enable-sysvsem \</span><br><span class="line"> --enable-xml \</span><br><span class="line"> --enable-zip</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">#成功输出</span><br><span class="line">Installing shared extensions:     &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php&#x2F;extensions&#x2F;no-debug-non-zts-20180731&#x2F;</span><br><span class="line">Installing PHP CLI binary:        &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">Installing PHP CLI man page:      &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man1&#x2F;</span><br><span class="line">Installing PHP FPM binary:        &#x2F;usr&#x2F;local&#x2F;php&#x2F;sbin&#x2F;</span><br><span class="line">Installing PHP FPM defconfig:     &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;</span><br><span class="line">Installing PHP FPM man page:      &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man8&#x2F;</span><br><span class="line">Installing PHP FPM status page:   &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;php&#x2F;fpm&#x2F;</span><br><span class="line">Installing phpdbg binary:         &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">Installing phpdbg man page:       &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man1&#x2F;</span><br><span class="line">Installing PHP CGI binary:        &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">Installing PHP CGI man page:      &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man1&#x2F;</span><br><span class="line">Installing build environment:     &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php&#x2F;build&#x2F;</span><br><span class="line">Installing header files:          &#x2F;usr&#x2F;local&#x2F;php&#x2F;include&#x2F;php&#x2F;</span><br><span class="line">Installing helper programs:       &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">  program: phpize</span><br><span class="line">  program: php-config</span><br><span class="line">Installing man pages:             &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man1&#x2F;</span><br><span class="line">  page: phpize.1</span><br><span class="line">  page: php-config.1</span><br><span class="line">Installing PEAR environment:      &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php&#x2F;</span><br><span class="line"></span><br><span class="line">Warning: &quot;continue&quot; targeting switch is equivalent to &quot;break&quot;. Did you mean to use &quot;continue 2&quot;? in phar:&#x2F;&#x2F;&#x2F;usr&#x2F;local&#x2F;src&#x2F;php-7.3.0&#x2F;pear&#x2F;install-pear-nozlib.phar&#x2F;PEAR&#x2F;PackageFile&#x2F;v2&#x2F;Validator.php on line 1933</span><br><span class="line">[PEAR] Archive_Tar    - installed: 1.4.3</span><br><span class="line">[PEAR] Console_Getopt - installed: 1.4.1</span><br><span class="line">[PEAR] Structures_Graph- installed: 1.1.1</span><br><span class="line">[PEAR] XML_Util       - installed: 1.4.2</span><br><span class="line">[PEAR] PEAR           - installed: 1.10.5</span><br><span class="line">Wrote PEAR system config file at: &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;pear.conf</span><br><span class="line">You may want to add: &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php to your php.ini include_path</span><br><span class="line">&#x2F;usr&#x2F;local&#x2F;src&#x2F;php-7.3.0&#x2F;build&#x2F;shtool install -c ext&#x2F;phar&#x2F;phar.phar &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin</span><br><span class="line">ln -s -f phar.phar &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;phar</span><br><span class="line">Installing PDO headers:           &#x2F;usr&#x2F;local&#x2F;php&#x2F;include&#x2F;php&#x2F;ext&#x2F;pdo&#x2F;</span><br></pre></td></tr></table></figure>
+<p>配置信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 复制 php.ini php-fpm.conf www.conf 配置文件</span><br><span class="line">cp php.ini-production &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php.ini</span><br><span class="line">cp &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php-fpm.conf.default &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php-fpm.conf</span><br><span class="line">cp &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php-fpm.d&#x2F;www.conf.default &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php-fpm.d&#x2F;www.conf</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;php&#x2F;sbin&#x2F;php-fpm &#x2F;usr&#x2F;local&#x2F;bin</span><br><span class="line"></span><br><span class="line">#加入服务</span><br><span class="line">cp &#x2F;usr&#x2F;local&#x2F;src&#x2F;sapi&#x2F;fpm&#x2F;php-fpm.service &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;</span><br><span class="line"></span><br><span class="line">#php 命令</span><br><span class="line">export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">#测试</span><br><span class="line">php -v</span><br><span class="line">php -m</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>开发</tag>
+        <tag>安装</tag>
+        <tag>PHP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Apache 自带 ab 测试工具使用</title>
+    <url>/2019/06/10/php/apache-ab-test/</url>
+    <content><![CDATA[<h4 id="打开方式"><a href="#打开方式" class="headerlink" title="打开方式"></a>打开方式</h4><p>ab 测试工具在 apache 目录下的 bin 文件夹中 , 进入 bin 目录之后可以直接执行 ab .</p>
+<h4 id="常用请求参数"><a href="#常用请求参数" class="headerlink" title="常用请求参数"></a>常用请求参数</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-n #总请求次数默认为 1</span><br><span class="line">-c #并发次数 , 不能大于总请求次数</span><br><span class="line">-p #post 参数路径 , 与 -T 参数配合使用</span><br><span class="line">-T #请求头设置 </span><br></pre></td></tr></table></figure>
+<h4 id="无参数请求"><a href="#无参数请求" class="headerlink" title="无参数请求"></a>无参数请求</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ab -n 10 -c 10 http:&#x2F;&#x2F;test.com&#x2F;index.php</span><br></pre></td></tr></table></figure>
+<h4 id="GET-方式请求"><a href="#GET-方式请求" class="headerlink" title="GET 方式请求"></a>GET 方式请求</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ab -n 10 -c 10 &quot;http:&#x2F;&#x2F;test.com&#x2F;index.php?a&#x3D;1&amp;b&#x3D;2&quot;</span><br></pre></td></tr></table></figure>
+<p>url 必须用双引号括起来</p>
+<h4 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ab -n 10 -c 10 -p D:\params.txt -T application&#x2F;x-www-form-urlencoded http:&#x2F;&#x2F;test.com&#x2F;index.php</span><br></pre></td></tr></table></figure>
+<p>D:/params.txt 的内容如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gid&#x3D;14659&amp;user_id&#x3D;1&amp;token&#x3D;f870b28e-5c04-4a90-9838-654172607287</span><br></pre></td></tr></table></figure>
+<h4 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h4><p><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3w3oysk9yj30m20esgn1.jpg"></p>
+]]></content>
+      <categories>
+        <category>apache</category>
+      </categories>
+      <tags>
+        <tag>开发</tag>
+        <tag>PHP</tag>
+        <tag>apache</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>phpstorm 常用插件</title>
+    <url>/2019/11/15/php/phpstorm-plugin/</url>
+    <content><![CDATA[<h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><p>File =&gt; settings 选择 plugin , 显示插件页面<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8ytuiir63j30sh0jrtad.jpg" alt="插件界面"></p>
+<h4 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h4><ol>
+<li>Translation<br> IDE 内翻译插件 , ctrl + shift + O (字母O) 选中单词后直接翻译 .</li>
+<li>CodeGlance<br> 类似 subline text 右侧代码地图 .</li>
+<li>.env files support</li>
+</ol>
+]]></content>
+      <categories>
+        <category>TOOL</category>
+      </categories>
+      <tags>
+        <tag>phpstorm</tag>
+        <tag>plugin</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PHP 版本支持</title>
+    <url>/2021/02/04/php/version-support-md/</url>
+    <content><![CDATA[<h3 id="PHP-版本支持时间表"><a href="#PHP-版本支持时间表" class="headerlink" title="PHP 版本支持时间表"></a>PHP 版本支持时间表</h3><p>PHP 每个发行版支持从发布开始的两年内完全支持 , 之后有一年的安全支持 . 意味着一个 PHP 版本支持三年 , 三年之后 , PHP 版本就走到尽头 , 不再支持了 .</p>
+<table>
+<thead>
+<tr>
+<th align="center">版本</th>
+<th align="center">发布时间</th>
+<th align="center">积极支持</th>
+<th align="center">安全支持</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">8.0</td>
+<td align="center">2020-11-26</td>
+<td align="center">2022-11-26</td>
+<td align="center">2023-11-26</td>
+</tr>
+<tr>
+<td align="center">7.4</td>
+<td align="center">2019-11-28</td>
+<td align="center">2021-11-28</td>
+<td align="center">2022-11-28</td>
+</tr>
+<tr>
+<td align="center">7.3</td>
+<td align="center">2018-12-06</td>
+<td align="center">2020-12-06</td>
+<td align="center">2021-12-06</td>
+</tr>
+<tr>
+<td align="center">7.2</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">2020-11-30</td>
+</tr>
+<tr>
+<td align="center">7.1</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">2019-12-01</td>
+</tr>
+<tr>
+<td align="center">7.0</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">2019-01-10</td>
+</tr>
+<tr>
+<td align="center">5.6</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">2018-12-31</td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title>细数微信公众号小程序开发中遇到的坑</title>
+    <url>/2019/01/26/php/develop-wx-pay/</url>
+    <content><![CDATA[<h3 id="微信支付"><a href="#微信支付" class="headerlink" title="微信支付"></a>微信支付</h3><p>开发前要准备好架构 , 如果需要使用到微信支付 , 要先确定使用 APP 去申请商户号还是用小程序去申请 .</p>
+<p>今年踩了一个坑就是小程序项目已经上线了 , 需要在 APP 中获取微信的用户信息 , 使用微信登陆 , 没想到 APP 这边不能绑定已申请的商户号 ,<br>只能重新申请一个商户号来对应 , 这样一来小程序的支付信息也要跟着变动 . 所以 APP 微信绑定之后无法使用 openid 进行付款和结算 .</p>
+<h3 id="CURL-58-错误"><a href="#CURL-58-错误" class="headerlink" title="CURL 58 错误"></a>CURL 58 错误</h3><p>微信支付还有一个大坑 , 就是 curl 的协议 , 微信使用的是 openssl 协议 , 而 centOs 默认的 curl 协议是<br> NSS . 碰到这个错误 , 一个就是签名出错了 , 仔细核对 , 或者用微信的签名工具测试 . 如果没有问题 , 基本上可以确定是 curl 协议的问题了 , 重新编译 curl 解决 .</p>
+<h3 id="公众号-access-token"><a href="#公众号-access-token" class="headerlink" title="公众号 access_token"></a>公众号 access_token</h3><p>公众号的 access_token 有两种类型 , 一个是获取用户信息需要用到的 , 用 appid 换取 code ,<br>然后用 code + appid + appsecret 换取 access_token 和 openid 等信息 . 这个获取个人信息的 access_token 每分钟有数万次的获取次数 , 目前没有超出的可能 . </p>
+<p>另一个 access_token 是全局变量 , 一个公众同一时间只有一个 . 刷新了之后 , 其他地方的 access_token 就会失效 ,<br>这个 access_token 有失效时间 , 目前是 7200 s , 即两小时 , 并且有获取次数限制 , 不能实时获取 , 必须做缓存 .</p>
+]]></content>
+      <categories>
+        <category>wechat</category>
+      </categories>
+      <tags>
+        <tag>开发</tag>
+        <tag>微信</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux 安装 php-redis 扩展</title>
+    <url>/2019/02/15/php/php-redis-install/</url>
+    <content><![CDATA[<h2 id="下载-redis-扩展"><a href="#下载-redis-扩展" class="headerlink" title="下载 redis 扩展"></a>下载 redis 扩展</h2><p>下载地址 <a href="http://pecl.php.net/package/redis">http://pecl.php.net/package/redis</a> 选择对应版本 , 也可以直接执行 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;pecl.php.net&#x2F;get&#x2F;redis-4.0.0.tgz</span><br></pre></td></tr></table></figure>
+<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar zxvf redis-4.0.0.tgz</span><br><span class="line">cd redis-4.0.0</span><br></pre></td></tr></table></figure>
+<h2 id="在解压的-redis-文件夹下生成-configure-配置文件"><a href="#在解压的-redis-文件夹下生成-configure-配置文件" class="headerlink" title="在解压的 redis 文件夹下生成 configure 配置文件"></a>在解压的 redis 文件夹下生成 configure 配置文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;phpize</span><br><span class="line">.&#x2F;configure --with-php-config&#x3D;&#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;php-config</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h2 id="编译完成后配置-php-ini"><a href="#编译完成后配置-php-ini" class="headerlink" title="编译完成后配置 php.ini"></a>编译完成后配置 php.ini</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extension&#x3D;redis.so</span><br></pre></td></tr></table></figure>
+<p>如果找不到 php.ini , 可以在 phpinfo() 中查看 Loaded Configuration File .<br>如果值为 none , 可以在编译目录下把 php.ini-development 复制一份到 /usr/local/php/lib 下</p>
+<h2 id="重启-nginx-或者-apache"><a href="#重启-nginx-或者-apache" class="headerlink" title="重启 nginx 或者 apache"></a>重启 nginx 或者 apache</h2>]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+        <tag>开发</tag>
+        <tag>安装</tag>
       </tags>
   </entry>
 </search>
