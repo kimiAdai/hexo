@@ -183,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/git/git-hooks/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/18/mysql/mysql-explain/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -197,7 +197,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/26/git/git-hooks/" class="post-title-link" itemprop="url">同步代码</a>
+            <a href="/2021/02/18/mysql/mysql-explain/" class="post-title-link" itemprop="url">mysql EXPLAIN 详解</a>
         </h2>
 
         <div class="post-meta">
@@ -206,17 +206,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-26 15:12:04 / 修改时间：15:21:40" itemprop="dateCreated datePublished" datetime="2019-11-26T15:12:04+08:00">2019-11-26</time>
+              <time title="创建时间：2021-02-18 15:26:01" itemprop="dateCreated datePublished" datetime="2021-02-18T15:26:01+08:00">2021-02-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-25 15:00:55" itemprop="dateModified" datetime="2021-02-25T15:00:55+08:00">2021-02-25</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                  <a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
                 </span>
             </span>
 
@@ -231,12 +237,105 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="同步代码"><a href="#同步代码" class="headerlink" title="同步代码"></a>同步代码</h2><p>服务器上的仓库位置 <code>/www/server/project.git</code> , 服务器上项目代码位置 <code>/www/wwwroot/project</code> .</p>
-<p>进入 <code>/www/server/project.git</code> 的 <code>hooks</code> 目录下 , 复制一份 post-update.sample</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp post-update.sample post-update</span><br><span class="line">vim post-update</span><br></pre></td></tr></table></figure>
-<p>post-update 内容如下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">unset</span> GIT_DIR</span><br><span class="line"></span><br><span class="line">NowPath=`<span class="built_in">pwd</span>`</span><br><span class="line">DeployPath=<span class="string">&quot;/www/wwwroot/project&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$DeployPath</span></span><br><span class="line"></span><br><span class="line">git pull origin master</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$NowPath</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span> 0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>如果出现 error , 大部分是权限错误 .</p>
+          <h3 id="EXPLAIN-命令"><a href="#EXPLAIN-命令" class="headerlink" title="EXPLAIN 命令"></a>EXPLAIN 命令</h3><ul>
+<li>使用<br>  直接在 SQL 语句前加入 EXPALIN </li>
+<li>参数<table>
+<thead>
+<tr>
+<th align="center">id</th>
+<th align="center">columns</th>
+<th align="center">JSON Name</th>
+<th align="left">Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">id</td>
+<td align="center">select_id</td>
+<td align="left">执行编号，标识select所属的行。如果在语句中没子查询或关联查询，只有唯一的select，每行都将显示1。否则，内层的select语句一般会顺序编号，对应于其在原始语句中的位置</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">select_type</td>
+<td align="center">None</td>
+<td align="left">显示本行是简单或复杂select。如果查询有任何复杂的子查询，则最外层标记为PRIMARY（DERIVED、UNION、UNION RESUlT）</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">table</td>
+<td align="center">Table Name</td>
+<td align="left">当前表名</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">partitions</td>
+<td align="center">Partitions</td>
+<td align="left">匹配的分区</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">type</td>
+<td align="center">Access Type</td>
+<td align="left">数据访问/读取操作类型（ALL、index、range、ref、eq_ref、const/system、NULL）</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">possible_keys</td>
+<td align="center">Possible Keys</td>
+<td align="left">可能用到的索引</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">key</td>
+<td align="center">key</td>
+<td align="left">经过优化器评估最终使用的索引</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">key_len</td>
+<td align="center">Key Lenth</td>
+<td align="left">使用到的索引长度</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">ref</td>
+<td align="center">ref</td>
+<td align="left">显示了之前的表在key列记录的索引中查找值所用的列或常量</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">rows</td>
+<td align="center">rows</td>
+<td align="left">为了找到所需的行而需要读取的行数，估算值，不精确。通过把所有rows列值相乘，可粗略估算整个查询会检查的行数</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">filtered</td>
+<td align="center">filtered</td>
+<td align="left">按表条件过滤行的百分比</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">Extra</td>
+<td align="center">Extra</td>
+<td align="left">额外信息说明</td>
+</tr>
+</tbody></table>
+</li>
+<li>详解<ul>
+<li>id</li>
+<li>select_type</li>
+<li>table</li>
+<li>type</li>
+<li>possible_keys</li>
+<li>key</li>
+<li>key_len</li>
+<li>ref</li>
+<li>rows</li>
+<li>Extra</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -255,7 +354,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -321,20 +420,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -357,6 +456,11 @@
         
 
         
+  <div class="beian">
+    <a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">闽ICP备18006503号</a>
+
+
+  </div>
 
 <div class="copyright">
   

@@ -183,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/mysql/mysql-group_by/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/php/develop-php-install/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -197,7 +197,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/05/31/mysql/mysql-group_by/" class="post-title-link" itemprop="url">MySQL 如何执行一条 SQL 语句的</a>
+            <a href="/2019/06/18/php/develop-php-install/" class="post-title-link" itemprop="url">centOs 安装 php 7.3</a>
         </h2>
 
         <div class="post-meta">
@@ -206,17 +206,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-05-31 15:30:01 / 修改时间：18:08:07" itemprop="dateCreated datePublished" datetime="2019-05-31T15:30:01+08:00">2019-05-31</time>
+              <time title="创建时间：2019-06-18 21:27:04" itemprop="dateCreated datePublished" datetime="2019-06-18T21:27:04+08:00">2019-06-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-18 19:22:44" itemprop="dateModified" datetime="2019-11-18T19:22:44+08:00">2019-11-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
                 </span>
             </span>
 
@@ -231,17 +237,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="流程示意图"><a href="#流程示意图" class="headerlink" title="流程示意图"></a>流程示意图</h4><div style="width: 450px; margin: auto">![示意图](https://ws1.sinaimg.cn/large/0060vrluly1g3kjdprxdgj31hc140wgx.jpg)</div>
-
-
-<h4 id="连接器"><a href="#连接器" class="headerlink" title="连接器"></a>连接器</h4><p>连接到数据库 , 连接器负责跟客户建立连接 , 获取权限 , 维持和管理连接 .</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h<span class="variable">$ip</span> -P<span class="variable">$port</span> -u<span class="variable">$user</span> -p***</span><br></pre></td></tr></table></figure>
-<p>长连接 : 连接成功后 , 如果客户端持续有请求 , 则一直使用同一个连接 .<br>短连接 : 每次执行完很少的几次查询后就断开连接 , 下次需要的时候再重新建立连接 .<br>建立连接的过程通常比较复杂 , 在日常使用中建议使用长连接 . 但是全部使用长连接后 , 可能会导致 MySQL 占用内存过高 , 被系统强行杀掉 , 导致 MySQL 异常重启 .<br>解决方案 : 1.定期断开长连接 . 2.在每次执行一个比较大的操作后 , 通过执行 mysql_reset_connection 来初始化连接资源 , 这个过程不需要重新连接和权限验证 .</p>
-<h4 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h4><p>缓存失效频繁 , 只要有一个更新 , 该表上的所有缓存将全部被清空 . 建议不使用 .<br>需要注意的一点是 , 查询缓存在 MySQL 8.0 中被移除了 .</p>
-<h4 id="分析器"><a href="#分析器" class="headerlink" title="分析器"></a>分析器</h4><p>词法分析 , 判断 SQL 是否满足 MySQL 的语法要求 , 识别表名和字段 , 并判断字段是否存在等 .<br>语法分析 , 判断语法是存在错误 , 如 SELECT 拼成 SELEC , 少了 T 字符串 , 报错 ‘You have an error in your SQL syntax’ .</p>
-<h4 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h4><p>在执行 SQL 语句之前优化处理 , 当表中有多个索引时 , 优化器会决定使用哪个索引 ; 在关联语句中决定表的连接顺序 .</p>
-<h4 id="执行器"><a href="#执行器" class="headerlink" title="执行器"></a>执行器</h4><p>MySQL 通过分析器知道了你要做什么 , 通过优化器知道了该怎么做 , 于是进入执行器 , 开始执行语句 .<br>开始执行的时候 , 需要先判断用户对这个表有没有查询或者更新/插入的权限 , 如果有权限 , 就打开表继续执行 , 打开表的时候 , 执行器会根据表定义的引擎 , 去使用这个引擎提供的接口 .</p>
-
+          <h3 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">yum -y install libxml2 libxml2-devel</span><br><span class="line">yum -y install openssl openssl-devel</span><br><span class="line">yum -y install curl curl-devel</span><br><span class="line">yum -y install libjpeg libjpeg-devel</span><br><span class="line">yum -y install libpng libpng-devel</span><br><span class="line">yum -y install freetype freetype-devel</span><br><span class="line">yum -y install pcre pcre-devel</span><br><span class="line">yum -y install libxslt libxslt-devel</span><br><span class="line">yum -y install bzip2 bzip2-devel</span><br></pre></td></tr></table></figure>
+<p>安装最新版 libzip</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#删除旧版</span><br><span class="line">yum remove libzip</span><br><span class="line"></span><br><span class="line">#下载 libzip-1.5.2</span><br><span class="line">cd &#x2F;usr&#x2F;local&#x2F;src</span><br><span class="line">wget https:&#x2F;&#x2F;nih.at&#x2F;libzip&#x2F;libzip-1.5.2.tar.gz</span><br><span class="line"></span><br><span class="line">#新版 libzip 需要 cmake 编译 , 下载 cmake</span><br><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;Kitware&#x2F;CMake&#x2F;releases&#x2F;download&#x2F;v3.15.0-rc1&#x2F;cmake-3.15.0-rc1-Linux-x86_64.tar.gz</span><br><span class="line">tar -zxvf cmake-3.15.0-rc1-Linux-x86_64.tar.gz</span><br><span class="line">mv cmake-3.15.0-rc1-Linux-x86_64.tar.gz &#x2F;usr&#x2F;local&#x2F;cmake</span><br><span class="line">export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;cmake&#x2F;bin</span><br><span class="line"></span><br><span class="line">#解压安装 libzip</span><br><span class="line">tar -zxvf libzip-1.5.2.tar.gz</span><br><span class="line">cd libzip-1.5.2</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make &amp; make install</span><br></pre></td></tr></table></figure>
+<h3 id="下载编译-php7-3-0"><a href="#下载编译-php7-3-0" class="headerlink" title="下载编译 php7.3.0"></a>下载编译 php7.3.0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;local&#x2F;src</span><br><span class="line">wget &quot;https:&#x2F;&#x2F;downloads.php.net&#x2F;~cmb&#x2F;php-7.3.0.tar.gz&quot;</span><br><span class="line">tar -zxvf php-7.3.0.tar.gz</span><br><span class="line">cd php-7.3.0</span><br><span class="line">#编译 参数自行添加</span><br><span class="line">.&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;php \</span><br><span class="line"> --with-curl&#x3D;&#x2F;usr&#x2F;local&#x2F;curl\</span><br><span class="line"> --with-gd \</span><br><span class="line"> --with-freetype-dir&#x3D;&#x2F;usr&#x2F;include&#x2F;freetype2\</span><br><span class="line"> --with-gettext \</span><br><span class="line"> --with-iconv-dir \</span><br><span class="line"> --with-kerberos \</span><br><span class="line"> --with-libdir&#x3D;lib64 \</span><br><span class="line"> --with-libxml-dir \</span><br><span class="line"> --with-mysqli \</span><br><span class="line"> --with-openssl \</span><br><span class="line"> --with-pcre-regex \</span><br><span class="line"> --with-pdo-mysql \</span><br><span class="line"> --with-pdo-sqlite \</span><br><span class="line"> --with-pear \</span><br><span class="line"> --with-png-dir \</span><br><span class="line"> --with-xmlrpc \</span><br><span class="line"> --with-xsl \</span><br><span class="line"> --with-zlib \</span><br><span class="line"> --enable-fpm \</span><br><span class="line"> --enable-bcmath \</span><br><span class="line"> --enable-libxml \</span><br><span class="line"> --enable-inline-optimization \</span><br><span class="line"> --enable-mbregex \</span><br><span class="line"> --enable-mbstring \</span><br><span class="line"> --enable-opcache \</span><br><span class="line"> --enable-pcntl \</span><br><span class="line"> --enable-shmop \</span><br><span class="line"> --enable-soap \</span><br><span class="line"> --enable-sockets \</span><br><span class="line"> --enable-sysvsem \</span><br><span class="line"> --enable-xml \</span><br><span class="line"> --enable-zip</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">#成功输出</span><br><span class="line">Installing shared extensions:     &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php&#x2F;extensions&#x2F;no-debug-non-zts-20180731&#x2F;</span><br><span class="line">Installing PHP CLI binary:        &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">Installing PHP CLI man page:      &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man1&#x2F;</span><br><span class="line">Installing PHP FPM binary:        &#x2F;usr&#x2F;local&#x2F;php&#x2F;sbin&#x2F;</span><br><span class="line">Installing PHP FPM defconfig:     &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;</span><br><span class="line">Installing PHP FPM man page:      &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man8&#x2F;</span><br><span class="line">Installing PHP FPM status page:   &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;php&#x2F;fpm&#x2F;</span><br><span class="line">Installing phpdbg binary:         &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">Installing phpdbg man page:       &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man1&#x2F;</span><br><span class="line">Installing PHP CGI binary:        &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">Installing PHP CGI man page:      &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man1&#x2F;</span><br><span class="line">Installing build environment:     &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php&#x2F;build&#x2F;</span><br><span class="line">Installing header files:          &#x2F;usr&#x2F;local&#x2F;php&#x2F;include&#x2F;php&#x2F;</span><br><span class="line">Installing helper programs:       &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">  program: phpize</span><br><span class="line">  program: php-config</span><br><span class="line">Installing man pages:             &#x2F;usr&#x2F;local&#x2F;php&#x2F;php&#x2F;man&#x2F;man1&#x2F;</span><br><span class="line">  page: phpize.1</span><br><span class="line">  page: php-config.1</span><br><span class="line">Installing PEAR environment:      &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php&#x2F;</span><br><span class="line"></span><br><span class="line">Warning: &quot;continue&quot; targeting switch is equivalent to &quot;break&quot;. Did you mean to use &quot;continue 2&quot;? in phar:&#x2F;&#x2F;&#x2F;usr&#x2F;local&#x2F;src&#x2F;php-7.3.0&#x2F;pear&#x2F;install-pear-nozlib.phar&#x2F;PEAR&#x2F;PackageFile&#x2F;v2&#x2F;Validator.php on line 1933</span><br><span class="line">[PEAR] Archive_Tar    - installed: 1.4.3</span><br><span class="line">[PEAR] Console_Getopt - installed: 1.4.1</span><br><span class="line">[PEAR] Structures_Graph- installed: 1.1.1</span><br><span class="line">[PEAR] XML_Util       - installed: 1.4.2</span><br><span class="line">[PEAR] PEAR           - installed: 1.10.5</span><br><span class="line">Wrote PEAR system config file at: &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;pear.conf</span><br><span class="line">You may want to add: &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php to your php.ini include_path</span><br><span class="line">&#x2F;usr&#x2F;local&#x2F;src&#x2F;php-7.3.0&#x2F;build&#x2F;shtool install -c ext&#x2F;phar&#x2F;phar.phar &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin</span><br><span class="line">ln -s -f phar.phar &#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;phar</span><br><span class="line">Installing PDO headers:           &#x2F;usr&#x2F;local&#x2F;php&#x2F;include&#x2F;php&#x2F;ext&#x2F;pdo&#x2F;</span><br></pre></td></tr></table></figure>
+<p>配置信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 复制 php.ini php-fpm.conf www.conf 配置文件</span><br><span class="line">cp php.ini-production &#x2F;usr&#x2F;local&#x2F;php&#x2F;lib&#x2F;php.ini</span><br><span class="line">cp &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php-fpm.conf.default &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php-fpm.conf</span><br><span class="line">cp &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php-fpm.d&#x2F;www.conf.default &#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php-fpm.d&#x2F;www.conf</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;php&#x2F;sbin&#x2F;php-fpm &#x2F;usr&#x2F;local&#x2F;bin</span><br><span class="line"></span><br><span class="line">#加入服务</span><br><span class="line">cp &#x2F;usr&#x2F;local&#x2F;src&#x2F;sapi&#x2F;fpm&#x2F;php-fpm.service &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;</span><br><span class="line"></span><br><span class="line">#php 命令</span><br><span class="line">export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;php&#x2F;bin&#x2F;</span><br><span class="line">#测试</span><br><span class="line">php -v</span><br><span class="line">php -m</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -259,7 +260,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -325,20 +326,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -361,6 +362,11 @@
         
 
         
+  <div class="beian">
+    <a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">闽ICP备18006503号</a>
+
+
+  </div>
 
 <div class="copyright">
   

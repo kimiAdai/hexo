@@ -588,4 +588,201 @@ D:/params.txt 的内容如下<figure class="highlight plain"><table><tr><td clas
         <tag>mysql</tag>
       </tags>
   </entry>
+  <entry>
+    <title>PHP 版本支持</title>
+    <url>/2021/02/04/php/version-support-md/</url>
+    <content><![CDATA[<h3 id="PHP-版本支持时间表"><a href="#PHP-版本支持时间表" class="headerlink" title="PHP 版本支持时间表"></a>PHP 版本支持时间表</h3><p>PHP 每个发行版支持从发布开始的两年内完全支持 , 之后有一年的安全支持 . 意味着一个 PHP 版本支持三年 , 三年之后 , PHP 版本就走到尽头 , 不再支持了 .</p>
+<table>
+<thead>
+<tr>
+<th align="center">版本</th>
+<th align="center">发布时间</th>
+<th align="center">积极支持</th>
+<th align="center">安全支持</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">8.0</td>
+<td align="center">2020-11-26</td>
+<td align="center">2022-11-26</td>
+<td align="center">2023-11-26</td>
+</tr>
+<tr>
+<td align="center">7.4</td>
+<td align="center">2019-11-28</td>
+<td align="center">2021-11-28</td>
+<td align="center">2022-11-28</td>
+</tr>
+<tr>
+<td align="center">7.3</td>
+<td align="center">2018-12-06</td>
+<td align="center">2020-12-06</td>
+<td align="center">2021-12-06</td>
+</tr>
+<tr>
+<td align="center">7.2</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">2020-11-30</td>
+</tr>
+<tr>
+<td align="center">7.1</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">2019-12-01</td>
+</tr>
+<tr>
+<td align="center">7.0</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">2019-01-10</td>
+</tr>
+<tr>
+<td align="center">5.6</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">2018-12-31</td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title>mysql EXPLAIN 详解</title>
+    <url>/2021/02/18/mysql/mysql-explain/</url>
+    <content><![CDATA[<h3 id="EXPLAIN-命令"><a href="#EXPLAIN-命令" class="headerlink" title="EXPLAIN 命令"></a>EXPLAIN 命令</h3><ul>
+<li>使用<br>  直接在 SQL 语句前加入 EXPALIN </li>
+<li>参数<table>
+<thead>
+<tr>
+<th align="center">id</th>
+<th align="center">columns</th>
+<th align="center">JSON Name</th>
+<th align="left">Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">id</td>
+<td align="center">select_id</td>
+<td align="left">执行编号，标识select所属的行。如果在语句中没子查询或关联查询，只有唯一的select，每行都将显示1。否则，内层的select语句一般会顺序编号，对应于其在原始语句中的位置</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">select_type</td>
+<td align="center">None</td>
+<td align="left">显示本行是简单或复杂select。如果查询有任何复杂的子查询，则最外层标记为PRIMARY（DERIVED、UNION、UNION RESUlT）</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">table</td>
+<td align="center">Table Name</td>
+<td align="left">当前表名</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">partitions</td>
+<td align="center">Partitions</td>
+<td align="left">匹配的分区</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">type</td>
+<td align="center">Access Type</td>
+<td align="left">数据访问/读取操作类型（ALL、index、range、ref、eq_ref、const/system、NULL）</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">possible_keys</td>
+<td align="center">Possible Keys</td>
+<td align="left">可能用到的索引</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">key</td>
+<td align="center">key</td>
+<td align="left">经过优化器评估最终使用的索引</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">key_len</td>
+<td align="center">Key Lenth</td>
+<td align="left">使用到的索引长度</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">ref</td>
+<td align="center">ref</td>
+<td align="left">显示了之前的表在key列记录的索引中查找值所用的列或常量</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">rows</td>
+<td align="center">rows</td>
+<td align="left">为了找到所需的行而需要读取的行数，估算值，不精确。通过把所有rows列值相乘，可粗略估算整个查询会检查的行数</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">filtered</td>
+<td align="center">filtered</td>
+<td align="left">按表条件过滤行的百分比</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">Extra</td>
+<td align="center">Extra</td>
+<td align="left">额外信息说明</td>
+</tr>
+</tbody></table>
+</li>
+<li>详解<ul>
+<li>id</li>
+<li>select_type</li>
+<li>table</li>
+<li>type</li>
+<li>possible_keys</li>
+<li>key</li>
+<li>key_len</li>
+<li>ref</li>
+<li>rows</li>
+<li>Extra</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hyperledger Fabric</title>
+    <url>/2021/02/25/block%20chain/hyperledger%20fabric/</url>
+    <content><![CDATA[<p>Hyperledger Fabric是一个开放源代码的企业级许可分布式账本技术（DLT）平台，设计用于企业环境，与其他流行的分布式账本或区块链平台相比，它提供了一些关键的区分功能。</p>
+<h3 id="Hyperledger-Fabric-结构模型"><a href="#Hyperledger-Fabric-结构模型" class="headerlink" title="Hyperledger Fabric 结构模型"></a>Hyperledger Fabric 结构模型</h3><h4 id="资产-Assets"><a href="#资产-Assets" class="headerlink" title="资产 Assets"></a>资产 Assets</h4><p>资产范围从有形资产（房地产和硬件）到无形资产（合同和知识产权）。Hyperledger Fabric提供了使用链码交易修改资产的功能。<br>资产在Hyperledger Fabric中表示为键值对的集合，状态更改记录为通道 分类账中的事务。资产可以二进制和/或JSON形式表示。</p>
+<h4 id="链码-Chaincode"><a href="#链码-Chaincode" class="headerlink" title="链码 Chaincode"></a>链码 Chaincode</h4><p>Chaincode是定义一项或多项资产的软件，以及用于修改资产的交易指令；换句话说，这是业务逻辑。Chaincode强制执行用于读取或更改键值对或其他状态数据库信息的规则。链码功能针对分类帐的当前状态数据库执行，并通过交易建议启动。链码执行产生了一组键值写操作（写集），这些键值写操作可以提交给网络，并应用于所有对等方的分类帐中。</p>
+<h4 id="分类账-Ledger-Features"><a href="#分类账-Ledger-Features" class="headerlink" title="分类账 Ledger Features"></a>分类账 Ledger Features</h4><p>分类帐是结构中所有状态转换的有序，防篡改记录。状态转换是参与方提交的链码调用（“交易”）的结果。每个交易都会产生一组资产键值对，这些键值对会在创建，更新或删除时提交到分类账。</p>
+<p>分类帐由一个区块链（“ chain”）和一个状态数据库组成，该区块链将不可变的顺序记录存储在块中，该状态数据库用于维护当前的结构状态。每个通道有一个分类帐。每个对等方都为其所属的每个通道维护一个分类帐的副本</p>
+<h4 id="隐私-Private"><a href="#隐私-Private" class="headerlink" title="隐私 Private"></a>隐私 Private</h4><h4 id="安全和会员服务-Security-amp-Membership-Services"><a href="#安全和会员服务-Security-amp-Membership-Services" class="headerlink" title="安全和会员服务 Security &amp; Membership Services"></a>安全和会员服务 Security &amp; Membership Services</h4><h4 id="共识-Consensus"><a href="#共识-Consensus" class="headerlink" title="共识 Consensus"></a>共识 Consensus</h4>]]></content>
+      <categories>
+        <category>block chain</category>
+      </categories>
+      <tags>
+        <tag>block_chain</tag>
+        <tag>Hyperledger Fabric</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初始化 Fabric</title>
+    <url>/2021/02/25/block%20chain/init/</url>
+    <content><![CDATA[<h3 id="创建通道-channel"><a href="#创建通道-channel" class="headerlink" title="创建通道 channel"></a>创建通道 channel</h3>]]></content>
+      <categories>
+        <category>block chain</category>
+      </categories>
+      <tags>
+        <tag>block_chain</tag>
+        <tag>Hyperledger Fabric</tag>
+      </tags>
+  </entry>
 </search>
