@@ -70,18 +70,6 @@ D:/params.txt 的内容如下<figure class="highlight plain"><table><tr><td clas
       </tags>
   </entry>
   <entry>
-    <title>初始化 Fabric</title>
-    <url>/2021/02/25/block%20chain/init/</url>
-    <content><![CDATA[<h3 id="创建通道-channel"><a href="#创建通道-channel" class="headerlink" title="创建通道 channel"></a>创建通道 channel</h3>]]></content>
-      <categories>
-        <category>block chain</category>
-      </categories>
-      <tags>
-        <tag>block_chain</tag>
-        <tag>Hyperledger Fabric</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hyperledger Fabric</title>
     <url>/2021/02/25/block%20chain/hyperledger%20fabric/</url>
     <content><![CDATA[<p>Hyperledger Fabric是一个开放源代码的企业级许可分布式账本技术（DLT）平台，设计用于企业环境，与其他流行的分布式账本或区块链平台相比，它提供了一些关键的区分功能。</p>

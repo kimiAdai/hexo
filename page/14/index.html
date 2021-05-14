@@ -21,11 +21,11 @@
   </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="kimiAdai">
+<meta property="og:title" content="MK_2920">
 <meta property="og:url" content="http://yoursite.com/page/14/index.html">
-<meta property="og:site_name" content="kimiAdai">
+<meta property="og:site_name" content="MK_2920">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="kimiAdai">
+<meta property="article:author" content="MK_2920">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/page/14/">
@@ -41,7 +41,7 @@
   };
 </script>
 
-  <title>kimiAdai</title>
+  <title>MK_2920</title>
   
 
 
@@ -92,7 +92,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">kimiAdai</h1>
+      <h1 class="site-title">MK_2920</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -183,21 +183,21 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/15/php/phpstorm-plugin/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/11/linux/linux-putty/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="name" content="MK_2920">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="name" content="MK_2920">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/15/php/phpstorm-plugin/" class="post-title-link" itemprop="url">phpstorm 常用插件</a>
+            <a href="/2019/11/11/linux/linux-putty/" class="post-title-link" itemprop="url">windows 使用密钥登录 linux 服务器 (putty)</a>
         </h2>
 
         <div class="post-meta">
@@ -206,17 +206,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-15 17:20:28 / 修改时间：17:07:53" itemprop="dateCreated datePublished" datetime="2019-11-15T17:20:28+08:00">2019-11-15</time>
+              <time title="创建时间：2019-11-11 19:51:00" itemprop="dateCreated datePublished" datetime="2019-11-11T19:51:00+08:00">2019-11-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-12 14:26:42" itemprop="dateModified" datetime="2019-11-12T14:26:42+08:00">2019-11-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TOOL/" itemprop="url" rel="index"><span itemprop="name">TOOL</span></a>
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
                 </span>
             </span>
 
@@ -231,12 +237,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><p>File =&gt; settings 选择 plugin , 显示插件页面<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8ytuiir63j30sh0jrtad.jpg" alt="插件界面"></p>
-<h4 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h4><ol>
-<li>Translation<br> IDE 内翻译插件 , ctrl + shift + O (字母O) 选中单词后直接翻译 .</li>
-<li>CodeGlance<br> 类似 subline text 右侧代码地图 .</li>
-<li>.env files support</li>
+          <h4 id="先用密码登录-linux-服务器-生成密钥"><a href="#先用密码登录-linux-服务器-生成密钥" class="headerlink" title="先用密码登录 linux 服务器 , 生成密钥"></a>先用密码登录 linux 服务器 , 生成密钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+<p>生成密钥的过程中会提示输入密码 , 可以直接 enter 跳过 . 如果输入密码的话 , 以后每次登录都需要输入密码 .</p>
+<h4 id="部署密钥"><a href="#部署密钥" class="headerlink" title="部署密钥"></a>部署密钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/.ssh</span><br><span class="line">ssh-copy-id -i /root/.ssh/id_rsa.pub root@yourip</span><br><span class="line">yes</span><br></pre></td></tr></table></figure>
+<p>.ssh 文件夹中的 id_rsa 是私钥文件 , 需要下载到本地电脑用来登录 .</p>
+<h4 id="下载-id-rsa-文件到本地"><a href="#下载-id-rsa-文件到本地" class="headerlink" title="下载 id_rsa 文件到本地"></a>下载 id_rsa 文件到本地</h4><p>打开 puttygen<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8uc5tt10nj30dp0da0tg.jpg"></p>
+<ol>
+<li>load , 选择 id_rsa 文件</li>
+<li>保存私钥到本地 (.ppk 文件)</li>
+<li>复制私钥 , 并将私钥保存到服务器 /root/.ssh/authorized_keys 中</li>
 </ol>
+<h4 id="使用-putty-登录"><a href="#使用-putty-登录" class="headerlink" title="使用 putty 登录"></a>使用 putty 登录</h4><p>填入 IP 地址<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8abmhk1j30cw0ch0t2.jpg"></p>
+<p>填入用户名<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8cckiooj30cy0ch74x.jpg"></p>
+<p>选择之前保存的 .ppk 私钥文件<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8e4cy3yj30cy0ch0t8.jpg"></p>
+<p>返回 session 保存站点<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g8v8f4yi27j30cy0ch0t5.jpg"></p>
+<p>尝试登录</p>
 
       
     </div>
@@ -255,7 +270,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -313,7 +328,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">kimiAdai</p>
+  <p class="site-author-name" itemprop="name">MK_2920</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -321,7 +336,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -358,7 +373,7 @@
 
         
   <div class="beian">
-    <a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">闽ICP备18006503号</a>
+    <a href="http://beian.miit.gov.cn/" rel="noopener" target="_blank">闽ICP备18006503号</a>
 
 
   </div>
@@ -370,10 +385,8 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">kimiAdai</span>
+  <span class="author" itemprop="copyrightHolder">MK_2920</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
 
         
 

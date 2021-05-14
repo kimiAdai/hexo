@@ -21,11 +21,11 @@
   </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="kimiAdai">
+<meta property="og:title" content="MK_2920">
 <meta property="og:url" content="http://yoursite.com/page/18/index.html">
-<meta property="og:site_name" content="kimiAdai">
+<meta property="og:site_name" content="MK_2920">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="kimiAdai">
+<meta property="article:author" content="MK_2920">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/page/18/">
@@ -41,7 +41,7 @@
   };
 </script>
 
-  <title>kimiAdai</title>
+  <title>MK_2920</title>
   
 
 
@@ -92,7 +92,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">kimiAdai</h1>
+      <h1 class="site-title">MK_2920</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -183,21 +183,21 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/linux/linux-crontab/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/linux/linux-used-commands/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="name" content="MK_2920">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kimiAdai">
+      <meta itemprop="name" content="MK_2920">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/09/linux/linux-crontab/" class="post-title-link" itemprop="url">linux crontab 计划任务</a>
+            <a href="/2019/07/08/linux/linux-used-commands/" class="post-title-link" itemprop="url">linux 常用命令</a>
         </h2>
 
         <div class="post-meta">
@@ -208,7 +208,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-07-09 16:10:52 / 修改时间：16:15:18" itemprop="dateCreated datePublished" datetime="2019-07-09T16:10:52+08:00">2019-07-09</time>
+              <time title="创建时间：2019-07-08 11:12:52 / 修改时间：14:50:35" itemprop="dateCreated datePublished" datetime="2019-07-08T11:12:52+08:00">2019-07-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,15 +231,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="crontab-参数"><a href="#crontab-参数" class="headerlink" title="crontab 参数"></a>crontab 参数</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab -e #编辑计划任务</span><br><span class="line">crontab -l #查看</span><br></pre></td></tr></table></figure>
-<p>crontab 格式 “M H D m d cmd” , 其中 M 为分钟(0-59) , H 为小时(0-23) , D 为天(1-31) , m 为月(1-12) , d 为每周天数(0-6) 0 是周日 , cmd 表示要运行的程序或者 sh 文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*/10 * * * * command #每 10 分钟执行</span><br><span class="line">0 * * * * command #每小时执行</span><br><span class="line">0 0 * * * command #每天执行</span><br><span class="line">0 0 1 * * command #每月执行</span><br><span class="line">0 0 1 1 * command #每年执行</span><br><span class="line">0 0 * * 0 command #每周执行一次</span><br><span class="line">0 2 * * * command #每天 2 点执行</span><br></pre></td></tr></table></figure>
-<p>特殊符号<br> , (逗号) 代表分隔时段<br> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 2,5,8 * * * command #代表每天 2 点 5 点 8 点各执行一次</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>(中划线) 代表时间区间<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 10-20 * * * command #代表每天 10 点到 20 点各执行一次</span><br></pre></td></tr></table></figure>
-/n (n为合理数值)<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/5 * * * * command #代表每 5 分钟执行一次</span><br></pre></td></tr></table></figure></li>
-</ul>
+          <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">df -h #显示文件系统磁盘块的使用情况  -h human read</span><br><span class="line">du -h --max-depth=1 #显示文件夹占用的存储空间  --max-depth 文件深度</span><br><span class="line">ls -al #list 列出当前工作目录的内容 -a 列出所有(包含 . ..  -A 不包含) -l 列出所有者 组 以及权限 -t 时间排序 </span><br><span class="line">ll #相当与 ls -l</span><br><span class="line">mkdir #创建目录 </span><br><span class="line">rmdir #删除目录</span><br><span class="line">pwd #print working directory</span><br><span class="line">cp FILE PATH #复制文件</span><br><span class="line">mv FILE PATH #移动文件</span><br></pre></td></tr></table></figure>
 
+
+
+
+
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>grep </p>
+<h2 id="网络连接"><a href="#网络连接" class="headerlink" title="网络连接"></a>网络连接</h2>
       
     </div>
 
@@ -257,7 +256,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -315,7 +314,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">kimiAdai</p>
+  <p class="site-author-name" itemprop="name">MK_2920</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -323,7 +322,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -360,7 +359,7 @@
 
         
   <div class="beian">
-    <a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">闽ICP备18006503号</a>
+    <a href="http://beian.miit.gov.cn/" rel="noopener" target="_blank">闽ICP备18006503号</a>
 
 
   </div>
@@ -372,10 +371,8 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">kimiAdai</span>
+  <span class="author" itemprop="copyrightHolder">MK_2920</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
 
         
 
