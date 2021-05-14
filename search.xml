@@ -507,45 +507,6 @@ D:/params.txt 的内容如下<figure class="highlight plain"><table><tr><td clas
       </tags>
   </entry>
   <entry>
-    <title>shadowsocks &amp; finalspeed 服务端搭建</title>
-    <url>/2019/06/04/linux/linux-install/</url>
-    <content><![CDATA[<h4 id="shadowsocks-服务端"><a href="#shadowsocks-服务端" class="headerlink" title="shadowsocks 服务端"></a>shadowsocks 服务端</h4><p>使用 root 用户登陆 , 安装 shadowsocks .</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">wget --no-check-certificate https:<span class="comment">//raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh</span></span><br><span class="line">chmod +x shadowsocks-go.sh</span><br><span class="line">./shadowsocks-go.sh <span class="number">2</span>&gt;&amp;<span class="number">1</span> | tee shadowsocks-go.log</span><br></pre></td></tr></table></figure>
-<p>脚本安装完成后，已将 shadowsocks-go 加入开机自启动<br>配置文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/shadowsocks/config.json</span><br></pre></td></tr></table></figure>
-<p>单用户 和 多用户 配置</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="string">&quot;server&quot;</span>:<span class="string">&quot;0.0.0.0&quot;</span>,</span><br><span class="line"> <span class="string">&quot;server_port&quot;</span>: 13839,</span><br><span class="line"> <span class="string">&quot;local_port&quot;</span>:1080,</span><br><span class="line"> <span class="string">&quot;password&quot;</span>:<span class="string">&quot;jkdf7nd33eUj&quot;</span>,</span><br><span class="line"> <span class="string">&quot;method&quot;</span>:<span class="string">&quot;aes-256-cfb&quot;</span>,</span><br><span class="line"> <span class="string">&quot;timeout&quot;</span>:600</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line"> <span class="string">&quot;port_password&quot;</span>:&#123;</span><br><span class="line">      <span class="string">&quot;13839&quot;</span>:<span class="string">&quot;jkdf7nd33eUj&quot;</span>,</span><br><span class="line">      <span class="string">&quot;12179&quot;</span>:<span class="string">&quot;Ka7KGb4gqwtF&quot;</span>,</span><br><span class="line">      <span class="string">&quot;16713&quot;</span>:<span class="string">&quot;fJArFv1gQ8Ve&quot;</span>,</span><br><span class="line">      <span class="string">&quot;18711&quot;</span>:<span class="string">&quot;4aZtRq4frGf5&quot;</span>,</span><br><span class="line">      <span class="string">&quot;17739&quot;</span>:<span class="string">&quot;e1PDAM35rYG9&quot;</span></span><br><span class="line"> &#125;,</span><br><span class="line"> <span class="string">&quot;method&quot;</span>:<span class="string">&quot;aes-256-cfb&quot;</span>,</span><br><span class="line"> <span class="string">&quot;timeout&quot;</span>:600</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>管理<br>启动/停止/重启/状态</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/etc/init.d/shadowsocks start/stop/restart/status</span><br></pre></td></tr></table></figure>
-<h4 id="FinalSpeed-服务端"><a href="#FinalSpeed-服务端" class="headerlink" title="FinalSpeed 服务端"></a>FinalSpeed 服务端</h4><p>安装</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm -f install_fs.sh</span><br><span class="line">wget  https://github.com/ucoker/finalspeed/raw/master/install_fs.sh</span><br><span class="line">chmod +x install_fs.sh</span><br><span class="line">./install_fs.sh 2&gt;&amp;1 | tee install.log</span><br></pre></td></tr></table></figure>
-<p>开机启动</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/rc.local</span><br></pre></td></tr></table></figure>
-<p>加入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/start.sh</span><br></pre></td></tr></table></figure>
-<p>确保端口开放<br>管理 执行一键安装会自动更新<br>卸载</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/stop.sh ; rm -rf /fs</span><br></pre></td></tr></table></figure>
-<p>启动</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/start.sh</span><br></pre></td></tr></table></figure>
-<p>停止</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/stop.sh</span><br></pre></td></tr></table></figure>
-<p>重新启动</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh /fs/restart.sh</span><br></pre></td></tr></table></figure>
-<p>运行日志</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tail -f /fs/server.log</span><br></pre></td></tr></table></figure>
-<h4 id="windows-客户端"><a href="#windows-客户端" class="headerlink" title="windows 客户端"></a>windows 客户端</h4><p><a href="https://pan.baidu.com/s/1TRcXDzhw9w9DqrgR5Iem-w">下载地址</a><br>提取码：xe8o</p>
-<p>解压安装 Shadowsocks-4.1.6 , 服务器配置如下 , 端口可以自定义 , 密码为 shadowsocks 服务端设置的密码 .<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3oxgz9aj1j30cw0cv0t2.jpg"></p>
-<p>执行 finalspeed.exe 文件<br>配置如下<br><img src="https://ws1.sinaimg.cn/large/0060vrlugy1g3oxpjaly5j30kx09gweu.jpg"></p>
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>搭建 shadowsocks</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>windows 使用密钥登录 linux 服务器 (putty)</title>
     <url>/2019/11/11/linux/linux-putty/</url>
     <content><![CDATA[<h4 id="先用密码登录-linux-服务器-生成密钥"><a href="#先用密码登录-linux-服务器-生成密钥" class="headerlink" title="先用密码登录 linux 服务器 , 生成密钥"></a>先用密码登录 linux 服务器 , 生成密钥</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
